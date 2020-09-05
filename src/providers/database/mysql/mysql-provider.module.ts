@@ -15,7 +15,6 @@ import { DatabaseType } from 'typeorm';
         username: mysqlConfigService.username,
         password: mysqlConfigService.password,
         database: mysqlConfigService.database,
-        underscore: true,
         entities: [__dirname + '/../../../**/*.entity.{js,ts}'],
         synchronize: mysqlConfigService.synchronize,
       }),
