@@ -10,7 +10,7 @@ import mysqlConfiguration from './mysql-configuration';
       envFilePath: ['.env'],
       load: [mysqlConfiguration],
       validationSchema: Joi.object({
-        DB: Joi.string().default('orm'),
+        DB: Joi.string(),
         DB_USERNAME: Joi.string().default('root'),
         DB_PASSWORD: Joi.string().default('root'),
         DB_HOST: Joi.string().default('localhost'),
