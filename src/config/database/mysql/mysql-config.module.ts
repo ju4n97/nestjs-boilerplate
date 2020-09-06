@@ -1,7 +1,7 @@
 import * as Joi from '@hapi/joi';
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { MysqlConfigService } from '.';
+import { MysqlConfigService } from './mysql-config.service';
 import mysqlConfiguration from './mysql-configuration';
 
 @Module({

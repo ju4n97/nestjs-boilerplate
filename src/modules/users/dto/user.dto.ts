@@ -1,11 +1,16 @@
-import { Exclude, Expose } from 'class-transformer';
+import { Exclude, Expose, Type } from 'class-transformer';
 import {
+  IsBoolean,
+  IsDate,
   IsEmail,
   IsNotEmpty,
+  IsPhoneNumber,
   IsString,
   MaxLength,
   MinLength,
 } from 'class-validator';
+import { UserDetailEntity } from '../entities/user-detail.entity';
+import { GetUserDetailDto } from './get-user-detail.dto';
 
 @Exclude()
 export class UserDto {
@@ -28,6 +33,29 @@ export class UserDto {
   @Expose()
   @IsNotEmpty()
   @IsEmail()
-  @MaxLength(100)
+  @MaxLength(60)
   email: string;
+
+  @Expose()
+  @IsBoolean()
+  emailConfirmed: boolean;
+
+  @Expose()
+  @IsNotEmpty()
+  @IsPhoneNumber('CO')
+  phoneNumber: string;
+
+  @Expose()
+  @Type(() => Date)
+  @IsDate()
+  createdAt: Date;
+
+  @Expose()
+  @Type(() => Date)
+  @IsDate()
+  updatedAt: Date;
+
+  @Expose()
+  @Type(() => UserDetailEntity)
+  details: GetUserDetailDto;
 }
