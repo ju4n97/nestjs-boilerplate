@@ -3,9 +3,11 @@ import {
   Injectable,
   Logger,
   NotFoundException,
+  UnauthorizedException,
 } from '@nestjs/common';
+import { compare } from 'bcrypt';
 import { plainToClass } from 'class-transformer';
-import { CreateUserDto, GetUserDto } from './dto';
+import { CreateUserDto, GetUserDto, LoginUserDto } from './dto';
 import { UserDetailEntity } from './entities/user-detail.entity';
 import { UserRepository } from './user.repository';
 
@@ -35,8 +37,42 @@ export class UsersService {
     return plainToClass(GetUserDto, user);
   }
 
+  async getByUsername(username: string): Promise<GetUserDto> {
+    this._logger.log(`Request to fetch user by username: ${username}`);
+    const user = await this._userRepository.findOne({ where: { username } });
+
+    if (!user) {
+      throw new NotFoundException('User was not found');
+    }
+
+    return plainToClass(GetUserDto, user);
+  }
+
+  async getByLoginCredentials({
+    username,
+    password,
+  }: LoginUserDto): Promise<GetUserDto> {
+    this._logger.log('Request to fetch user by login credentials.');
+
+    // Checks if user exists.
+    const user = await this._userRepository.findOne({ where: { username } });
+
+    if (!user) {
+      throw new UnauthorizedException('Username incorrect.');
+    }
+
+    // Checks if user password is correct.
+    const validPassword = await compare(password, user.password);
+
+    if (!validPassword) {
+      throw new UnauthorizedException('Password incorrect.');
+    }
+
+    return plainToClass(GetUserDto, user);
+  }
+
   async create(createUserDto: CreateUserDto): Promise<GetUserDto> {
-    this._logger.log(`Request to create user: ${createUserDto}`);
+    this._logger.log(`Request to create a new user`);
     const { username, firstName, lastName } = createUserDto;
 
     const userInDb = await this._userRepository.findOne({
