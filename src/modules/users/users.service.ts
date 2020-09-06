@@ -1,6 +1,12 @@
-import { Injectable, Logger, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  Logger,
+  NotFoundException,
+} from '@nestjs/common';
 import { plainToClass } from 'class-transformer';
 import { CreateUserDto, GetUserDto } from './dto';
+import { UserDetailEntity } from './entities/user-detail.entity';
 import { UserRepository } from './user.repository';
 
 @Injectable()
@@ -31,8 +37,25 @@ export class UsersService {
 
   async create(createUserDto: CreateUserDto): Promise<GetUserDto> {
     this._logger.log(`Request to create user: ${createUserDto}`);
+    const { username, firstName, lastName } = createUserDto;
+
+    const userInDb = await this._userRepository.findOne({
+      where: { username },
+    });
+
+    if (userInDb) {
+      throw new BadRequestException('User already exists');
+    }
+
     const user = this._userRepository.create(createUserDto);
+
+    const userDetail = new UserDetailEntity();
+    userDetail.firstName = firstName;
+    userDetail.lastName = lastName;
+    user.details = userDetail;
+
     await user.save();
+
     return plainToClass(GetUserDto, user);
   }
 }
