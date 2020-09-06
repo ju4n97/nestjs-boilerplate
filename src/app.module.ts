@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AppConfigModule, AppConfigService } from './config/app';
+import { AppConfigModule } from './config/app/app-config.module';
+import { AppConfigService } from './config/app/app-config.service';
 import { AuthModule } from './modules/auth/auth.module';
 import { UsersModule } from './modules/users/users.module';
 import { MysqlProviderModule } from './providers/database/mysql/mysql-provider.module';
