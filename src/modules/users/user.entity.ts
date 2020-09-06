@@ -1,5 +1,7 @@
+import { hash } from 'bcrypt';
 import {
   BaseEntity,
+  BeforeInsert,
   Column,
   CreateDateColumn,
   Entity,
@@ -26,4 +28,9 @@ export class UserEntity extends BaseEntity {
 
   @UpdateDateColumn({ name: 'updated_at', type: 'timestamp', nullable: true })
   updatedAt: Date;
+
+  @BeforeInsert()
+  async hashPassword(): Promise<void> {
+    this.password = await hash(this.password, 10);
+  }
 }
