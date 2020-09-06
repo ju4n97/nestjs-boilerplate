@@ -1,7 +1,7 @@
 import * as Joi from '@hapi/joi';
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { AuthConfigService } from './auth-config.service';
+import { AuthConfigService } from '.';
 import authConfiguration from './auth-configuration';
 
 @Module({
