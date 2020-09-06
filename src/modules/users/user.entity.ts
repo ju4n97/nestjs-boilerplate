@@ -1,4 +1,11 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  BaseEntity,
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity('user')
 export class UserEntity extends BaseEntity {
@@ -13,4 +20,10 @@ export class UserEntity extends BaseEntity {
 
   @Column({ type: 'varchar', nullable: false, unique: true, length: 100 })
   email: string;
+
+  @CreateDateColumn({ name: 'created_at', type: 'timestamp', nullable: false })
+  createdAt: Date;
+
+  @UpdateDateColumn({ name: 'updated_at', type: 'timestamp', nullable: true })
+  updatedAt: Date;
 }
