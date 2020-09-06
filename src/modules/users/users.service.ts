@@ -1,4 +1,4 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { plainToClass } from 'class-transformer';
 import { CreateUserDto, GetUserDto } from './dto';
 import { UserRepository } from './user.repository';
@@ -21,6 +21,11 @@ export class UsersService {
   async getById(id: string): Promise<GetUserDto> {
     this._logger.log(`Request to fetch user by id: ${id}`);
     const user = await this._userRepository.findOne(id);
+
+    if (!user) {
+      throw new NotFoundException('User was not found');
+    }
+
     return plainToClass(GetUserDto, user);
   }
 
