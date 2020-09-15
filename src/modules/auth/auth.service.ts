@@ -1,3 +1,4 @@
+import { MailerService } from '@nestjs-modules/mailer';
 import { Injectable, Logger } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { plainToClass } from 'class-transformer';
@@ -10,6 +11,7 @@ import { JwtPayload, LoginResult, Token } from './interfaces';
 export class AuthService {
   constructor(
     private readonly _usersService: UsersService,
+    private readonly _mailerService: MailerService,
     private readonly _authConfigService: AuthConfigService,
     private readonly _jwtService: JwtService,
     private readonly _logger: Logger,
@@ -19,6 +21,7 @@ export class AuthService {
 
   async register(createUserDto: CreateUserDto): Promise<GetUserDto> {
     const user = await this._usersService.create(createUserDto);
+    this._sendWelcomeEmail(user.email, user.username);
     return plainToClass(GetUserDto, user);
   }
 
@@ -32,6 +35,10 @@ export class AuthService {
     return await this._usersService.getByUsername(username);
   }
 
+  async forgotPassword() {
+    console.log('');
+  }
+
   private _createToken({ username }: GetUserDto): Token {
     const expiresIn = this._authConfigService.jwtExpiresIn;
 
@@ -42,5 +49,17 @@ export class AuthService {
       expiresIn,
       accessToken,
     };
+  }
+
+  private _sendWelcomeEmail(email: string, username: string): void {
+    this._mailerService.sendMail({
+      to: email,
+      from: 'codevlab.development@gmail.com',
+      subject: '🥳🎉 Welcome to the amazing Nestjs boilerplate!',
+      template: 'welcome',
+      context: {
+        username: username,
+      },
+    });
   }
 }
