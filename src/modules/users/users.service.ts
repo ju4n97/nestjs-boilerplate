@@ -73,14 +73,16 @@ export class UsersService {
 
   async create(createUserDto: CreateUserDto): Promise<GetUserDto> {
     this._logger.log(`Request to create a new user`);
-    const { username, firstName, lastName } = createUserDto;
+    const { username, email, firstName, lastName } = createUserDto;
 
     const userInDb = await this._userRepository.findOne({
-      where: { username },
+      where: [{ username }, { email }],
     });
 
+    console.log(userInDb);
+
     if (userInDb) {
-      throw new BadRequestException('User already exists');
+      throw new BadRequestException('Username already registered');
     }
 
     const user = this._userRepository.create(createUserDto);
