@@ -1,6 +1,7 @@
 import { AdvanceQuery } from '@lib/dto/advance-result';
 import { AdvanceResult } from '@lib/interfaces/advance-result';
 import { mapQuery } from '@lib/utils/advance-result';
+import { removeEmptyProps } from '@lib/utils/object';
 import {
   BadRequestException,
   Injectable,
@@ -8,8 +9,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { plainToClass } from 'class-transformer';
-import { CreateRoleDto } from './dto/create-role.dto';
-import { GetRoleDto } from './dto/get-role.dto';
+import { CreateRoleDto, GetRoleDto, UpdateRoleDto } from './dto';
 import { RoleRepository } from './role.repository';
 
 @Injectable()
@@ -66,9 +66,39 @@ export class RolesService {
 
   async create(createRoleDto: CreateRoleDto): Promise<GetRoleDto> {
     this._logger.log('Request to create role.');
-
     const role = this._roleRepository.create(createRoleDto);
     await this._roleRepository.save(role);
+    return plainToClass(GetRoleDto, role);
+  }
+
+  async update(id: string, updateRoleDto: UpdateRoleDto): Promise<GetRoleDto> {
+    this._logger.log(
+      `Solicitud para actualizar el nombre de el rol por el id: "${id}".`,
+    );
+
+    const role = await this._roleRepository.findOne(id);
+
+    if (!role) {
+      throw new NotFoundException('Role not found');
+    }
+
+    await this._roleRepository.save(
+      Object.assign(role, removeEmptyProps(updateRoleDto)),
+    );
+
+    return plainToClass(GetRoleDto, role);
+  }
+
+  async deleteById(id: string): Promise<GetRoleDto> {
+    this._logger.log(`Request to delete a role by id "${id}".`);
+    const role = await this._roleRepository.findOne(id);
+
+    if (!role) {
+      throw new NotFoundException('Role not found');
+    }
+
+    await this._roleRepository.delete(id);
+
     return plainToClass(GetRoleDto, role);
   }
 }

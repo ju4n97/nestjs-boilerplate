@@ -24,18 +24,3 @@ export const toCapitalizedCase = (entry: string): string => {
     .map(w => `${w[0].toUpperCase()}${w.slice(1, w.length).toLowerCase()}`)
     .join(' ');
 };
-
-/**
- * @description Converts enum to string.
- * @param entries enum.
- * @returns String with enum keys.
- */
-export const enumToString = (e: { [k: string]: string }): string => {
-  let result = '';
-
-  for (const key in e) {
-    result += `${key}, `;
-  }
-
-  return result.substring(0, result.length - 2);
-};

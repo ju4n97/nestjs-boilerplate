@@ -3,14 +3,15 @@ import { AdvanceResult } from '@lib/interfaces/advance-result';
 import {
   Body,
   Controller,
+  Delete,
   Get,
   Param,
   ParseUUIDPipe,
   Post,
+  Put,
   Query,
 } from '@nestjs/common';
-import { CreateRoleDto } from './dto/create-role.dto';
-import { GetRoleDto } from './dto/get-role.dto';
+import { CreateRoleDto, GetRoleDto, UpdateRoleDto } from './dto';
 import { RolesService } from './roles.service';
 
 @Controller('roles')
@@ -35,5 +36,20 @@ export class RolesController {
   @Post()
   async create(@Body() createRoleDto: CreateRoleDto): Promise<GetRoleDto> {
     return await this._rolesService.create(createRoleDto);
+  }
+
+  @Put(':id')
+  async update(
+    @Param('id', new ParseUUIDPipe()) id: string,
+    @Body() updateRoleDto: UpdateRoleDto,
+  ): Promise<GetRoleDto> {
+    return await this._rolesService.update(id, updateRoleDto);
+  }
+
+  @Delete(':id')
+  async deleteById(
+    @Param('id', new ParseUUIDPipe()) id: string,
+  ): Promise<GetRoleDto> {
+    return await this._rolesService.deleteById(id);
   }
 }

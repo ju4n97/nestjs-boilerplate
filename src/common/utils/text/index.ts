@@ -1,1 +1,1 @@
-export { enumToString, toCapitalizedCase, toInitials } from './text.util';
+export { toCapitalizedCase, toInitials } from './text.util';

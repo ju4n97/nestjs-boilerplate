@@ -1,3 +1,4 @@
+import { enumToString } from '@lib/utils/object';
 import { Exclude, Expose } from 'class-transformer';
 import {
   IsDate,
@@ -6,7 +7,6 @@ import {
   IsString,
   MaxLength,
 } from 'class-validator';
-import { enumToString } from 'src/common/utils/text';
 // import { GetPermissionDto } from 'src/modules/permissions/dto';
 import { RoleStatus } from '../enums/role-status.enum';
 

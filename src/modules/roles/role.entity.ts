@@ -1,6 +1,7 @@
 import {
   BaseEntity,
   BeforeInsert,
+  BeforeUpdate,
   Column,
   CreateDateColumn,
   Entity,
@@ -16,6 +17,7 @@ export class RoleEntity extends BaseEntity {
   @Column({
     type: 'varchar',
     length: 25,
+    unique: true,
     nullable: false,
   })
   name: string;
@@ -43,7 +45,8 @@ export class RoleEntity extends BaseEntity {
   //   permissions: PermissionEntity[];
 
   @BeforeInsert()
+  @BeforeUpdate()
   async normalizeRole(): Promise<void> {
-    this.name = this.name.toUpperCase();
+    this.name = this.name?.toUpperCase();
   }
 }
