@@ -72,9 +72,7 @@ export class RolesService {
   }
 
   async update(id: string, updateRoleDto: UpdateRoleDto): Promise<GetRoleDto> {
-    this._logger.log(
-      `Solicitud para actualizar el nombre de el rol por el id: "${id}".`,
-    );
+    this._logger.log(`Request to update role by id: "${id}".`);
 
     const role = await this._roleRepository.findOne(id);
 
