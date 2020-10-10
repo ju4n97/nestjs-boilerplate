@@ -21,7 +21,7 @@ import { Module } from '@nestjs/common';
           from: '"No Reply" <noreply@example.com>',
         },
         template: {
-          dir: process.cwd() + '/@config/email/templates',
+          dir: process.cwd() + '/src/config/email/templates',
           adapter: new HandlebarsAdapter(),
           options: {
             strict: true,

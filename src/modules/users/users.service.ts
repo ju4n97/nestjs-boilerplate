@@ -79,8 +79,6 @@ export class UsersService {
       where: [{ username }, { email }],
     });
 
-    console.log(userInDb);
-
     if (userInDb) {
       throw new BadRequestException('Username already registered');
     }

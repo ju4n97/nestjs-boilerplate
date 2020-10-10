@@ -2,6 +2,7 @@ import { hash } from 'bcrypt';
 import {
   BaseEntity,
   BeforeInsert,
+  BeforeUpdate,
   Column,
   CreateDateColumn,
   Entity,
@@ -21,6 +22,20 @@ export class UserEntity extends BaseEntity {
 
   @Column({ type: 'varchar', nullable: false })
   password: string;
+
+  @Column({
+    name: 'password_reset_token',
+    type: 'varchar',
+    nullable: true,
+  })
+  passwordResetToken: string;
+
+  @Column({
+    name: 'password_reset_token_expire',
+    type: 'timestamp',
+    nullable: true,
+  })
+  passwordResetTokenExpire: Date;
 
   @Column({ type: 'varchar', unique: true, length: 60, nullable: false })
   email: string;
@@ -75,6 +90,7 @@ export class UserEntity extends BaseEntity {
   details: UserDetailEntity;
 
   @BeforeInsert()
+  @BeforeUpdate()
   async hashPassword(): Promise<void> {
     this.password = await hash(this.password, 10);
   }

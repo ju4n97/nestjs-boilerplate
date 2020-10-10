@@ -31,6 +31,16 @@ export class UserDto {
   password: string;
 
   @Expose()
+  @IsString()
+  passwordResetToken: string;
+
+  @Expose()
+  @IsNotEmpty()
+  @Type(() => Date)
+  @IsDate()
+  passwordResetTokenExpires: Date;
+
+  @Expose()
   @IsNotEmpty()
   @IsEmail()
   @MaxLength(60)

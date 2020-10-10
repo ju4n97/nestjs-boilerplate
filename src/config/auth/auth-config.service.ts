@@ -12,4 +12,14 @@ export class AuthConfigService {
   get jwtExpiresIn(): string {
     return this._configService.get<string>('auth.jwtExpiresIn');
   }
+
+  get authAccessFailedCountLimit(): number {
+    return this._configService.get<number>('auth.authAccessFailedCountLimit');
+  }
+
+  get authPasswordResetTokenExpires(): number {
+    return this._configService.get<number>(
+      'auth.authPasswordResetTokenExpires',
+    );
+  }
 }

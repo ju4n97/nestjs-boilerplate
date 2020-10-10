@@ -12,6 +12,8 @@ import authConfiguration from './auth-configuration';
       validationSchema: Joi.object({
         JWT_SECRET_KEY: Joi.string(),
         JWT_EXPIRES_IN: Joi.string().default('2d'),
+        AUTH_ACCESS_FAILED_COUNT_LIMIT: Joi.number().default(3),
+        AUTH_PASSWORD_RESET_TOKEN_EXPIRES: Joi.number().default(2),
       }),
     }),
   ],
