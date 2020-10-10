@@ -1,4 +1,4 @@
-import { getInitials, toCapitalizedCase } from 'src/common/utils';
+import { toCapitalizedCase, toInitials } from '@lib/utils';
 import {
   BeforeInsert,
   BeforeUpdate,
@@ -51,7 +51,7 @@ export class UserDetailEntity {
     const { firstName, lastName } = this;
 
     const extractInitials = () => {
-      this.initials = getInitials(firstName, lastName);
+      this.initials = toInitials(firstName, lastName);
     };
 
     const capitalizeNames = () => {
