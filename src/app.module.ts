@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { AppConfigModule } from './config/app/app-config.module';
 import { AppConfigService } from './config/app/app-config.service';
 import { AuthModule } from './modules/auth/auth.module';
@@ -16,7 +14,6 @@ import { EmailProviderModule } from './providers/email/email-provider.module';
     AuthModule,
     UsersModule,
   ],
-  controllers: [AppController],
-  providers: [AppService, AppConfigService],
+  providers: [AppConfigService],
 })
 export class AppModule {}
