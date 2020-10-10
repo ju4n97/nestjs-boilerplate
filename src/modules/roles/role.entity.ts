@@ -5,8 +5,11 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinTable,
+  ManyToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+import { PermissionEntity } from '../permissions/permission.entity';
 import { RoleStatus } from './enums';
 
 @Entity('role')
@@ -36,13 +39,13 @@ export class RoleEntity extends BaseEntity {
   @CreateDateColumn({ name: 'updated_at', type: 'timestamp', nullable: true })
   updatedAt: Date;
 
-  //   @ManyToMany(() => PermissionEntity, { eager: true })
-  //   @JoinTable({
-  //     name: 'role_permission',
-  //     joinColumn: { name: 'role_id', referencedColumnName: 'id' },
-  //     inverseJoinColumn: { name: 'permission_id', referencedColumnName: 'id' },
-  //   })
-  //   permissions: PermissionEntity[];
+  @ManyToMany(() => PermissionEntity, { eager: true })
+  @JoinTable({
+    name: 'role_permission',
+    joinColumn: { name: 'role_id', referencedColumnName: 'id' },
+    inverseJoinColumn: { name: 'permission_id', referencedColumnName: 'id' },
+  })
+  permissions: PermissionEntity[];
 
   @BeforeInsert()
   @BeforeUpdate()

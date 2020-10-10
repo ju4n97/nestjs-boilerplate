@@ -1,4 +1,5 @@
 import { hash } from 'bcrypt';
+import { RoleEntity } from 'src/modules/roles/role.entity';
 import {
   BaseEntity,
   BeforeInsert,
@@ -6,6 +7,8 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinTable,
+  ManyToMany,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -88,6 +91,14 @@ export class UserEntity extends BaseEntity {
     },
   )
   details: UserDetailEntity;
+
+  @ManyToMany(() => RoleEntity, { eager: true })
+  @JoinTable({
+    name: 'user_role',
+    joinColumn: { name: 'user_id', referencedColumnName: 'id' },
+    inverseJoinColumn: { name: 'role_id', referencedColumnName: 'id' },
+  })
+  roles: RoleEntity[];
 
   @BeforeInsert()
   @BeforeUpdate()
