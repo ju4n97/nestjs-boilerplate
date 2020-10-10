@@ -1,9 +1,9 @@
 /**
  * @description Extracts initials from one or more texts.
- * @param entries Input texts.
+ * @param entries Input text.
  * @returns String with initials.
  */
-export const getInitials = (...entries: string[]): string => {
+export const toInitials = (...entries: string[]): string => {
   let initials = '';
   for (const entry of entries) {
     initials += entry
@@ -15,7 +15,7 @@ export const getInitials = (...entries: string[]): string => {
 
 /**
  * @description Capitalize one or more words in a text.
- * @param entries Input texts.
+ * @param entries Input text.
  * @returns String with all words capitalized.
  */
 export const toCapitalizedCase = (entry: string): string => {
@@ -23,4 +23,19 @@ export const toCapitalizedCase = (entry: string): string => {
     .split(' ')
     .map(w => `${w[0].toUpperCase()}${w.slice(1, w.length).toLowerCase()}`)
     .join(' ');
+};
+
+/**
+ * @description Converts enum to string.
+ * @param entries enum.
+ * @returns String with enum keys.
+ */
+export const enumToString = (e: { [k: string]: string }): string => {
+  let result = '';
+
+  for (const key in e) {
+    result += `${key}, `;
+  }
+
+  return result.substring(0, result.length - 2);
 };
