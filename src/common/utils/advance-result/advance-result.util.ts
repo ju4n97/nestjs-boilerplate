@@ -14,3 +14,17 @@ export const mapSelect = (selectParams: string, pk: string): any => {
   fields.unshift(pk);
   return fields;
 };
+
+/**
+ * @description Defines the structure of a relations object.
+ * @param relationsParam  Query parameter of relations (select).
+ * @returns An array that will be processed by typeorm, which has the following structure:
+ * [field1, field2, field3]
+ */
+export const mapRelations = (relationsParams: string): any => {
+  if (!relationsParams) {
+    return null;
+  }
+
+  return relationsParams.split(',').map(r => r);
+};
