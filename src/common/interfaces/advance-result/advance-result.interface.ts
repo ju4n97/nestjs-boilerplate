@@ -9,10 +9,10 @@ export interface AdvanceResult<T> {
     groupCount?: number;
     summary?: number;
   };
-  links: {
-    first: string;
-    previous: string;
-    next: string;
-    last: string;
-  };
+  // links: {
+  //   first: string;
+  //   previous: string;
+  //   next: string;
+  //   last: string;
+  // };
 }
