@@ -1,7 +1,7 @@
+import { AuthConfigService } from '@config/auth/auth-config.service';
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
-import { AuthConfigService } from 'src/config/auth/auth-config.service';
 import { GetUserDto } from '../users/dto';
 import { AuthService } from './auth.service';
 import { JwtPayload } from './interfaces';

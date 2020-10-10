@@ -10,6 +10,10 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
+    "paths": {
+      "@config/*": ["src/config/*"],
+      "@lib/*": ["src/common/*"]
+    },
     "incremental": true
   }
 }

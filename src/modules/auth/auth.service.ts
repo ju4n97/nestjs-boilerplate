@@ -1,8 +1,8 @@
+import { AuthConfigService } from '@config/auth/auth-config.service';
 import { MailerService } from '@nestjs-modules/mailer';
 import { Injectable, Logger } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { plainToClass } from 'class-transformer';
-import { AuthConfigService } from 'src/config/auth/auth-config.service';
 import { CreateUserDto, GetUserDto, LoginUserDto } from '../users/dto';
 import { UsersService } from '../users/users.service';
 import { JwtPayload, LoginResult, Token } from './interfaces';
