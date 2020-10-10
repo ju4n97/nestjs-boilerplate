@@ -1,7 +1,12 @@
 import { AdvanceQuery } from '@lib/dto/advance-result';
 import { AdvanceResult } from '@lib/interfaces/advance-result';
 import { mapQuery } from '@lib/utils/advance-result';
-import { BadRequestException, Injectable, Logger } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  Logger,
+  NotFoundException,
+} from '@nestjs/common';
 import { plainToClass } from 'class-transformer';
 import { GetRoleDto } from './dto/get-role.dto';
 import { RoleRepository } from './role.repository';
@@ -28,6 +33,30 @@ export class RolesService {
       return {
         data: result.map(role => plainToClass(GetRoleDto, role)),
         meta: { count: total },
+      };
+    } catch (err) {
+      throw new BadRequestException(err.message);
+    }
+  }
+
+  async getById(
+    id: string,
+    advanceQuery: AdvanceQuery,
+  ): Promise<AdvanceResult<GetRoleDto>> {
+    this._logger.log(`Request to fetch role by id ${id}`);
+
+    try {
+      const role = await this._roleRepository.findOne(
+        id,
+        mapQuery(advanceQuery, { simple: true }),
+      );
+
+      if (!role) {
+        throw new NotFoundException('Role not found');
+      }
+
+      return {
+        data: plainToClass(GetRoleDto, role),
       };
     } catch (err) {
       throw new BadRequestException(err.message);
