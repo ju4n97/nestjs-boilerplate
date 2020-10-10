@@ -121,6 +121,24 @@ export const mapSort = (orderParam: string): Record<string, string> => {
 };
 
 /**
+ * @description Sets the limit of data it will take from an entity.
+ * @param take limit of data.
+ * @param isLoadingAll If true, ignores the take parameter and returns all data.
+ * @returns Limit of data it will take from an entity.
+ */
+export const mapTake = (take: number, isLoadingAll = false): number =>
+  !isLoadingAll ? take : null;
+
+/**
+ * @description Sets the limit of data it will omit from an entity.
+ * @param take limit of data.
+ * @param isLoadingAll If true, ignores the take parameter and returns all data.
+ * @returns Limit of data it will omit from an entity.
+ */
+export const mapSkip = (skip: number, isLoadingAll = false): number =>
+  !isLoadingAll ? skip : 0;
+
+/**
  * @description Gets the values of a 3-position array and returns a new object
  * @param array 3-position Array ([key, filterOperator, value]).
  * @returns An object that will be processed by typeorm.
