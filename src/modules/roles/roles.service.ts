@@ -8,6 +8,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { plainToClass } from 'class-transformer';
+import { CreateRoleDto } from './dto/create-role.dto';
 import { GetRoleDto } from './dto/get-role.dto';
 import { RoleRepository } from './role.repository';
 
@@ -61,5 +62,13 @@ export class RolesService {
     } catch (err) {
       throw new BadRequestException(err.message);
     }
+  }
+
+  async create(createRoleDto: CreateRoleDto): Promise<GetRoleDto> {
+    this._logger.log('Request to create role.');
+
+    const role = this._roleRepository.create(createRoleDto);
+    await this._roleRepository.save(role);
+    return plainToClass(GetRoleDto, role);
   }
 }
