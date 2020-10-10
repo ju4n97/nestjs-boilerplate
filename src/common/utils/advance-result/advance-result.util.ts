@@ -1,4 +1,4 @@
-import { FilterOperator } from '@lib/enums/advance-result';
+import { FilterOperator, Sort } from '@lib/enums/advance-result';
 import {
   Between,
   Equal,
@@ -13,7 +13,7 @@ import {
 
 /**
  * @description Defines the structure of a selection object.
- * @param selectParam Query parameter of selection (select).
+ * @param selectParam Selections query parameter (select).
  * @param pk Primary key name in case it is different from "id".
  * @returns An array that will be processed by typeorm, which has the following structure:
  * [field1, field2, field3]
@@ -30,7 +30,7 @@ export const mapSelect = (selectParams: string, pk: string): any => {
 
 /**
  * @description Defines the structure of a relations object.
- * @param relationsParam  Query parameter of relations (select).
+ * @param relationsParam Relations query parameter (select).
  * @returns An array that will be processed by typeorm, which has the following structure:
  * [field1, field2, field3]
  */
@@ -44,7 +44,7 @@ export const mapRelations = (relationsParams: string): any => {
 
 /**
  * @description Defines the structure of a filter object.
- * @param filterParam Query parameter of filter (filter).
+ * @param filterParam Filter query parameter (filter).
  * @returns A dynamic array of objects that will be processed by typeorm, which allows dynamic queries.
  */
 export const mapFilter = (filterParam: string): Record<string, string>[] => {
@@ -97,6 +97,27 @@ export const mapFilter = (filterParam: string): Record<string, string>[] => {
   }
 
   return finalCondition;
+};
+
+/**
+ * @description Defines the structure of a sorting object.
+ * @param orderParam Sorting query parameter (sort).
+ * @returns A key-value object { [key]: value }.
+ */
+export const mapSort = (orderParam: string): Record<string, string> => {
+  if (!orderParam) {
+    return null;
+  }
+
+  const param = JSON.parse(orderParam)[0];
+
+  const key = param.selector;
+  const order = param.desc ? Sort.Desc : Sort.Asc;
+  const obj = {
+    [key]: order,
+  };
+
+  return obj;
 };
 
 /**
