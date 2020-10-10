@@ -1,8 +1,8 @@
+import { EmailConfigModule } from '@config/email/email-config.module';
+import { EmailConfigService } from '@config/email/email-config.service';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
 import { Module } from '@nestjs/common';
-import { EmailConfigModule } from 'src/config/email/email-config.module';
-import { EmailConfigService } from 'src/config/email/email-config.service';
 @Module({
   imports: [
     MailerModule.forRootAsync({
@@ -21,7 +21,7 @@ import { EmailConfigService } from 'src/config/email/email-config.service';
           from: '"No Reply" <noreply@example.com>',
         },
         template: {
-          dir: process.cwd() + '/src/config/email/templates',
+          dir: process.cwd() + '/@config/email/templates',
           adapter: new HandlebarsAdapter(),
           options: {
             strict: true,

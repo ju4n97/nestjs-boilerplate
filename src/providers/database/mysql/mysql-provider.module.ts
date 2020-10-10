@@ -1,7 +1,7 @@
+import { MysqlConfigModule } from '@config/database/mysql/mysql-config.module';
+import { MysqlConfigService } from '@config/database/mysql/mysql-config.service';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule, TypeOrmModuleAsyncOptions } from '@nestjs/typeorm';
-import { MysqlConfigModule } from 'src/config/database/mysql/mysql-config.module';
-import { MysqlConfigService } from 'src/config/database/mysql/mysql-config.service';
 import { DatabaseType } from 'typeorm';
 
 @Module({
