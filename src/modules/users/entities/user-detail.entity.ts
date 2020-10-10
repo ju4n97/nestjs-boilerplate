@@ -1,4 +1,4 @@
-import { toCapitalizedCase, toInitials } from '@lib/utils';
+import { toCapitalizedCase, toInitials } from '@lib/utils/text';
 import {
   BeforeInsert,
   BeforeUpdate,
