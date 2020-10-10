@@ -1,4 +1,6 @@
+import { AdvanceQuery } from '@lib/dto/advance-result';
 import { FilterOperator, Sort } from '@lib/enums/advance-result';
+import { QueryOptions } from '@lib/interfaces/advance-result';
 import {
   Between,
   Equal,
@@ -10,6 +12,43 @@ import {
   MoreThan,
   Not,
 } from 'typeorm';
+
+/**
+ * @description Defines the structure of a FindManyOptions object.
+ * @param advanceQuery Client query parameters.
+ * @param options.simple If true, only the "select", "relations" and "filter" properties will be mapped
+ * and the "order", "take" and "skip" properties will be omitted
+ * @param options.pk Primary key name in case it is different from "id".
+ * @returns A FindManyOptions object.
+ */
+export const mapQuery = (
+  advanceQuery: AdvanceQuery,
+  options?: QueryOptions,
+): any => {
+  // Gets the functionality options.
+  const { simple, pk } = Object(options);
+
+  // Gets the query parameters.
+  const {
+    select,
+    relations,
+    filter,
+    sort,
+    isLoadingAll,
+    take,
+    skip,
+  } = advanceQuery;
+
+  // Maps the query parameters to populate FindManyOptions object
+  return {
+    select: mapSelect(select, pk || 'id'),
+    relations: mapRelations(relations),
+    where: mapFilter(filter),
+    order: simple ? null : mapSort(sort),
+    take: simple ? null : mapTake(take, isLoadingAll),
+    skip: simple ? null : mapSkip(skip, isLoadingAll),
+  };
+};
 
 /**
  * @description Defines the structure of a selection object.
