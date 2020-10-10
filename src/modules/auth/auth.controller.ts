@@ -1,4 +1,4 @@
-import { GenericStatusResponse } from '@lib/interfaces';
+import { GenericStatusResponse } from '@lib/interfaces/generic';
 import { Body, Controller, Post } from '@nestjs/common';
 import {
   CreateUserDto,

@@ -1,5 +1,5 @@
 import { AuthConfigService } from '@config/auth/auth-config.service';
-import { GenericStatusResponse } from '@lib/interfaces';
+import { GenericStatusResponse } from '@lib/interfaces/generic';
 import { addHours } from '@lib/utils/date';
 import { MailerService } from '@nestjs-modules/mailer';
 import {
