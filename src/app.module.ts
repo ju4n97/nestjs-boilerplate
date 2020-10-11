@@ -1,10 +1,23 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { AppConfigModule } from './config/app/app-config.module';
+import { AppConfigService } from './config/app/app-config.service';
+import { AuthModule } from './modules/auth/auth.module';
+import { PermissionsModule } from './modules/permissions/permissions.module';
+import { RolesModule } from './modules/roles/roles.module';
+import { UsersModule } from './modules/users/users.module';
+import { MysqlProviderModule } from './providers/database/mysql/mysql-provider.module';
+import { EmailProviderModule } from './providers/email/email-provider.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    AppConfigModule,
+    MysqlProviderModule,
+    EmailProviderModule,
+    AuthModule,
+    UsersModule,
+    RolesModule,
+    PermissionsModule,
+  ],
+  providers: [AppConfigService],
 })
 export class AppModule {}
