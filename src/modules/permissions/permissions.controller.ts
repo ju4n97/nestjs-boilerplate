@@ -11,6 +11,8 @@ import {
   Put,
   Query,
 } from '@nestjs/common';
+import { Auth } from '../auth/guards';
+import { Role } from '../roles/enums';
 import {
   CreatePermissionDto,
   GetPermissionDto,
@@ -18,6 +20,7 @@ import {
 } from './dto';
 import { PermissionsService } from './permissions.service';
 
+@Auth(Role.SuperUser, Role.Admin)
 @Controller('permissions')
 export class PermissionsController {
   constructor(private readonly _permissionsService: PermissionsService) {}
