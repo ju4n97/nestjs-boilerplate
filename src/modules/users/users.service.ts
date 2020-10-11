@@ -7,6 +7,8 @@ import {
 } from '@nestjs/common';
 import { compare } from 'bcrypt';
 import { plainToClass } from 'class-transformer';
+import { Auth } from '../auth/guards';
+import { Role } from '../roles/enums';
 import { CreateUserDto, GetUserDto, LoginUserDto } from './dto';
 import { UserDetailEntity } from './entities/user-detail.entity';
 import { UserRepository } from './user.repository';
@@ -20,6 +22,7 @@ export class UsersService {
     this._logger.setContext('UsersService');
   }
 
+  @Auth(Role.SuperUser, Role.Admin)
   async getAll(): Promise<GetUserDto[]> {
     this._logger.log('Request to fetch all users');
     const users = await this._userRepository.find();
