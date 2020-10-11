@@ -11,9 +11,12 @@ import {
   Put,
   Query,
 } from '@nestjs/common';
+import { Auth } from '../auth/guards';
 import { CreateRoleDto, GetRoleDto, UpdateRoleDto } from './dto';
+import { Role } from './enums';
 import { RolesService } from './roles.service';
 
+@Auth(Role.SuperUser, Role.Admin)
 @Controller('roles')
 export class RolesController {
   constructor(private readonly _rolesService: RolesService) {}
