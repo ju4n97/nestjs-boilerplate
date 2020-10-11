@@ -1,5 +1,5 @@
 import { enumToString } from '@lib/utils/object';
-import { Exclude, Expose } from 'class-transformer';
+import { Exclude, Expose, Type } from 'class-transformer';
 import {
   IsDate,
   IsEnum,
@@ -7,6 +7,7 @@ import {
   IsString,
   MaxLength,
 } from 'class-validator';
+import { GetPermissionDto } from 'src/modules/permissions/dto';
 // import { GetPermissionDto } from 'src/modules/permissions/dto';
 import { RoleStatus } from '../enums/role-status.enum';
 
@@ -38,7 +39,7 @@ export class RoleDto {
   @IsDate()
   updatedAt: Date;
 
-  //   @Expose()
-  //   @Type(() => GetPermissionDto)
-  //   permissions: GetPermissionDto[];
+  @Expose()
+  @Type(() => GetPermissionDto)
+  permissions: GetPermissionDto[];
 }

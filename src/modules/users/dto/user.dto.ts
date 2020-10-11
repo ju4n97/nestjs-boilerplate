@@ -9,6 +9,7 @@ import {
   MaxLength,
   MinLength,
 } from 'class-validator';
+import { GetRoleDto } from 'src/modules/roles/dto';
 import { UserDetailEntity } from '../entities/user-detail.entity';
 import { GetUserDetailDto } from './get-user-detail.dto';
 
@@ -68,4 +69,8 @@ export class UserDto {
   @Expose()
   @Type(() => UserDetailEntity)
   details: GetUserDetailDto;
+
+  @Expose()
+  @Type(() => GetRoleDto)
+  roles: GetRoleDto[];
 }
