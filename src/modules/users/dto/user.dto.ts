@@ -9,6 +9,7 @@ import {
   MaxLength,
   MinLength,
 } from 'class-validator';
+import { GetFileDto } from 'src/modules/files/dto';
 import { GetRoleDto } from 'src/modules/roles/dto';
 import { UserDetailEntity } from '../entities/user-detail.entity';
 import { GetUserDetailDto } from './get-user-detail.dto';
@@ -73,4 +74,8 @@ export class UserDto {
   @Expose()
   @Type(() => GetRoleDto)
   roles: GetRoleDto[];
+
+  @Expose()
+  @Type(() => GetFileDto)
+  files: GetFileDto[];
 }
