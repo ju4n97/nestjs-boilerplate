@@ -7,14 +7,18 @@ import {
 } from '@nestjs/common';
 import { compare } from 'bcrypt';
 import { plainToClass } from 'class-transformer';
+import { CreateFileDto } from '../files/dto';
+import { FilesService } from '../files/files.service';
 import { CreateUserDto, GetUserDto, LoginUserDto } from './dto';
 import { UserDetailEntity } from './entities/user-detail.entity';
+import { UserStatus } from './enums';
 import { UserRepository } from './user.repository';
 
 @Injectable()
 export class UsersService {
   constructor(
     private readonly _userRepository: UserRepository,
+    private readonly _filesService: FilesService,
     private readonly _logger: Logger,
   ) {
     this._logger.setContext('UsersService');
@@ -92,6 +96,39 @@ export class UsersService {
 
     await user.save();
 
+    return plainToClass(GetUserDto, user);
+  }
+
+  async uploadFile(
+    userId: string,
+    createFileDto: CreateFileDto,
+  ): Promise<GetUserDto> {
+    this._logger.log(`Request to upload user file`);
+
+    // Validates if user exists.
+    const user = await this._userRepository.findOne(userId, {
+      where: { status: UserStatus.Active },
+    });
+
+    if (!user) {
+      throw new NotFoundException('User not found');
+    }
+
+    // Validates if the user already has the file.
+    const currentFile = user.files.find(
+      file => file.group === createFileDto.group,
+    );
+
+    if (currentFile) {
+      await this._filesService.delete(currentFile.id);
+    }
+
+    await user.reload();
+
+    // Updates user's file.
+    const file = await this._filesService.create(createFileDto);
+    user.files.push(file);
+    await user.save();
     return plainToClass(GetUserDto, user);
   }
 }
