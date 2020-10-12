@@ -1,4 +1,5 @@
 import { hash } from 'bcrypt';
+import { FileEntity } from 'src/modules/files/file.entity';
 import { RoleEntity } from 'src/modules/roles/role.entity';
 import {
   BaseEntity,
@@ -13,6 +14,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { UserStatus } from '../enums';
 import { UserDetailEntity } from './user-detail.entity';
 
 @Entity('user')
@@ -75,6 +77,14 @@ export class UserEntity extends BaseEntity {
   })
   twoFactorEnabled: boolean;
 
+  @Column({
+    type: 'varchar',
+    nullable: false,
+    length: 10,
+    default: UserStatus.Active,
+  })
+  status: UserStatus;
+
   @CreateDateColumn({ name: 'created_at', type: 'timestamp', nullable: false })
   createdAt: Date;
 
@@ -99,6 +109,19 @@ export class UserEntity extends BaseEntity {
     inverseJoinColumn: { name: 'role_id', referencedColumnName: 'id' },
   })
   roles: RoleEntity[];
+
+  @ManyToMany(() => FileEntity, {
+    nullable: true,
+    eager: true,
+    cascade: true,
+    onDelete: 'CASCADE',
+  })
+  @JoinTable({
+    name: 'user_file',
+    joinColumn: { name: 'user_id', referencedColumnName: 'id' },
+    inverseJoinColumn: { name: 'file_id', referencedColumnName: 'id' },
+  })
+  files: FileEntity[];
 
   @BeforeInsert()
   @BeforeUpdate()
