@@ -12,7 +12,12 @@ import {
   Query,
 } from '@nestjs/common';
 import { Auth } from '../auth/guards';
-import { CreateRoleDto, GetRoleDto, UpdateRoleDto } from './dto';
+import {
+  AddRolePermissionDto,
+  CreateRoleDto,
+  GetRoleDto,
+  UpdateRoleDto,
+} from './dto';
 import { Role } from './enums';
 import { RolesService } from './roles.service';
 
@@ -47,6 +52,14 @@ export class RolesController {
     @Body() updateRoleDto: UpdateRoleDto,
   ): Promise<GetRoleDto> {
     return await this._rolesService.update(id, updateRoleDto);
+  }
+
+  @Post('permission')
+  async addPermission(
+    @Body() addRolePermissionDto: AddRolePermissionDto,
+  ): Promise<GetRoleDto> {
+    const { roleId, permissionId } = addRolePermissionDto;
+    return await this._rolesService.addPermission(roleId, permissionId);
   }
 
   @Delete(':id')
