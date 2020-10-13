@@ -9,6 +9,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { plainToClass } from 'class-transformer';
+import { PermissionRepository } from '../permissions/permission.repository';
 import { CreateRoleDto, GetRoleDto, UpdateRoleDto } from './dto';
 import { RoleRepository } from './role.repository';
 
@@ -16,6 +17,7 @@ import { RoleRepository } from './role.repository';
 export class RolesService {
   constructor(
     private readonly _roleRepository: RoleRepository,
+    private readonly _permissionRepository: PermissionRepository,
     private readonly _logger: Logger,
   ) {
     this._logger.setContext('RolesService');
@@ -84,6 +86,34 @@ export class RolesService {
       Object.assign(role, removeEmptyProps(updateRoleDto)),
     );
 
+    return plainToClass(GetRoleDto, role);
+  }
+
+  async addPermission(
+    roleId: string,
+    permissionId: string,
+  ): Promise<GetRoleDto> {
+    this._logger.log(
+      `Request to add permission "${permissionId}" to role "${roleId}".`,
+    );
+
+    // Validates if role exists.
+    const role = await this._roleRepository.findOne(roleId);
+
+    if (!role) {
+      throw new NotFoundException('Role not found');
+    }
+
+    // Validates if permission exists.
+    const permission = await this._permissionRepository.findOne(permissionId);
+
+    if (!permission) {
+      throw new NotFoundException('Permission not found');
+    }
+
+    // Agrega el rol al usuario.
+    role.permissions.push(permission);
+    await role.save();
     return plainToClass(GetRoleDto, role);
   }
 
