@@ -1,10 +1,10 @@
 {
   "name": "nestjs-boilerplate",
-  "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "version": "v0.1.1-beta",
+  "description": "Develop database-agnostic APIs with a focus on performance, maintainability, security, quick implementation, and best practices.",
+  "author": "juanmesa2097",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
