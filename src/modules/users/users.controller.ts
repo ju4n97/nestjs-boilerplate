@@ -53,7 +53,7 @@ export class UsersController {
   uploadAvatar(
     @UploadedFile() file: Express.Multer.File,
     @User('id') userId: string,
-  ): Promise<GetUserDto> {
+  ): Promise<GetFileDto> {
     const createFileDto = new CreateFileDto();
     createFileDto.assign(file, FileGroup.UserAvatar);
     return this._usersService.uploadFile(userId, createFileDto);
@@ -75,7 +75,7 @@ export class UsersController {
   uploadCover(
     @UploadedFile() file: Express.Multer.File,
     @User('id') userId: string,
-  ): Promise<GetUserDto> {
+  ): Promise<GetFileDto> {
     const createFileDto = new CreateFileDto();
     createFileDto.assign(file, FileGroup.UserCoverBackground);
     return this._usersService.uploadFile(userId, createFileDto);

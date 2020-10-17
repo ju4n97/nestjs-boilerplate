@@ -7,7 +7,7 @@ import {
 } from '@nestjs/common';
 import { compare } from 'bcrypt';
 import { plainToClass } from 'class-transformer';
-import { CreateFileDto } from '../files/dto';
+import { CreateFileDto, GetFileDto } from '../files/dto';
 import { FilesService } from '../files/files.service';
 import { CreateUserDto, GetUserDto, LoginUserDto } from './dto';
 import { UserDetailEntity } from './entities/user-detail.entity';
@@ -27,7 +27,7 @@ export class UsersService {
   async getAll(): Promise<GetUserDto[]> {
     this._logger.log('Request to fetch all users');
     const users = await this._userRepository.find();
-    return users.map(user => plainToClass(GetUserDto, user));
+    return users.map((user) => plainToClass(GetUserDto, user));
   }
 
   async getById(id: string): Promise<GetUserDto> {
@@ -102,7 +102,7 @@ export class UsersService {
   async uploadFile(
     userId: string,
     createFileDto: CreateFileDto,
-  ): Promise<GetUserDto> {
+  ): Promise<GetFileDto> {
     this._logger.log(`Request to upload user file`);
 
     // Validates if user exists.
@@ -116,7 +116,7 @@ export class UsersService {
 
     // Validates if the user already has the file.
     const currentFile = user.files.find(
-      file => file.group === createFileDto.group,
+      (file) => file.group === createFileDto.group,
     );
 
     if (currentFile) {
@@ -129,6 +129,6 @@ export class UsersService {
     const file = await this._filesService.create(createFileDto);
     user.files.push(file);
     await user.save();
-    return plainToClass(GetUserDto, user);
+    return plainToClass(GetFileDto, file);
   }
 }
