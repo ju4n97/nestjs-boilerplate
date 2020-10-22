@@ -55,7 +55,7 @@
     "@types/bcrypt": "^3.0.0",
     "@types/express": "^4.17.3",
     "@types/hapi__joi": "^17.1.4",
-    "@types/jest": "26.0.14",
+    "@types/jest": "26.0.15",
     "@types/node": "^14.11.10",
     "@types/multer": "^1.4.4",
     "@types/passport-jwt": "^3.0.3",
@@ -70,7 +70,7 @@
     "ts-jest": "26.4.1",
     "prettier": "^2.1.2",
     "ts-node": "^9.0.0",
-    "ts-loader": "^8.0.5",
+    "ts-loader": "^8.0.6",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^3.7.4"
   },
