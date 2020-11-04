@@ -686,16 +686,16 @@
   resolved "https://registry.yarnpkg.com/@nestjs/passport/-/passport-7.1.0.tgz#04cbb6dec4b6fd92b943e131a2ad89da42c2a9f0"
   integrity sha512-TdXqEwQ9PWWdpZsWp6jnora+zN+jg7h9Om9CAxXDMCqnmB+IJknkY0OyyplxbMjRyep1zvsc3IptuPHIXb27tA==
 
-"@nestjs/platform-express@^7.0.0":
-  version "7.4.4"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-7.4.4.tgz#03429ebd5ae4fe7e38556cd9af8ae38ee42e7d1f"
-  integrity sha512-LO0WuMZuP1P68t2kQbxb3GUh2SfkOGw5Ma2fR+QWNS7N63BL6Vsf/b8Ad43ht51FuVfqOQZo7AJVz8DljDRw3A==
+"@nestjs/platform-express@^7.5.1":
+  version "7.5.1"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-7.5.1.tgz#aa03c221bb7b0d02e104b00df1c3936653329a39"
+  integrity sha512-sJG9KSIsnPCsfk4uvEBDu8vE78Yjm1kT1b4HLjawH34DJoV16FAlIJQcXwKn0Lq4QWPafQvWr7e1KP5jzOdNEQ==
   dependencies:
     body-parser "1.19.0"
     cors "2.8.5"
     express "4.17.1"
     multer "1.4.2"
-    tslib "2.0.1"
+    tslib "2.0.3"
 
 "@nestjs/schematics@^7.0.0", "@nestjs/schematics@^7.1.0":
   version "7.1.2"
@@ -5168,8 +5168,7 @@ jest-snapshot@^26.6.2:
     pretty-format "^26.6.2"
     semver "^7.3.2"
 
-
-jest-util@^26.6.2:
+jest-util@^26.1.0, jest-util@^26.6.2:
   version "26.6.2"
   resolved "https://registry.yarnpkg.com/jest-util/-/jest-util-26.6.2.tgz#907535dbe4d5a6cb4c47ac9b926f6af29576cbc1"
   integrity sha512-MDW0fKfsn0OI7MS7Euz6h8HNDXVQ0gaM9uW6RjfDmd1DAFcaxX9OqIakHIqhbnmF08Cf2DLDG+ulq8YQQ0Lp0Q==
@@ -5180,11 +5179,6 @@ jest-util@^26.6.2:
     graceful-fs "^4.2.4"
     is-ci "^2.0.0"
     micromatch "^4.0.2"
-
-jest-util@^26.6.1:
-  version "26.6.1"
-  resolved "https://registry.yarnpkg.com/jest-util/-/jest-util-26.6.1.tgz#4cc0d09ec57f28d12d053887eec5dc976a352e9b"
-  integrity sha512-xCLZUqVoqhquyPLuDXmH7ogceGctbW8SMyQVjD9o+1+NPWI7t0vO08udcFLVPLgKWcvc+zotaUv/RuaR6l8HIA==
 
 jest-validate@^26.6.2:
   version "26.6.2"
