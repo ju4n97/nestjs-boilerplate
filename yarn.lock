@@ -703,10 +703,10 @@
     fs-extra "9.0.1"
     pluralize "8.0.0"
 
-"@nestjs/testing@^7.5.5":
-  version "7.5.5"
-  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-7.5.5.tgz#510198af70e4d260907687ee7c9c98642ecfbb75"
-  integrity sha512-6CrDiwtFcMS4kjFFS1pm/0f00ji+32xOlKmojPaNLhmhPw39l5W/5R78iW9g6tFY/Qvm5zpbWz/FKaHxFJYOpQ==
+"@nestjs/testing@^7.6.2":
+  version "7.6.2"
+  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-7.6.2.tgz#0b29add9a86302e3b59b0665df4c382c1420c32d"
+  integrity sha512-mGRp9W8v8TXoHKuCu6Am+1dzO3q7lCNO0CW3JmmphVlUSa5BV4Dj3dHi7q3i6e1zQ7IK/gjJBjG59VWLwR4lPQ==
   dependencies:
     optional "0.1.4"
     tslib "2.0.3"
