@@ -38,7 +38,7 @@
     "csurf": "^1.11.0",
     "express-rate-limit": "^5.2.3",
     "handlebars": "^4.7.6",
-    "helmet": "^4.3.1",
+    "helmet": "^4.4.0",
     "mysql2": "^2.2.5",
     "nodemailer": "^6.4.17",
     "passport": "^0.4.1",
