@@ -37,7 +37,7 @@
     "compression": "^1.7.4",
     "csurf": "^1.11.0",
     "express-rate-limit": "^5.2.5",
-    "handlebars": "^4.7.6",
+    "handlebars": "^4.7.7",
     "helmet": "^4.4.1",
     "mysql2": "^2.2.5",
     "nodemailer": "^6.4.18",
