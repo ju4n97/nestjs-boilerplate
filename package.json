@@ -36,7 +36,7 @@
     "class-validator": "^0.13.1",
     "compression": "^1.7.4",
     "csurf": "^1.11.0",
-    "express-rate-limit": "^5.2.6",
+    "express-rate-limit": "^5.3.0",
     "handlebars": "^4.7.7",
     "helmet": "^4.6.0",
     "mysql2": "^2.2.5",
