@@ -1,17 +1,17 @@
 export interface Config {
-  app: AppConfig
-  database: DatabaseConfig
+  app: AppConfig;
+  database: DatabaseConfig;
 }
 
 export interface AppConfig {
-  port: number
-  cors: CorsConfig
+  port: number;
+  cors: CorsConfig;
 }
 
 export interface CorsConfig {
-  enabled: boolean
+  enabled: boolean;
 }
 
 export interface DatabaseConfig {
-  url: string
+  url: string;
 }

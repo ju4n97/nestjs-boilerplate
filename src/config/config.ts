@@ -1,4 +1,4 @@
-import { Config } from './config.interface'
+import { Config } from './config.interface';
 
 const config: Config = {
   app: {
@@ -10,6 +10,6 @@ const config: Config = {
   database: {
     url: process.env.DATABASE_URL,
   },
-}
+};
 
-export default (): Config => config
+export default (): Config => config;
