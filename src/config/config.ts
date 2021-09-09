@@ -10,6 +10,12 @@ const config: Config = {
   database: {
     url: process.env.DATABASE_URL,
   },
+  graphql: {
+    sortSchema: true,
+    debug: true,
+    playground: true,
+    introspection: true,
+  },
 };
 
 export default (): Config => config;

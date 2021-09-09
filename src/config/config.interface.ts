@@ -1,6 +1,7 @@
 export interface Config {
   app: AppConfig;
   database: DatabaseConfig;
+  graphql: GraphqlConfig;
 }
 
 export interface AppConfig {
@@ -14,4 +15,11 @@ export interface CorsConfig {
 
 export interface DatabaseConfig {
   url: string;
+}
+
+export interface GraphqlConfig {
+  sortSchema: boolean;
+  debug: boolean;
+  playground: boolean;
+  introspection: boolean;
 }
