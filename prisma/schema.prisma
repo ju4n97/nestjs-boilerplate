@@ -10,6 +10,23 @@ generator client {
   provider = "prisma-client-js"
 }
 
+generator nestgraphql {
+  provider                    = "node node_modules/prisma-nestjs-graphql"
+  output                      = "../src/@generated/models"
+  noAtomicOperations          = false
+  combineScalarFilters        = false
+  reExport                    = None
+  emitSingle                  = false
+  emitCompiled                = false
+  purgeOutput                 = false
+  fields_from                 = "class-validator"
+  fields_Validator_from       = "class-validator"
+  fields_Validator_input      = true
+  fields_Scalars_from         = "graphql-scalars"
+  fields_Scalars_input        = true
+  useInputType_WhereInput_ALL = "WhereInput"
+}
+
 model User {
   id               String   @id @default(uuid())
   password         String

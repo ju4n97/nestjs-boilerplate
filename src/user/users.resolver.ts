@@ -1,5 +1,9 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
-import { User, UserCreateInput } from './user.model';
+import { FindManyUserArgs } from 'src/@generated/models/user/find-many-user.args';
+import { UserCreateInput } from 'src/@generated/models/user/user-create.input';
+import { UserUpdateInput } from 'src/@generated/models/user/user-update.input';
+import { UserWhereUniqueInput } from 'src/@generated/models/user/user-where-unique.input';
+import { User } from 'src/@generated/models/user/user.model';
 import { UsersService } from './users.service';
 
 @Resolver(() => User)
@@ -7,12 +11,25 @@ export class UsersResolver {
   constructor(private usersService: UsersService) {}
 
   @Query(() => [User])
-  async users() {
-    return this.usersService.getUsers();
+  async users(@Args() args: FindManyUserArgs): Promise<User[]> {
+    return this.usersService.getUsers(args);
   }
 
   @Mutation(() => User)
-  async createUser(@Args('input') input: UserCreateInput) {
-    this.usersService.createUser(input);
+  async userCreate(@Args('input') input: UserCreateInput): Promise<User> {
+    return this.usersService.createUser(input);
+  }
+
+  @Mutation(() => User)
+  async userUpdate(
+    @Args('input') input: UserUpdateInput,
+    @Args('where') where: UserWhereUniqueInput,
+  ): Promise<User> {
+    return this.usersService.updateUser(input, where);
+  }
+
+  @Mutation(() => User)
+  async userDelete(@Args('where') where: UserWhereUniqueInput): Promise<User> {
+    return this.usersService.deleteUser(where);
   }
 }
