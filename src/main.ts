@@ -1,6 +1,7 @@
 import { ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { NestFactory } from '@nestjs/core';
+import { HttpAdapterHost, NestFactory } from '@nestjs/core';
+import { PrismaClientExceptionFilter } from 'nestjs-prisma';
 import { AppModule } from './app.module';
 import { AppConfig } from './config/config.interface';
 
@@ -10,6 +11,10 @@ async function bootstrap() {
   // Validations
   app.useGlobalPipes(new ValidationPipe());
   app.setGlobalPrefix('api');
+
+  // Filters
+  const { httpAdapter } = app.get(HttpAdapterHost);
+  app.useGlobalFilters(new PrismaClientExceptionFilter(httpAdapter));
 
   // Config declarations
   const configService = app.get(ConfigService);

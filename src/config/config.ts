@@ -7,8 +7,9 @@ const config: Config = {
       enabled: true,
     },
   },
-  database: {
-    url: process.env.DATABASE_URL,
+  prisma: {
+    log: ['query', 'info', 'warn', 'error'],
+    explicitConnect: true,
   },
   graphql: {
     sortSchema: true,

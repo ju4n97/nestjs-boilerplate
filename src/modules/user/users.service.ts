@@ -4,7 +4,7 @@ import { FindManyUserArgs } from 'src/@generated/models/user/find-many-user.args
 import { UserCreateInput } from 'src/@generated/models/user/user-create.input';
 import { UserUpdateInput } from 'src/@generated/models/user/user-update.input';
 import { UserWhereUniqueInput } from 'src/@generated/models/user/user-where-unique.input';
-import { PrismaService } from 'src/services/prisma.service';
+import { PrismaService } from 'src/prisma/prisma.service';
 @Injectable()
 export class UsersService {
   constructor(private prisma: PrismaService) {}
