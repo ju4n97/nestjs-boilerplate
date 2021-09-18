@@ -11,15 +11,14 @@ generator client {
 }
 
 generator nestgraphql {
-  provider                    = "node node_modules/prisma-nestjs-graphql"
-  output                      = "../src/@generated/models"
+  provider                    = "node node_modules/prisma-nestjs-graphql/index.js"
+  output                      = "../src/@generated"
   noAtomicOperations          = false
   combineScalarFilters        = false
   reExport                    = None
   emitSingle                  = false
   emitCompiled                = false
   purgeOutput                 = false
-  fields_from                 = "class-validator"
   fields_Validator_from       = "class-validator"
   fields_Validator_input      = true
   fields_Scalars_from         = "graphql-scalars"

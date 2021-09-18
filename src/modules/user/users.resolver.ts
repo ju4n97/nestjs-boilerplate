@@ -1,9 +1,9 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
-import { FindManyUserArgs } from 'src/@generated/models/user/find-many-user.args';
-import { UserCreateInput } from 'src/@generated/models/user/user-create.input';
-import { UserUpdateInput } from 'src/@generated/models/user/user-update.input';
-import { UserWhereUniqueInput } from 'src/@generated/models/user/user-where-unique.input';
-import { User } from 'src/@generated/models/user/user.model';
+import { FindManyUserArgs } from 'src/@generated/user/find-many-user.args';
+import { UserCreateInput } from 'src/@generated/user/user-create.input';
+import { UserUpdateInput } from 'src/@generated/user/user-update.input';
+import { UserWhereUniqueInput } from 'src/@generated/user/user-where-unique.input';
+import { User } from 'src/@generated/user/user.model';
 import { UsersService } from './users.service';
 
 @Resolver(() => User)

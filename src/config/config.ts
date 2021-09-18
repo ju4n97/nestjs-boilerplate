@@ -1,4 +1,4 @@
-import { Config } from './config.interface';
+import { Config } from './config.types';
 
 const config: Config = {
   app: {
@@ -6,10 +6,6 @@ const config: Config = {
     cors: {
       enabled: true,
     },
-  },
-  prisma: {
-    log: ['query', 'info', 'warn', 'error'],
-    explicitConnect: true,
   },
   graphql: {
     sortSchema: true,

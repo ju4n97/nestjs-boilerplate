@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
-import { GraphqlConfig } from 'src/config/config.interface';
+import { GraphqlConfig } from 'src/config/config.types';
 
 @Module({
   imports: [
