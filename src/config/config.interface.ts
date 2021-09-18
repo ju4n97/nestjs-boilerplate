@@ -1,6 +1,6 @@
 export interface Config {
   app: AppConfig;
-  database: DatabaseConfig;
+  prisma: PrismaConfig;
   graphql: GraphqlConfig;
 }
 
@@ -13,8 +13,9 @@ export interface CorsConfig {
   enabled: boolean;
 }
 
-export interface DatabaseConfig {
-  url: string;
+export interface PrismaConfig {
+  log: Array<'query' | 'info' | 'warn' | 'error'>;
+  explicitConnect: boolean;
 }
 
 export interface GraphqlConfig {

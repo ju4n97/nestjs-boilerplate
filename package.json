@@ -20,9 +20,15 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "prisma:generate": "prisma generate",
+    "prisma:generate": "npx prisma generate",
     "prisma:migrate": "prisma migrate dev --name",
-    "prisma:studio": "npx prisma studio"
+    "prisma:studio": "npx prisma studio",
+    "migrate:dev": "npx prisma migrate dev",
+    "migrate:dev:create": "npx prisma migrate dev --create-only",
+    "migrate:deploy": "npx prisma migrate deploy",
+    "prisma:seed": "npx prisma db seed --preview-feature",
+    "docker:compose:up": "docker-compose up -d",
+    "docker:compose:down": "docker-compose down --remove-orphans --volumes"
   },
   "lint-staged": {
     "*.{ts,tsx}": "eslint --fix",
@@ -40,6 +46,7 @@
     "class-validator": "^0.13.1",
     "graphql": "^15.5.3",
     "graphql-scalars": "^1.10.1",
+    "nestjs-prisma": "^0.13.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0"
