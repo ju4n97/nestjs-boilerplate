@@ -226,14 +226,7 @@ input ProfileWhereUniqueInput {
 }
 
 type Query {
-  users(
-    cursor: UserWhereUniqueInput
-    distinct: [UserScalarFieldEnum!]
-    orderBy: [UserOrderByWithRelationInput!]
-    skip: Int
-    take: Int
-    where: UserWhereInput
-  ): [User!]!
+  users(cursor: UserWhereUniqueInput, distinct: [UserScalarFieldEnum!], orderBy: [UserOrderByWithRelationInput!], skip: Int, take: Int, where: UserWhereInput): [User!]!
 }
 
 enum QueryMode {
