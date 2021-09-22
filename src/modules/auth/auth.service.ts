@@ -34,9 +34,10 @@ export class AuthService {
         ...input,
         email: input.email.toLowerCase(),
         password: hashedPassword,
-        profile: {
+        detail: {
           create: {
-            name: input.name,
+            firstName: '',
+            lastName: '',
           },
         },
       },

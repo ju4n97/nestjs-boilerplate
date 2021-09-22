@@ -93,7 +93,7 @@ input IntFilter {
 }
 
 type Mutation {
-  refreshToken(token: String!): AccessToken!
+  refreshToken: AccessToken!
   signIn(input: SignInInput!): AccessToken!
   signUp(input: SignUpInput!): AccessToken!
   userCreate(input: UserCreateInput!): User!
@@ -211,13 +211,14 @@ enum Role {
 }
 
 input SignInInput {
-  email: String!
+  email: EmailAddress!
   password: String!
 }
 
 input SignUpInput {
-  email: String!
-  name: String
+  email: EmailAddress!
+  firstName: String!
+  lastName: String!
   password: String!
 }
 
