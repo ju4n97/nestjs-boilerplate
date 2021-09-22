@@ -17,7 +17,7 @@ export class UsersService {
       skip,
       take,
       distinct,
-      include: { profile: true },
+      include: { detail: true },
     });
   }
 

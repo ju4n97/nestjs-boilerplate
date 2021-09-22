@@ -1,6 +1,7 @@
 export type Config = {
   app: AppConfig;
   graphql: GraphqlConfig;
+  security: SecurityConfig;
 };
 
 export type AppConfig = {
@@ -17,4 +18,10 @@ export type GraphqlConfig = {
   debug: boolean;
   playground: boolean;
   introspection: boolean;
+};
+
+export type SecurityConfig = {
+  expiresIn: string;
+  refreshIn: string;
+  bcryptSaltOrRound: string | number;
 };
