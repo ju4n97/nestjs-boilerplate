@@ -17,7 +17,9 @@ export class UsersService {
       skip,
       take,
       distinct,
-      include: { detail: true },
+      include: {
+        detail: true,
+      },
     });
   }
 
