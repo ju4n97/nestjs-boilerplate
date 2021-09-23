@@ -2,8 +2,9 @@ import { TextUtils } from './text.utils';
 
 describe('TextUtils', () => {
   describe('Normalize', () => {
-    it('It should throw an error when an invalid argument is passed', () => {
-      expect(() => TextUtils.normalize(null)).toThrow(TypeError);
+    it('It should return empty string when invalid argument is passed', () => {
+      expect(TextUtils.normalize(null)).toBe('');
+      expect(TextUtils.normalize(undefined)).toBe('');
     });
     it('It should trim unwanted spaces', () => {
       const mockText = ' Lorem    IPSUM     ';

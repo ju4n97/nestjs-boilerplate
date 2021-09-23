@@ -3,14 +3,10 @@
 # ------------------------------------------------------
 
 type AccessToken {
-  """
-  JWT access token
-  """
+  """JWT access token"""
   accessToken: String!
 
-  """
-  JWT refresh token
-  """
+  """JWT refresh token"""
   refreshToken: String!
 }
 
@@ -63,13 +59,6 @@ input EnumRoleFieldUpdateOperationsInput {
   set: Role
 }
 
-input EnumRoleFilter {
-  equals: Role
-  in: [Role!]
-  not: NestedEnumRoleFilter
-  notIn: [Role!]
-}
-
 input EnumStatusFieldUpdateOperationsInput {
   set: Status
 }
@@ -96,9 +85,10 @@ type Mutation {
   refreshToken: AccessToken!
   signIn(input: SignInInput!): AccessToken!
   signUp(input: SignUpInput!): AccessToken!
-  userCreate(input: UserCreateInput!): User!
   userDelete(where: UserWhereUniqueInput!): User!
   userUpdate(input: UserUpdateInput!, where: UserWhereUniqueInput!): User!
+  userUpdateRole(input: UpdateUserRoleInput!, where: UserWhereUniqueInput!): User!
+  userUpdateStatus(input: UpdateUserStatusInput!, where: UserWhereUniqueInput!): User!
 }
 
 input NestedBoolFilter {
@@ -126,13 +116,6 @@ input NestedDateTimeNullableFilter {
   lte: DateTime
   not: NestedDateTimeNullableFilter
   notIn: [DateTime!]
-}
-
-input NestedEnumRoleFilter {
-  equals: Role
-  in: [Role!]
-  not: NestedEnumRoleFilter
-  notIn: [Role!]
 }
 
 input NestedEnumStatusFilter {
@@ -190,14 +173,7 @@ input NullableStringFieldUpdateOperationsInput {
 }
 
 type Query {
-  users(
-    cursor: UserWhereUniqueInput
-    distinct: [UserScalarFieldEnum!]
-    orderBy: [UserOrderByWithRelationInput!]
-    skip: Int
-    take: Int
-    where: UserWhereInput
-  ): [User!]!
+  users(cursor: UserWhereUniqueInput, distinct: [UserScalarFieldEnum!], orderBy: [UserOrderByWithRelationInput!], skip: Int, take: Int, where: UserWhereInput): [User!]!
 }
 
 enum QueryMode {
@@ -218,7 +194,7 @@ input SignInInput {
 input SignUpInput {
   email: EmailAddress!
   firstName: String!
-  lastName: String!
+  lastName: String
   password: String!
 }
 
@@ -266,6 +242,14 @@ input StringNullableFilter {
   startsWith: String
 }
 
+input UpdateUserRoleInput {
+  role: EnumRoleFieldUpdateOperationsInput
+}
+
+input UpdateUserStatusInput {
+  status: EnumStatusFieldUpdateOperationsInput
+}
+
 type User {
   createdAt: DateTime!
   detail: UserDetail
@@ -278,19 +262,6 @@ type User {
   updatedAt: DateTime!
 }
 
-input UserCreateInput {
-  createdAt: DateTime
-  detail: UserDetailCreateNestedOneWithoutUserInput
-  email: EmailAddress!
-  emailConfirmed: Boolean
-  id: String
-  password: String!
-  role: Role
-  status: Status
-  twoFactorEnabled: Boolean
-  updatedAt: DateTime
-}
-
 type UserDetail {
   avatarUrl: String
   bio: String
@@ -298,16 +269,10 @@ type UserDetail {
   dateOfBirth: DateTime
   firstName: String!
   id: ID!
-  lastName: String!
+  lastName: String
   updatedAt: DateTime!
   user: User!
   userId: String!
-}
-
-input UserDetailCreateNestedOneWithoutUserInput {
-  connect: UserDetailWhereUniqueInput
-  connectOrCreate: UserDetailCreateOrConnectWithoutUserInput
-  create: UserDetailCreateWithoutUserInput
 }
 
 input UserDetailCreateOrConnectWithoutUserInput {
@@ -321,7 +286,7 @@ input UserDetailCreateWithoutUserInput {
   createdAt: DateTime
   dateOfBirth: DateTime
   firstName: String!
-  lastName: String!
+  lastName: String
   updatedAt: DateTime
 }
 
@@ -354,7 +319,7 @@ input UserDetailUpdateWithoutUserInput {
   createdAt: DateTimeFieldUpdateOperationsInput
   dateOfBirth: NullableDateTimeFieldUpdateOperationsInput
   firstName: StringFieldUpdateOperationsInput
-  lastName: StringFieldUpdateOperationsInput
+  lastName: NullableStringFieldUpdateOperationsInput
   updatedAt: DateTimeFieldUpdateOperationsInput
 }
 
@@ -373,7 +338,7 @@ input UserDetailWhereInput {
   dateOfBirth: DateTimeNullableFilter
   firstName: StringFilter
   id: IntFilter
-  lastName: StringFilter
+  lastName: StringNullableFilter
   updatedAt: DateTimeFilter
   user: UserWhereInput
   userId: StringFilter
@@ -390,7 +355,6 @@ input UserOrderByWithRelationInput {
   emailConfirmed: SortOrder
   id: SortOrder
   password: SortOrder
-  role: SortOrder
   status: SortOrder
   twoFactorEnabled: SortOrder
   updatedAt: SortOrder
@@ -415,7 +379,6 @@ input UserUpdateInput {
   emailConfirmed: BoolFieldUpdateOperationsInput
   id: StringFieldUpdateOperationsInput
   password: StringFieldUpdateOperationsInput
-  role: EnumRoleFieldUpdateOperationsInput
   status: EnumStatusFieldUpdateOperationsInput
   twoFactorEnabled: BoolFieldUpdateOperationsInput
   updatedAt: DateTimeFieldUpdateOperationsInput
@@ -431,7 +394,6 @@ input UserWhereInput {
   emailConfirmed: BoolFilter
   id: StringFilter
   password: StringFilter
-  role: EnumRoleFilter
   status: EnumStatusFilter
   twoFactorEnabled: BoolFilter
   updatedAt: DateTimeFilter

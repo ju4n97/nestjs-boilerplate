@@ -1,7 +1,7 @@
 import { Args, Mutation, Resolver } from '@nestjs/graphql';
 import { AuthService } from './auth.service';
 import { AccessToken } from './dto/access-token.dto';
-import { RefreshTokenInput } from './dto/refresh-token.input';
+import { RefreshTokenInput } from './dto/refresh-token.args';
 import { SignInInput } from './dto/sign-in.input';
 import { SignUpInput } from './dto/sign-up.input';
 

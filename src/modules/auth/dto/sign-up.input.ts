@@ -4,6 +4,6 @@ import { UserCreateInput } from 'src/@generated/user/user-create.input';
 
 @InputType()
 export class SignUpInput extends IntersectionType(
-  PickType(UserCreateInput, ['email', 'password']),
-  PickType(UserDetailCreateInput, ['firstName', 'lastName']),
+  PickType(UserCreateInput, ['email', 'password'] as const),
+  PickType(UserDetailCreateInput, ['firstName', 'lastName'] as const),
 ) {}

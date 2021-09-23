@@ -10,11 +10,12 @@ async function main() {
     update: {},
     create: {
       email: 'alice@prisma.io',
-      password: '123',
+      password: '$2b$10$1XVF0bILGrFGHPMQbtp/betn.OojId7b1omrrqNp1el8AEcBSXquO', // FirstPassword123
       role: 'USER',
-      profile: {
+      detail: {
         create: {
-          name: 'Alice',
+          firstName: 'Alice',
+          lastName: 'Parker',
           bio: `This is Alice's bio`,
         },
       },
@@ -26,11 +27,12 @@ async function main() {
     update: {},
     create: {
       email: 'bob@prisma.io',
-      password: '123',
+      password: '$2b$10$EpreVGbl.d0qzfmGZwWb3.gdiDD4biBMs4kP5PJWCt3wveclHzoV2', // SecondPassword123
       role: 'ADMIN',
-      profile: {
+      detail: {
         create: {
-          name: 'Bob',
+          firstName: 'Bob',
+          lastName: 'Jones',
           bio: `This is Bob's bio`,
         },
       },

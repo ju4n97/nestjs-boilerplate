@@ -7,6 +7,8 @@ import { CryptModule } from 'src/crypt/crypt.module';
 import { PrismaModule } from 'src/prisma/prisma.module';
 import { AuthResolver } from './auth.resolver';
 import { AuthService } from './auth.service';
+import { GqlAuthGuard } from './guards/gql-auth.guard';
+import { JwtStrategy } from './jwt.strategy';
 
 @Module({
   imports: [
@@ -26,6 +28,7 @@ import { AuthService } from './auth.service';
     PrismaModule,
     CryptModule,
   ],
-  providers: [AuthResolver, AuthService],
+  providers: [AuthResolver, AuthService, JwtStrategy, GqlAuthGuard],
+  exports: [],
 })
 export class AuthModule {}

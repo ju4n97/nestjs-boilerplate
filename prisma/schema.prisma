@@ -27,38 +27,54 @@ generator nestgraphql {
 }
 
 model User {
-  id               String      @id @default(uuid())
+  id String @id @default(uuid())
+
   /// @HideField()
   /// @Validator.MinLength(6)
-  password         String
+  password String
+
   /// @FieldType('Scalars.GraphQLEmailAddress')
-  email            String      @unique @db.VarChar(60)
-  emailConfirmed   Boolean     @default(false) @map("email_confirmed")
-  twoFactorEnabled Boolean     @default(true) @map("two_factor_enabled")
-  createdAt        DateTime    @default(now()) @map("created_at")
-  updatedAt        DateTime    @updatedAt @map("updated_at")
-  status           Status      @default(ACTIVE)
-  role             Role        @default(USER)
-  detail           UserDetail?
+  email String @unique @db.VarChar(60)
+
+  emailConfirmed   Boolean  @default(false) @map("email_confirmed")
+  twoFactorEnabled Boolean  @default(true) @map("two_factor_enabled")
+  createdAt        DateTime @default(now()) @map("created_at")
+  updatedAt        DateTime @updatedAt @map("updated_at")
+  status           Status   @default(ACTIVE)
+
+  /// @HideField({ input: true, output: false })
+  /// @Validator.IsEnum(Role)
+  role Role @default(USER)
+
+  detail UserDetail?
 
   @@map("user")
 }
 
 model UserDetail {
-  id          Int       @id @default(autoincrement())
+  id Int @id @default(autoincrement())
+
+  /// @Validator.IsNotEmpty()
   /// @Validator.MaxLength(40)
-  firstName   String    @map("first_name") @db.VarChar(40)
+  firstName String @map("first_name") @db.VarChar(40)
+
+  /// @Validator.IsOptional()
   /// @Validator.MaxLength(40)
-  lastName    String    @map("last_name") @db.VarChar(40)
+  lastName String? @map("last_name") @db.VarChar(40)
+
+  /// @Validator.IsOptional()
   /// @Validator.MaxLength(300)
-  bio         String?   @db.VarChar(300)
+  bio String? @db.VarChar(300)
+
+  /// @Validator.IsOptional()
   /// @Validator.IsDate()
   dateOfBirth DateTime? @map("date_of_birth")
-  avatarUrl   String?   @map("avatar_url")
-  createdAt   DateTime  @default(now()) @map("created_at")
-  updatedAt   DateTime  @updatedAt @map("updated_at")
-  userId      String    @map("user_id")
-  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  avatarUrl String?  @map("avatar_url")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  userId    String   @map("user_id")
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("user_detail")
 }

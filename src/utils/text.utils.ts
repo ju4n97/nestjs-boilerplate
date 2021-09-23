@@ -13,12 +13,7 @@ type NormalizeParams =
  * @returns normalized text
  */
 const normalize = (args: NormalizeParams): string => {
-  // Throws if invalid argument is passed
-  if (!args) {
-    throw new TypeError(
-      `Argument must be of type NormalizeParams. Passed argument: ${typeof args}`,
-    );
-  }
+  if (!args) return '';
 
   // Optional params inicialization
   let text = '';
@@ -27,7 +22,9 @@ const normalize = (args: NormalizeParams): string => {
 
   // Checks if the provided argument is a text value or an object of options
   if (typeof args === 'object') {
-    text = args.text;
+    if (args.text) {
+      text = args.text;
+    }
 
     if (args.letterCase) {
       letterCase = args.letterCase;

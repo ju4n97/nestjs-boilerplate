@@ -1,5 +1,7 @@
+import { Prisma } from '.prisma/client';
 import {
   BadRequestException,
+  ConflictException,
   Injectable,
   NotFoundException,
   UnauthorizedException,
@@ -10,6 +12,7 @@ import { User } from 'src/@generated/user/user.model';
 import { SecurityConfig } from 'src/config/config.types';
 import { CryptService } from 'src/crypt/crypt.service';
 import { PrismaService } from 'src/prisma/prisma.service';
+import { TextUtils } from 'src/utils/text.utils';
 import { AccessToken } from './dto/access-token.dto';
 import { SignInInput } from './dto/sign-in.input';
 import { SignUpInput } from './dto/sign-up.input';
@@ -27,23 +30,33 @@ export class AuthService {
    * Register a new user in the application
    */
   async signUp(input: SignUpInput): Promise<AccessToken> {
+    const email = TextUtils.normalize({ text: input.email, letterCase: 'lowercase' });
+    const firstName = TextUtils.normalize({ text: input.firstName, letterCase: 'capitalize' });
+    const lastName = TextUtils.normalize({ text: input.lastName, letterCase: 'capitalize' });
     const hashedPassword = await this.cryptService.hashPassword(input.password);
-
-    const newUser = await this.prisma.user.create({
-      data: {
-        ...input,
-        email: input.email.toLowerCase(),
-        password: hashedPassword,
-        detail: {
-          create: {
-            firstName: '',
-            lastName: '',
+    console.log({ hashedPassword });
+    try {
+      const newUser = await this.prisma.user.create({
+        data: {
+          email,
+          password: hashedPassword,
+          detail: {
+            create: {
+              firstName,
+              lastName,
+            },
           },
         },
-      },
-    });
+      });
 
-    return this.generateTokens({ userId: newUser.id });
+      return this.generateTokens({ userId: newUser.id });
+    } catch (error) {
+      if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === 'P2002') {
+        throw new ConflictException(`Email ${input.email} already exists`);
+      } else {
+        throw new Error(error);
+      }
+    }
   }
 
   /**
@@ -51,7 +64,9 @@ export class AuthService {
    * @returns access token
    */
   async signIn({ email, password }: SignInInput): Promise<AccessToken> {
-    const user = await this.prisma.user.findUnique({ where: { email: email.toLowerCase() } });
+    const normalizedEmail = TextUtils.normalize({ text: email, letterCase: 'lowercase' });
+
+    const user = await this.prisma.user.findUnique({ where: { email: normalizedEmail } });
 
     if (!user) {
       throw new NotFoundException(`Email address: ${email} was not found`);
