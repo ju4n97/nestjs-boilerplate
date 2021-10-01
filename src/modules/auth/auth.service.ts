@@ -26,12 +26,12 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
-  async signUp(input: SignUpInput): Promise<AccessToken> {
-    const email = TextUtils.normalize({ text: input.email, letterCase: 'lowercase' });
-    const firstName = TextUtils.normalize({ text: input.firstName, letterCase: 'capitalize' });
-    const lastName = TextUtils.normalize({ text: input.lastName, letterCase: 'capitalize' });
-    const hashedPassword = await this.cryptService.hashPassword(input.password);
-    console.log({ hashedPassword });
+  async signUp(data: SignUpInput): Promise<AccessToken> {
+    const email = TextUtils.normalize({ text: data.email, letterCase: 'lowercase' });
+    const firstName = TextUtils.normalize({ text: data.firstName, letterCase: 'capitalize' });
+    const lastName = TextUtils.normalize({ text: data.lastName, letterCase: 'capitalize' });
+    const hashedPassword = await this.cryptService.hashPassword(data.password);
+
     try {
       const newUser = await this.prisma.user.create({
         data: {
@@ -49,7 +49,7 @@ export class AuthService {
       return this.generateTokens({ userId: newUser.id });
     } catch (error) {
       if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === 'P2002') {
-        throw new ConflictException(`Email ${input.email} already exists`);
+        throw new ConflictException(`Email ${data.email} already exists`);
       } else {
         throw new Error(error);
       }
