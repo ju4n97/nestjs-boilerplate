@@ -11,17 +11,8 @@ import { UpdateUserStatusInput } from './dto/update-user-status.input';
 export class UsersService {
   constructor(private prisma: PrismaService) {}
 
-  async get({ where, orderBy, distinct, skip, take }: FindManyUserArgs): Promise<User[]> {
-    return this.prisma.user.findMany({
-      where,
-      orderBy,
-      skip,
-      take,
-      distinct,
-      include: {
-        detail: true,
-      },
-    });
+  async get(args: FindManyUserArgs, select: any): Promise<User[]> {
+    return this.prisma.user.findMany({ ...args, ...select });
   }
 
   async update(input: UserUpdateInput, where: UserWhereUniqueInput): Promise<User> {

@@ -1,4 +1,6 @@
-import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { Args, Info, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { PrismaSelect } from '@paljs/plugins';
+import { GraphQLResolveInfo } from 'graphql';
 import { Role } from 'src/@generated/prisma/role.enum';
 import { FindManyUserArgs } from 'src/@generated/user/find-many-user.args';
 import { UserUpdateInput } from 'src/@generated/user/user-update.input';
@@ -15,8 +17,9 @@ export class UsersResolver {
   constructor(private usersService: UsersService) {}
 
   @Query(() => [User])
-  async users(@Args() args: FindManyUserArgs): Promise<User[]> {
-    return this.usersService.get(args);
+  async users(@Args() args: FindManyUserArgs, @Info() info: GraphQLResolveInfo): Promise<User[]> {
+    const select = new PrismaSelect(info).value;
+    return this.usersService.get(args, select);
   }
 
   @Mutation(() => User)
