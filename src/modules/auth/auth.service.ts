@@ -26,9 +26,6 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
-  /**
-   * Register a new user in the application
-   */
   async signUp(input: SignUpInput): Promise<AccessToken> {
     const email = TextUtils.normalize({ text: input.email, letterCase: 'lowercase' });
     const firstName = TextUtils.normalize({ text: input.firstName, letterCase: 'capitalize' });
@@ -59,10 +56,6 @@ export class AuthService {
     }
   }
 
-  /**
-   * Login existing user by email & password
-   * @returns access token
-   */
   async signIn({ email, password }: SignInInput): Promise<AccessToken> {
     const normalizedEmail = TextUtils.normalize({ text: email, letterCase: 'lowercase' });
 
