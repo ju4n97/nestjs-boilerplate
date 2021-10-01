@@ -2,6 +2,14 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type AccessToken {
+  """JWT access token"""
+  accessToken: String!
+
+  """JWT refresh token"""
+  refreshToken: String!
+}
+
 input BoolFieldUpdateOperationsInput {
   set: Boolean
 }
@@ -31,15 +39,24 @@ input DateTimeFilter {
   notIn: [DateTime!]
 }
 
-input EnumRoleFieldUpdateOperationsInput {
-  set: Role
+input DateTimeNullableFilter {
+  equals: DateTime
+  gt: DateTime
+  gte: DateTime
+  in: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  not: NestedDateTimeNullableFilter
+  notIn: [DateTime!]
 }
 
-input EnumRoleFilter {
-  equals: Role
-  in: [Role!]
-  not: NestedEnumRoleFilter
-  notIn: [Role!]
+"""
+A field whose value conforms to the standard internet email address format as specified in RFC822: https://www.w3.org/Protocols/rfc822/.
+"""
+scalar EmailAddress @specifiedBy(url: "https://www.w3.org/Protocols/rfc822/")
+
+input EnumRoleFieldUpdateOperationsInput {
+  set: Role
 }
 
 input EnumStatusFieldUpdateOperationsInput {
@@ -65,9 +82,13 @@ input IntFilter {
 }
 
 type Mutation {
-  userCreate(input: UserCreateInput!): User!
+  refreshToken: AccessToken!
+  signIn(input: SignInInput!): AccessToken!
+  signUp(input: SignUpInput!): AccessToken!
   userDelete(where: UserWhereUniqueInput!): User!
   userUpdate(input: UserUpdateInput!, where: UserWhereUniqueInput!): User!
+  userUpdateRole(input: UpdateUserRoleInput!, where: UserWhereUniqueInput!): User!
+  userUpdateStatus(input: UpdateUserStatusInput!, where: UserWhereUniqueInput!): User!
 }
 
 input NestedBoolFilter {
@@ -86,11 +107,15 @@ input NestedDateTimeFilter {
   notIn: [DateTime!]
 }
 
-input NestedEnumRoleFilter {
-  equals: Role
-  in: [Role!]
-  not: NestedEnumRoleFilter
-  notIn: [Role!]
+input NestedDateTimeNullableFilter {
+  equals: DateTime
+  gt: DateTime
+  gte: DateTime
+  in: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  not: NestedDateTimeNullableFilter
+  notIn: [DateTime!]
 }
 
 input NestedEnumStatusFilter {
@@ -139,90 +164,12 @@ input NestedStringNullableFilter {
   startsWith: String
 }
 
+input NullableDateTimeFieldUpdateOperationsInput {
+  set: DateTime
+}
+
 input NullableStringFieldUpdateOperationsInput {
   set: String
-}
-
-type Profile {
-  avatarUrl: String
-  bio: String
-  createdAt: DateTime!
-  id: ID!
-  name: String!
-  updatedAt: DateTime!
-  user: User!
-  userId: String!
-}
-
-input ProfileCreateNestedOneWithoutUserInput {
-  connect: ProfileWhereUniqueInput
-  connectOrCreate: ProfileCreateOrConnectWithoutUserInput
-  create: ProfileCreateWithoutUserInput
-}
-
-input ProfileCreateOrConnectWithoutUserInput {
-  create: ProfileCreateWithoutUserInput!
-  where: ProfileWhereUniqueInput!
-}
-
-input ProfileCreateWithoutUserInput {
-  avatarUrl: String
-  bio: String
-  createdAt: DateTime
-  name: String!
-  updatedAt: DateTime
-}
-
-input ProfileOrderByWithRelationInput {
-  avatarUrl: SortOrder
-  bio: SortOrder
-  createdAt: SortOrder
-  id: SortOrder
-  name: SortOrder
-  updatedAt: SortOrder
-  user: UserOrderByWithRelationInput
-  userId: SortOrder
-}
-
-input ProfileUpdateOneWithoutUserInput {
-  connect: ProfileWhereUniqueInput
-  connectOrCreate: ProfileCreateOrConnectWithoutUserInput
-  create: ProfileCreateWithoutUserInput
-  delete: Boolean
-  disconnect: Boolean
-  update: ProfileUpdateWithoutUserInput
-  upsert: ProfileUpsertWithoutUserInput
-}
-
-input ProfileUpdateWithoutUserInput {
-  avatarUrl: NullableStringFieldUpdateOperationsInput
-  bio: NullableStringFieldUpdateOperationsInput
-  createdAt: DateTimeFieldUpdateOperationsInput
-  name: StringFieldUpdateOperationsInput
-  updatedAt: DateTimeFieldUpdateOperationsInput
-}
-
-input ProfileUpsertWithoutUserInput {
-  create: ProfileCreateWithoutUserInput!
-  update: ProfileUpdateWithoutUserInput!
-}
-
-input ProfileWhereInput {
-  AND: [ProfileWhereInput!]
-  NOT: [ProfileWhereInput!]
-  OR: [ProfileWhereInput!]
-  avatarUrl: StringNullableFilter
-  bio: StringNullableFilter
-  createdAt: DateTimeFilter
-  id: IntFilter
-  name: StringFilter
-  updatedAt: DateTimeFilter
-  user: UserWhereInput
-  userId: StringFilter
-}
-
-input ProfileWhereUniqueInput {
-  id: Int
 }
 
 type Query {
@@ -237,6 +184,18 @@ enum QueryMode {
 enum Role {
   ADMIN
   USER
+}
+
+input SignInInput {
+  email: EmailAddress!
+  password: String!
+}
+
+input SignUpInput {
+  email: EmailAddress!
+  firstName: String!
+  lastName: String
+  password: String!
 }
 
 enum SortOrder {
@@ -283,40 +242,119 @@ input StringNullableFilter {
   startsWith: String
 }
 
+input UpdateUserRoleInput {
+  role: EnumRoleFieldUpdateOperationsInput
+}
+
+input UpdateUserStatusInput {
+  status: EnumStatusFieldUpdateOperationsInput
+}
+
 type User {
   createdAt: DateTime!
+  detail: UserDetail
   email: String!
   emailConfirmed: Boolean!
   id: ID!
-  password: String!
-  profile: Profile
   role: Role!
   status: Status!
   twoFactorEnabled: Boolean!
   updatedAt: DateTime!
 }
 
-input UserCreateInput {
+type UserDetail {
+  avatarUrl: String
+  bio: String
+  createdAt: DateTime!
+  dateOfBirth: DateTime
+  firstName: String!
+  id: ID!
+  lastName: String
+  updatedAt: DateTime!
+  user: User!
+  userId: String!
+}
+
+input UserDetailCreateOrConnectWithoutUserInput {
+  create: UserDetailCreateWithoutUserInput!
+  where: UserDetailWhereUniqueInput!
+}
+
+input UserDetailCreateWithoutUserInput {
+  avatarUrl: String
+  bio: String
   createdAt: DateTime
-  email: String!
-  emailConfirmed: Boolean
-  id: String
-  password: String!
-  profile: ProfileCreateNestedOneWithoutUserInput
-  role: Role
-  status: Status
-  twoFactorEnabled: Boolean
+  dateOfBirth: DateTime
+  firstName: String!
+  lastName: String
   updatedAt: DateTime
+}
+
+input UserDetailOrderByWithRelationInput {
+  avatarUrl: SortOrder
+  bio: SortOrder
+  createdAt: SortOrder
+  dateOfBirth: SortOrder
+  firstName: SortOrder
+  id: SortOrder
+  lastName: SortOrder
+  updatedAt: SortOrder
+  user: UserOrderByWithRelationInput
+  userId: SortOrder
+}
+
+input UserDetailUpdateOneWithoutUserInput {
+  connect: UserDetailWhereUniqueInput
+  connectOrCreate: UserDetailCreateOrConnectWithoutUserInput
+  create: UserDetailCreateWithoutUserInput
+  delete: Boolean
+  disconnect: Boolean
+  update: UserDetailUpdateWithoutUserInput
+  upsert: UserDetailUpsertWithoutUserInput
+}
+
+input UserDetailUpdateWithoutUserInput {
+  avatarUrl: NullableStringFieldUpdateOperationsInput
+  bio: NullableStringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  dateOfBirth: NullableDateTimeFieldUpdateOperationsInput
+  firstName: StringFieldUpdateOperationsInput
+  lastName: NullableStringFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input UserDetailUpsertWithoutUserInput {
+  create: UserDetailCreateWithoutUserInput!
+  update: UserDetailUpdateWithoutUserInput!
+}
+
+input UserDetailWhereInput {
+  AND: [UserDetailWhereInput!]
+  NOT: [UserDetailWhereInput!]
+  OR: [UserDetailWhereInput!]
+  avatarUrl: StringNullableFilter
+  bio: StringNullableFilter
+  createdAt: DateTimeFilter
+  dateOfBirth: DateTimeNullableFilter
+  firstName: StringFilter
+  id: IntFilter
+  lastName: StringNullableFilter
+  updatedAt: DateTimeFilter
+  user: UserWhereInput
+  userId: StringFilter
+}
+
+input UserDetailWhereUniqueInput {
+  id: Int
 }
 
 input UserOrderByWithRelationInput {
   createdAt: SortOrder
+  detail: UserDetailOrderByWithRelationInput
   email: SortOrder
   emailConfirmed: SortOrder
   id: SortOrder
   password: SortOrder
-  profile: ProfileOrderByWithRelationInput
-  role: SortOrder
   status: SortOrder
   twoFactorEnabled: SortOrder
   updatedAt: SortOrder
@@ -336,12 +374,11 @@ enum UserScalarFieldEnum {
 
 input UserUpdateInput {
   createdAt: DateTimeFieldUpdateOperationsInput
+  detail: UserDetailUpdateOneWithoutUserInput
   email: StringFieldUpdateOperationsInput
   emailConfirmed: BoolFieldUpdateOperationsInput
   id: StringFieldUpdateOperationsInput
   password: StringFieldUpdateOperationsInput
-  profile: ProfileUpdateOneWithoutUserInput
-  role: EnumRoleFieldUpdateOperationsInput
   status: EnumStatusFieldUpdateOperationsInput
   twoFactorEnabled: BoolFieldUpdateOperationsInput
   updatedAt: DateTimeFieldUpdateOperationsInput
@@ -352,18 +389,17 @@ input UserWhereInput {
   NOT: [UserWhereInput!]
   OR: [UserWhereInput!]
   createdAt: DateTimeFilter
+  detail: UserDetailWhereInput
   email: StringFilter
   emailConfirmed: BoolFilter
   id: StringFilter
   password: StringFilter
-  profile: ProfileWhereInput
-  role: EnumRoleFilter
   status: EnumStatusFilter
   twoFactorEnabled: BoolFilter
   updatedAt: DateTimeFilter
 }
 
 input UserWhereUniqueInput {
-  email: String
+  email: EmailAddress
   id: String
 }

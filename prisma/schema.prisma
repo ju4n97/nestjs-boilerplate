@@ -11,7 +11,7 @@ generator client {
 }
 
 generator nestgraphql {
-  provider                    = "node node_modules/prisma-nestjs-graphql/index.js"
+  provider                    = "node node_modules/prisma-nestjs-graphql"
   output                      = "../src/@generated"
   noAtomicOperations          = false
   combineScalarFilters        = false
@@ -27,31 +27,56 @@ generator nestgraphql {
 }
 
 model User {
-  id               String   @id @default(uuid())
-  password         String
-  email            String   @unique @db.VarChar(60)
+  id String @id @default(uuid())
+
+  /// @HideField()
+  /// @Validator.MinLength(6)
+  password String
+
+  /// @FieldType('Scalars.GraphQLEmailAddress')
+  email String @unique @db.VarChar(60)
+
   emailConfirmed   Boolean  @default(false) @map("email_confirmed")
   twoFactorEnabled Boolean  @default(true) @map("two_factor_enabled")
   createdAt        DateTime @default(now()) @map("created_at")
   updatedAt        DateTime @updatedAt @map("updated_at")
   status           Status   @default(ACTIVE)
-  role             Role     @default(USER)
-  profile          Profile?
+
+  /// @HideField({ input: true, output: false })
+  /// @Validator.IsEnum(Role)
+  role Role @default(USER)
+
+  detail UserDetail?
 
   @@map("user")
 }
 
-model Profile {
-  id        Int      @id @default(autoincrement())
-  name      String   @db.VarChar(40)
-  bio       String?  @db.VarChar(300)
+model UserDetail {
+  id Int @id @default(autoincrement())
+
+  /// @Validator.IsNotEmpty()
+  /// @Validator.MaxLength(40)
+  firstName String @map("first_name") @db.VarChar(40)
+
+  /// @Validator.IsOptional()
+  /// @Validator.MaxLength(40)
+  lastName String? @map("last_name") @db.VarChar(40)
+
+  /// @Validator.IsOptional()
+  /// @Validator.MaxLength(300)
+  bio String? @db.VarChar(300)
+
+  /// @Validator.IsOptional()
+  /// @Validator.IsDate()
+  dateOfBirth DateTime? @map("date_of_birth")
+
   avatarUrl String?  @map("avatar_url")
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
   userId    String   @map("user_id")
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  @@map("profile")
+  @@map("user_detail")
 }
 
 enum Role {
