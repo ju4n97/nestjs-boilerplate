@@ -11,7 +11,7 @@ import { UpdateUserRoleInput } from './dto/update-user-role.input';
 import { UpdateUserStatusInput } from './dto/update-user-status.input';
 import { UsersService } from './users.service';
 
-@Authorize()
+// @Authorize()
 @Resolver(() => User)
 export class UsersResolver {
   constructor(private usersService: UsersService) {}
