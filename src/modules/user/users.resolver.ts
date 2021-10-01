@@ -11,7 +11,7 @@ import { UpdateUserRoleInput } from './dto/update-user-role.input';
 import { UpdateUserStatusInput } from './dto/update-user-status.input';
 import { UsersService } from './users.service';
 
-// @Authorize()
+@Authorize()
 @Resolver(() => User)
 export class UsersResolver {
   constructor(private usersService: UsersService) {}
@@ -24,10 +24,10 @@ export class UsersResolver {
 
   @Mutation(() => User)
   async userUpdate(
-    @Args('input') input: UserUpdateInput,
+    @Args('data') data: UserUpdateInput,
     @Args('where') where: UserWhereUniqueInput,
   ): Promise<User> {
-    return this.usersService.update(input, where);
+    return this.usersService.update(data, where);
   }
 
   @Authorize(Role.ADMIN)
@@ -39,18 +39,18 @@ export class UsersResolver {
   @Authorize(Role.ADMIN)
   @Mutation(() => User)
   async userUpdateRole(
-    @Args('input') input: UpdateUserRoleInput,
+    @Args('data') data: UpdateUserRoleInput,
     @Args('where') where: UserWhereUniqueInput,
   ): Promise<User> {
-    return this.usersService.updateRole(input, where);
+    return this.usersService.updateRole(data, where);
   }
 
   @Authorize(Role.ADMIN)
   @Mutation(() => User)
   async userUpdateStatus(
-    @Args('input') input: UpdateUserStatusInput,
+    @Args('data') data: UpdateUserStatusInput,
     @Args('where') where: UserWhereUniqueInput,
   ): Promise<User> {
-    return this.usersService.updateStatus(input, where);
+    return this.usersService.updateStatus(data, where);
   }
 }

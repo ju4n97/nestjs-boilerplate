@@ -83,12 +83,12 @@ input IntFilter {
 
 type Mutation {
   refreshToken: AccessToken!
-  signIn(input: SignInInput!): AccessToken!
-  signUp(input: SignUpInput!): AccessToken!
+  signIn(data: SignInInput!): AccessToken!
+  signUp(data: SignUpInput!): AccessToken!
   userDelete(where: UserWhereUniqueInput!): User!
-  userUpdate(input: UserUpdateInput!, where: UserWhereUniqueInput!): User!
-  userUpdateRole(input: UpdateUserRoleInput!, where: UserWhereUniqueInput!): User!
-  userUpdateStatus(input: UpdateUserStatusInput!, where: UserWhereUniqueInput!): User!
+  userUpdate(data: UserUpdateInput!, where: UserWhereUniqueInput!): User!
+  userUpdateRole(data: UpdateUserRoleInput!, where: UserWhereUniqueInput!): User!
+  userUpdateStatus(data: UpdateUserStatusInput!, where: UserWhereUniqueInput!): User!
 }
 
 input NestedBoolFilter {
