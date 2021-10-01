@@ -67,13 +67,11 @@ export class AuthService {
     const normalizedEmail = TextUtils.normalize({ text: email, letterCase: 'lowercase' });
 
     const user = await this.prisma.user.findUnique({ where: { email: normalizedEmail } });
-
     if (!user) {
       throw new NotFoundException(`Email address: ${email} was not found`);
     }
 
     const isPasswordValid = await this.cryptService.validatePassword(password, user.password);
-
     if (!isPasswordValid) {
       throw new BadRequestException('Invalid password');
     }
@@ -85,7 +83,7 @@ export class AuthService {
     return this.prisma.user.findUnique({ where: { id: userId } });
   }
 
-  getUserFromToken(accessToken: string): Promise<User> {
+  decodeToken(accessToken: string): Promise<User> {
     const userId = this.jwtService.decode(accessToken)['userId'];
     return this.prisma.user.findUnique({ where: { id: userId } });
   }
