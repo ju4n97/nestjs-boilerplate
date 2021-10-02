@@ -8,7 +8,7 @@ import { PrismaModule } from 'src/prisma/prisma.module';
 import { AuthResolver } from './auth.resolver';
 import { AuthService } from './auth.service';
 import { GqlAuthGuard } from './guards/gql-auth.guard';
-import { JwtStrategy } from './jwt.strategy';
+import { JwtStrategy } from './strategies/jwt.strategy';
 
 @Module({
   imports: [

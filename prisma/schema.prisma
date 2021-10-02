@@ -36,13 +36,16 @@ model User {
   /// @FieldType('Scalars.GraphQLEmailAddress')
   email String @unique @db.VarChar(60)
 
-  emailConfirmed   Boolean    @default(false) @map("email_confirmed")
-  twoFactorEnabled Boolean    @default(true) @map("two_factor_enabled")
-  createdAt        DateTime   @default(now()) @map("created_at")
-  updatedAt        DateTime   @updatedAt @map("updated_at")
-  status           UserStatus @default(ACTIVE)
+  emailConfirmed   Boolean  @default(false) @map("email_confirmed")
+  twoFactorEnabled Boolean  @default(true) @map("two_factor_enabled")
+  createdAt        DateTime @default(now()) @map("created_at")
+  updatedAt        DateTime @updatedAt @map("updated_at")
 
-  /// @HideField({ input: true, output: false })
+  // @HideField({ input: true, output: false })
+  /// @Validator.IsEnum(UserStatus)
+  status UserStatus @default(ACTIVE)
+
+  // @HideField({ input: true, output: false })
   /// @Validator.IsEnum(Role)
   role Role @default(USER)
 
@@ -76,12 +79,8 @@ model UserDetail {
   /// @Validator.IsDate()
   dateOfBirth DateTime? @map("date_of_birth")
 
-  avatarUrl String? @map("avatar_url")
-
-  /// @HideField({ input: true, output: false })
+  avatarUrl String?  @map("avatar_url")
   createdAt DateTime @default(now()) @map("created_at")
-
-  /// @HideField({ input: true, output: false })
   updatedAt DateTime @updatedAt @map("updated_at")
 
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -93,23 +92,23 @@ model UserDetail {
 model Post {
   id Int @id @default(autoincrement())
 
+  /// @Validator.IsNotEmpty()
   /// @Validator.MaxLength(45)
   title String @db.VarChar(45)
 
+  /// @Validator.IsNotEmpty()
   /// @Validator.MaxLength(300)
   content String @db.Text
 
-  /// @Validator.IsBoolean(300)
+  /// @Validator.IsOptional()
+  /// @Validator.IsBoolean()
   published Boolean @default(false)
 
-  /// @HideField({ input: true, output: false })
   createdAt DateTime @default(now()) @map("created_at")
-
-  /// @HideField({ input: true, output: false })
   updatedAt DateTime @updatedAt @map("updated_at")
 
-  author   User?   @relation(fields: [authorId], references: [id])
-  authorId String?
+  author   User   @relation(fields: [authorId], references: [id])
+  authorId String
 
   @@map("post")
 }
