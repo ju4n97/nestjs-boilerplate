@@ -40,15 +40,24 @@ model User {
   twoFactorEnabled Boolean  @default(true) @map("two_factor_enabled")
   createdAt        DateTime @default(now()) @map("created_at")
   updatedAt        DateTime @updatedAt @map("updated_at")
-  status           Status   @default(ACTIVE)
 
-  /// @HideField({ input: true, output: false })
+  // @HideField({ input: true, output: false })
+  /// @Validator.IsEnum(UserStatus)
+  status UserStatus @default(ACTIVE)
+
+  // @HideField({ input: true, output: false })
   /// @Validator.IsEnum(Role)
   role Role @default(USER)
 
   detail UserDetail?
+  posts  Post[]
 
   @@map("user")
+}
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
 }
 
 model UserDetail {
@@ -73,18 +82,38 @@ model UserDetail {
   avatarUrl String?  @map("avatar_url")
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
-  userId    String   @map("user_id")
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String @map("user_id")
 
   @@map("user_detail")
+}
+
+model Post {
+  id Int @id @default(autoincrement())
+
+  /// @Validator.IsNotEmpty()
+  /// @Validator.MaxLength(45)
+  title String @db.VarChar(45)
+
+  /// @Validator.IsNotEmpty()
+  /// @Validator.MaxLength(300)
+  content String @db.Text
+
+  /// @Validator.IsOptional()
+  /// @Validator.IsBoolean()
+  published Boolean @default(false)
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  author   User   @relation(fields: [authorId], references: [id])
+  authorId String
+
+  @@map("post")
 }
 
 enum Role {
   USER
   ADMIN
-}
-
-enum Status {
-  ACTIVE
-  INACTIVE
 }

@@ -15,6 +15,7 @@ import { GraphqlConfig } from 'src/config/config.types';
           debug: config.debug,
           playground: config.playground,
           introspection: config.introspection,
+          installSubscriptionHandlers: config.installSubscriptionHandlers,
           context: ({ req }) => ({ req }),
         };
       },

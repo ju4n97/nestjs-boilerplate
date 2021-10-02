@@ -18,6 +18,7 @@ export type GraphqlConfig = {
   debug: boolean;
   playground: boolean;
   introspection: boolean;
+  installSubscriptionHandlers: boolean;
 };
 
 export type SecurityConfig = {

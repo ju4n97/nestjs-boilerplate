@@ -1,4 +1,3 @@
-import { Prisma } from '.prisma/client';
 import {
   BadRequestException,
   ConflictException,
@@ -8,6 +7,7 @@ import {
 } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
+import { Prisma } from '@prisma/client';
 import { User } from 'src/@generated/user/user.model';
 import { SecurityConfig } from 'src/config/config.types';
 import { CryptService } from 'src/crypt/crypt.service';

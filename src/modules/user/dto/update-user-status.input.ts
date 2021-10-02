@@ -1,8 +1,8 @@
 import { Field, InputType } from '@nestjs/graphql';
-import { EnumStatusFieldUpdateOperationsInput } from 'src/@generated/prisma/enum-status-field-update-operations.input';
+import { EnumUserStatusFieldUpdateOperationsInput } from 'src/@generated/prisma/enum-user-status-field-update-operations.input';
 
 @InputType()
 export class UpdateUserStatusInput {
-  @Field(() => EnumStatusFieldUpdateOperationsInput, { nullable: true })
-  status?: EnumStatusFieldUpdateOperationsInput;
+  @Field(() => EnumUserStatusFieldUpdateOperationsInput, { nullable: true })
+  status?: EnumUserStatusFieldUpdateOperationsInput;
 }

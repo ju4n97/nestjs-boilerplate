@@ -12,6 +12,7 @@ const config: Config = {
     debug: true,
     playground: true,
     introspection: true,
+    installSubscriptionHandlers: true,
   },
   security: {
     expiresIn: '2m',
