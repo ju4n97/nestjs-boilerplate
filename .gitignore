@@ -1,6 +1,8 @@
 # compiled output
 /dist
 /node_modules
+/**/node_modules
+/src/@generated/*
 
 # Logs
 logs
@@ -36,6 +38,3 @@ lerna-debug.log*
 
 # Environment
 .env
-
-# Generated
-src/@generated/*
