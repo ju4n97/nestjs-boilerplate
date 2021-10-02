@@ -419,6 +419,10 @@ input StringNullableFilter {
   startsWith: String
 }
 
+type Subscription {
+  postChanged: Post!
+}
+
 input UpdateUserRoleInput {
   role: EnumRoleFieldUpdateOperationsInput
 }
