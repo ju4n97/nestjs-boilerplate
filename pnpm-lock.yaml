@@ -39,7 +39,7 @@ specifiers:
   passport-jwt: ^4.0.0
   prettier: 2.4.1
   prisma: ^3.1.1
-  prisma-nestjs-graphql: 14.3.0
+  prisma-nestjs-graphql: 14.4.1
   reflect-metadata: ^0.1.13
   rimraf: ^3.0.2
   rxjs: ^7.2.0
@@ -94,7 +94,7 @@ devDependencies:
   lint-staged: 11.1.2
   prettier: 2.4.1
   prisma: 3.1.1
-  prisma-nestjs-graphql: 14.3.0
+  prisma-nestjs-graphql: 14.4.1
   supertest: 6.1.6
   ts-jest: 27.0.5_52a571d76319e63aeaa66dc9db9e90cc
   ts-loader: 9.2.6_typescript@4.4.3
@@ -1365,8 +1365,8 @@ packages:
       prisma: 3.1.1
     dev: false
 
-  /@prisma/debug/3.1.1:
-    resolution: {integrity: sha512-KCpckIAxYnf3wJ6wa2HkdwK7JZdgwr00T5QulC6dHbhn0a8QCSb/yTo74m2zuiyi/5NYo5LslZVPFeQJvKU7cQ==}
+  /@prisma/debug/3.2.0:
+    resolution: {integrity: sha512-QcGbt0f4qCeWYVWWk41F+bFnt6gqw8Wqr3vWZ/vAVjUI1MCFpIuzHUV4veIlriopA0kvFe0aQj5P+Ihg507Ijg==}
     dependencies:
       '@types/debug': 4.1.7
       debug: 4.3.2
@@ -1384,10 +1384,10 @@ packages:
     requiresBuild: true
     dev: true
 
-  /@prisma/generator-helper/3.1.1:
-    resolution: {integrity: sha512-Jke+zZrUE0v1gqaQ4fyMDzDk9yj7W8qMtyyPJjFWyprQNf4zMTffLmYsIrYVCULYt6C47u2AwXbQGyESlSFgJw==}
+  /@prisma/generator-helper/3.2.0:
+    resolution: {integrity: sha512-jjHmG8+AE4715QVLvkr41ZIfGS8vKBqcn8lu6qaIJvD/V+AEgq4R3FZB2w/q7Vz9tp0CsdUI81UE1EcC5QpSbw==}
     dependencies:
-      '@prisma/debug': 3.1.1
+      '@prisma/debug': 3.2.0
       '@types/cross-spawn': 6.0.2
       chalk: 4.1.2
       cross-spawn: 7.0.3
@@ -5652,11 +5652,11 @@ packages:
       react-is: 17.0.2
     dev: true
 
-  /prisma-nestjs-graphql/14.3.0:
-    resolution: {integrity: sha512-NUzyxVhJBPKM9awvdtxKCtPa1Leh0zbZf5E7S/g3K3eF/hoS6lIHZL1u7fe2RSOBdNHDszSkEr5FHemppjh0ZQ==}
+  /prisma-nestjs-graphql/14.4.1:
+    resolution: {integrity: sha512-6V055e/zcKSU/dLbAeRQvELqpKYCcOrBI46pPbj5lYZC/K5t3X0akkaO4rYgYzXfu3dLbDu6asx+fxEIQvtaQQ==}
     hasBin: true
     dependencies:
-      '@prisma/generator-helper': 3.1.1
+      '@prisma/generator-helper': 3.2.0
       await-event-emitter: 2.0.2
       filenamify: 4.3.0
       flat: 5.0.2
