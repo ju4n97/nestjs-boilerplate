@@ -21,8 +21,8 @@ specifiers:
   '@types/node': ^16.9.2
   '@types/passport-jwt': ^3.0.6
   '@types/supertest': ^2.0.11
-  '@typescript-eslint/eslint-plugin': 4.32.0
-  '@typescript-eslint/parser': 4.32.0
+  '@typescript-eslint/eslint-plugin': 4.33.0
+  '@typescript-eslint/parser': 4.33.0
   apollo-server-express: ^3.3.0
   bcrypt: ^5.0.1
   class-transformer: ^0.4.0
@@ -39,7 +39,7 @@ specifiers:
   passport-jwt: ^4.0.0
   prettier: 2.4.1
   prisma: ^3.1.1
-  prisma-nestjs-graphql: 14.3.0
+  prisma-nestjs-graphql: 14.4.1
   reflect-metadata: ^0.1.13
   rimraf: ^3.0.2
   rxjs: ^7.2.0
@@ -85,8 +85,8 @@ devDependencies:
   '@types/node': 16.10.2
   '@types/passport-jwt': 3.0.6
   '@types/supertest': 2.0.11
-  '@typescript-eslint/eslint-plugin': 4.32.0_1eacf2495a01e8a68ffa99482308e8ec
-  '@typescript-eslint/parser': 4.32.0_eslint@7.32.0+typescript@4.4.3
+  '@typescript-eslint/eslint-plugin': 4.33.0_d753869925cce96d3eb2141eeedafe57
+  '@typescript-eslint/parser': 4.33.0_eslint@7.32.0+typescript@4.4.3
   eslint: 7.32.0
   eslint-config-prettier: 8.3.0_eslint@7.32.0
   eslint-plugin-prettier: 4.0.0_6e975bd57c7acf028c1a9ddbbf60c898
@@ -94,7 +94,7 @@ devDependencies:
   lint-staged: 11.1.2
   prettier: 2.4.1
   prisma: 3.1.1
-  prisma-nestjs-graphql: 14.3.0
+  prisma-nestjs-graphql: 14.4.1
   supertest: 6.1.6
   ts-jest: 27.0.5_52a571d76319e63aeaa66dc9db9e90cc
   ts-loader: 9.2.6_typescript@4.4.3
@@ -1365,8 +1365,8 @@ packages:
       prisma: 3.1.1
     dev: false
 
-  /@prisma/debug/3.1.1:
-    resolution: {integrity: sha512-KCpckIAxYnf3wJ6wa2HkdwK7JZdgwr00T5QulC6dHbhn0a8QCSb/yTo74m2zuiyi/5NYo5LslZVPFeQJvKU7cQ==}
+  /@prisma/debug/3.2.0:
+    resolution: {integrity: sha512-QcGbt0f4qCeWYVWWk41F+bFnt6gqw8Wqr3vWZ/vAVjUI1MCFpIuzHUV4veIlriopA0kvFe0aQj5P+Ihg507Ijg==}
     dependencies:
       '@types/debug': 4.1.7
       debug: 4.3.2
@@ -1384,10 +1384,10 @@ packages:
     requiresBuild: true
     dev: true
 
-  /@prisma/generator-helper/3.1.1:
-    resolution: {integrity: sha512-Jke+zZrUE0v1gqaQ4fyMDzDk9yj7W8qMtyyPJjFWyprQNf4zMTffLmYsIrYVCULYt6C47u2AwXbQGyESlSFgJw==}
+  /@prisma/generator-helper/3.2.0:
+    resolution: {integrity: sha512-jjHmG8+AE4715QVLvkr41ZIfGS8vKBqcn8lu6qaIJvD/V+AEgq4R3FZB2w/q7Vz9tp0CsdUI81UE1EcC5QpSbw==}
     dependencies:
-      '@prisma/debug': 3.1.1
+      '@prisma/debug': 3.2.0
       '@types/cross-spawn': 6.0.2
       chalk: 4.1.2
       cross-spawn: 7.0.3
@@ -1732,8 +1732,8 @@ packages:
       '@types/yargs-parser': 20.2.1
     dev: true
 
-  /@typescript-eslint/eslint-plugin/4.32.0_1eacf2495a01e8a68ffa99482308e8ec:
-    resolution: {integrity: sha512-+OWTuWRSbWI1KDK8iEyG/6uK2rTm3kpS38wuVifGUTDB6kjEuNrzBI1MUtxnkneuWG/23QehABe2zHHrj+4yuA==}
+  /@typescript-eslint/eslint-plugin/4.33.0_d753869925cce96d3eb2141eeedafe57:
+    resolution: {integrity: sha512-aINiAxGVdOl1eJyVjaWn/YcVAq4Gi/Yo35qHGCnqbWVz61g39D0h23veY/MA0rFFGfxK7TySg2uwDeNv+JgVpg==}
     engines: {node: ^10.12.0 || >=12.0.0}
     peerDependencies:
       '@typescript-eslint/parser': ^4.0.0
@@ -1743,9 +1743,9 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/experimental-utils': 4.32.0_eslint@7.32.0+typescript@4.4.3
-      '@typescript-eslint/parser': 4.32.0_eslint@7.32.0+typescript@4.4.3
-      '@typescript-eslint/scope-manager': 4.32.0
+      '@typescript-eslint/experimental-utils': 4.33.0_eslint@7.32.0+typescript@4.4.3
+      '@typescript-eslint/parser': 4.33.0_eslint@7.32.0+typescript@4.4.3
+      '@typescript-eslint/scope-manager': 4.33.0
       debug: 4.3.2
       eslint: 7.32.0
       functional-red-black-tree: 1.0.1
@@ -1758,16 +1758,16 @@ packages:
       - supports-color
     dev: true
 
-  /@typescript-eslint/experimental-utils/4.32.0_eslint@7.32.0+typescript@4.4.3:
-    resolution: {integrity: sha512-WLoXcc+cQufxRYjTWr4kFt0DyEv6hDgSaFqYhIzQZ05cF+kXfqXdUh+//kgquPJVUBbL3oQGKQxwPbLxHRqm6A==}
+  /@typescript-eslint/experimental-utils/4.33.0_eslint@7.32.0+typescript@4.4.3:
+    resolution: {integrity: sha512-zeQjOoES5JFjTnAhI5QY7ZviczMzDptls15GFsI6jyUOq0kOf9+WonkhtlIhh0RgHRnqj5gdNxW5j1EvAyYg6Q==}
     engines: {node: ^10.12.0 || >=12.0.0}
     peerDependencies:
       eslint: '*'
     dependencies:
       '@types/json-schema': 7.0.9
-      '@typescript-eslint/scope-manager': 4.32.0
-      '@typescript-eslint/types': 4.32.0
-      '@typescript-eslint/typescript-estree': 4.32.0_typescript@4.4.3
+      '@typescript-eslint/scope-manager': 4.33.0
+      '@typescript-eslint/types': 4.33.0
+      '@typescript-eslint/typescript-estree': 4.33.0_typescript@4.4.3
       eslint: 7.32.0
       eslint-scope: 5.1.1
       eslint-utils: 3.0.0_eslint@7.32.0
@@ -1776,8 +1776,8 @@ packages:
       - typescript
     dev: true
 
-  /@typescript-eslint/parser/4.32.0_eslint@7.32.0+typescript@4.4.3:
-    resolution: {integrity: sha512-lhtYqQ2iEPV5JqV7K+uOVlPePjClj4dOw7K4/Z1F2yvjIUvyr13yJnDzkK6uon4BjHYuHy3EG0c2Z9jEhFk56w==}
+  /@typescript-eslint/parser/4.33.0_eslint@7.32.0+typescript@4.4.3:
+    resolution: {integrity: sha512-ZohdsbXadjGBSK0/r+d87X0SBmKzOq4/S5nzK6SBgJspFo9/CUDJ7hjayuze+JK7CZQLDMroqytp7pOcFKTxZA==}
     engines: {node: ^10.12.0 || >=12.0.0}
     peerDependencies:
       eslint: ^5.0.0 || ^6.0.0 || ^7.0.0
@@ -1786,9 +1786,9 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/scope-manager': 4.32.0
-      '@typescript-eslint/types': 4.32.0
-      '@typescript-eslint/typescript-estree': 4.32.0_typescript@4.4.3
+      '@typescript-eslint/scope-manager': 4.33.0
+      '@typescript-eslint/types': 4.33.0
+      '@typescript-eslint/typescript-estree': 4.33.0_typescript@4.4.3
       debug: 4.3.2
       eslint: 7.32.0
       typescript: 4.4.3
@@ -1796,21 +1796,21 @@ packages:
       - supports-color
     dev: true
 
-  /@typescript-eslint/scope-manager/4.32.0:
-    resolution: {integrity: sha512-DK+fMSHdM216C0OM/KR1lHXjP1CNtVIhJ54kQxfOE6x8UGFAjha8cXgDMBEIYS2XCYjjCtvTkjQYwL3uvGOo0w==}
+  /@typescript-eslint/scope-manager/4.33.0:
+    resolution: {integrity: sha512-5IfJHpgTsTZuONKbODctL4kKuQje/bzBRkwHE8UOZ4f89Zeddg+EGZs8PD8NcN4LdM3ygHWYB3ukPAYjvl/qbQ==}
     engines: {node: ^8.10.0 || ^10.13.0 || >=11.10.1}
     dependencies:
-      '@typescript-eslint/types': 4.32.0
-      '@typescript-eslint/visitor-keys': 4.32.0
+      '@typescript-eslint/types': 4.33.0
+      '@typescript-eslint/visitor-keys': 4.33.0
     dev: true
 
-  /@typescript-eslint/types/4.32.0:
-    resolution: {integrity: sha512-LE7Z7BAv0E2UvqzogssGf1x7GPpUalgG07nGCBYb1oK4mFsOiFC/VrSMKbZQzFJdN2JL5XYmsx7C7FX9p9ns0w==}
+  /@typescript-eslint/types/4.33.0:
+    resolution: {integrity: sha512-zKp7CjQzLQImXEpLt2BUw1tvOMPfNoTAfb8l51evhYbOEEzdWyQNmHWWGPR6hwKJDAi+1VXSBmnhL9kyVTTOuQ==}
     engines: {node: ^8.10.0 || ^10.13.0 || >=11.10.1}
     dev: true
 
-  /@typescript-eslint/typescript-estree/4.32.0_typescript@4.4.3:
-    resolution: {integrity: sha512-tRYCgJ3g1UjMw1cGG8Yn1KzOzNlQ6u1h9AmEtPhb5V5a1TmiHWcRyF/Ic+91M4f43QeChyYlVTcf3DvDTZR9vw==}
+  /@typescript-eslint/typescript-estree/4.33.0_typescript@4.4.3:
+    resolution: {integrity: sha512-rkWRY1MPFzjwnEVHsxGemDzqqddw2QbTJlICPD9p9I9LfsO8fdmfQPOX3uKfUaGRDFJbfrtm/sXhVXN4E+bzCA==}
     engines: {node: ^10.12.0 || >=12.0.0}
     peerDependencies:
       typescript: '*'
@@ -1818,8 +1818,8 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/types': 4.32.0
-      '@typescript-eslint/visitor-keys': 4.32.0
+      '@typescript-eslint/types': 4.33.0
+      '@typescript-eslint/visitor-keys': 4.33.0
       debug: 4.3.2
       globby: 11.0.4
       is-glob: 4.0.3
@@ -1830,11 +1830,11 @@ packages:
       - supports-color
     dev: true
 
-  /@typescript-eslint/visitor-keys/4.32.0:
-    resolution: {integrity: sha512-e7NE0qz8W+atzv3Cy9qaQ7BTLwWsm084Z0c4nIO2l3Bp6u9WIgdqCgyPyV5oSPDMIW3b20H59OOCmVk3jw3Ptw==}
+  /@typescript-eslint/visitor-keys/4.33.0:
+    resolution: {integrity: sha512-uqi/2aSz9g2ftcHWf8uLPJA70rUv6yuMW5Bohw+bwcuzaxQIHaKFZCKGoGXIrc9vkTJ3+0txM73K0Hq3d5wgIg==}
     engines: {node: ^8.10.0 || ^10.13.0 || >=11.10.1}
     dependencies:
-      '@typescript-eslint/types': 4.32.0
+      '@typescript-eslint/types': 4.33.0
       eslint-visitor-keys: 2.1.0
     dev: true
 
@@ -5652,11 +5652,11 @@ packages:
       react-is: 17.0.2
     dev: true
 
-  /prisma-nestjs-graphql/14.3.0:
-    resolution: {integrity: sha512-NUzyxVhJBPKM9awvdtxKCtPa1Leh0zbZf5E7S/g3K3eF/hoS6lIHZL1u7fe2RSOBdNHDszSkEr5FHemppjh0ZQ==}
+  /prisma-nestjs-graphql/14.4.1:
+    resolution: {integrity: sha512-6V055e/zcKSU/dLbAeRQvELqpKYCcOrBI46pPbj5lYZC/K5t3X0akkaO4rYgYzXfu3dLbDu6asx+fxEIQvtaQQ==}
     hasBin: true
     dependencies:
-      '@prisma/generator-helper': 3.1.1
+      '@prisma/generator-helper': 3.2.0
       await-event-emitter: 2.0.2
       filenamify: 4.3.0
       flat: 5.0.2
