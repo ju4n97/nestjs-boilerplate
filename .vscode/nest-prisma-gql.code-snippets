@@ -1,0 +1,316 @@
+{
+  "Service empty": {
+    "scope": "typescript",
+    "prefix": "nserempty",
+    "body": [
+      "import { Injectable } from '@nestjs/common';",
+      "",
+      "@Injectable()",
+      "export class $1Service {",
+      "  constructor(private prisma: PrismaService) {}",
+      "}"
+    ],
+    "description": "Empty implementation of service using Prisma"
+  },
+  "Service full": {
+    "scope": "typescript",
+    "prefix": "nser",
+    "body": [
+      "import { Injectable } from '@nestjs/common';",
+      "",
+      "@Injectable()",
+      "export class $1Service {",
+      "  constructor(private prisma: PrismaService) {}",
+      "",
+      "  async get(args: FindMany$1Args, select: any): Promise<$1[]> {",
+      "    return this.prisma.$2.findMany({ ...args, ...select });",
+      "  }",
+      "",
+      "  async create(data: $1CreateInput): Promise<$1> {",
+      "    return this.prisma.$2.create({ data });",
+      "  }",
+      "",
+      "  async update(data: $1UpdateInput, where: $1WhereUniqueInput): Promise<$1> {",
+      "    return this.prisma.$2.update({ data, where });",
+      "  }",
+      "",
+      "  async delete(where: $1WhereUniqueInput): Promise<$1> {",
+      "    return this.prisma.$2.delete({ where });",
+      "  }",
+      "}"
+    ],
+    "description": "Full implementation of service using Prisma"
+  },
+  "Service Get": {
+    "scope": "typescript",
+    "prefix": "nserget",
+    "body": [
+      "async get(args: FindMany$1Args, select: any): Promise<$1[]> {",
+      "  return this.prisma.$2.findMany({ ...args, ...select });",
+      "}"
+    ],
+    "description": "Add get service using prisma"
+  },
+  "Service Create": {
+    "scope": "typescript",
+    "prefix": "nsercreate",
+    "body": [
+      "async create(data: $1CreateInput): Promise<$1> {",
+      "  return this.prisma.$2.create({ data });",
+      "}"
+    ],
+    "description": "Add create service using prisma"
+  },
+  "Service Update": {
+    "scope": "typescript",
+    "prefix": "nserupdate",
+    "body": [
+      "async update(data: $1UpdateInput, where: $1WhereUniqueInput): Promise<$1> {",
+      "  return this.prisma.$2.update({ data, where });",
+      "}"
+    ],
+    "description": "Add update service using prisma"
+  },
+  "Service Delete": {
+    "scope": "typescript",
+    "prefix": "nserdelete",
+    "body": [
+      "async delete(where: $1WhereUniqueInput): Promise<$1> {",
+      "  return this.prisma.$2.delete({ where });",
+      "}"
+    ],
+    "description": "Add delete service using prisma"
+  },
+  "Resolver empty": {
+    "scope": "typescript",
+    "prefix": "nresempty",
+    "body": [
+      "import { Args, Info, Mutation, Query, Resolver } from '@nestjs/graphql';",
+      "import { PrismaSelect } from '@paljs/plugins';",
+      "import { GraphQLResolveInfo } from 'graphql';",
+      "",
+      "@Authorize()",
+      "@Resolver(() => $1)",
+      "export class $1Resolver {",
+      "  constructor(private $2Service: $1Service) {}",
+      "}"
+    ],
+    "description": "Empty implementation of service using Prisma"
+  },
+  "Resolver": {
+    "scope": "typescript",
+    "prefix": "nres",
+    "body": [
+      "import { Args, Info, Mutation, Query, Resolver } from '@nestjs/graphql';",
+      "import { PrismaSelect } from '@paljs/plugins';",
+      "import { GraphQLResolveInfo } from 'graphql';",
+      "",
+      "@Authorize()",
+      "@Resolver(() => $1)",
+      "export class $1Resolver {",
+      "  constructor(private $2Service: $1Service) {}",
+      "",
+      "  @Query(() => [$1])",
+      "  async $3(@Args() args: FindMany$1Args, @Info() info: GraphQLResolveInfo): Promise<$1[]> {",
+      "    const select = new PrismaSelect(info).value;",
+      "    return this.$2Service.get(args, select);",
+      "  }",
+      "",
+      "  @Mutation(() => $1)",
+      "  async $2Create(@Args('data') data: $1CreateInput): Promise<$1> {",
+      "    return this.$2Service.create(data);",
+      "  }",
+      "",
+      "  @Mutation(() => $1)",
+      "  async $2Update(",
+      "    @Args('data') data: $1UpdateInput,",
+      "    @Args('where') where: $1WhereUniqueInput,",
+      "  ): Promise<$1> {",
+      "    return this.$2Service.update(data, where);",
+      "  }",
+      "",
+      "  @Mutation(() => $1)",
+      "  async postDelete(@Args('where') where: $1WhereUniqueInput): Promise<$1> {",
+      "    return this.$2Service.delete(where);",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "Full implementation of GraphQl resolver"
+  },
+  "Resolver Query": {
+    "scope": "typescript",
+    "prefix": "nresquery",
+    "body": [
+      "@Query(() => [$1])",
+      "async $3(@Args() args: FindMany$1Args, @Info() info: GraphQLResolveInfo): Promise<$1[]> {",
+      "  const select = new PrismaSelect(info).value;",
+      "  return this.$2Service.get(args, select);",
+      "}"
+    ],
+    "description": "Add GraphQl query"
+  },
+  "Resolver Mutation Create": {
+    "scope": "typescript",
+    "prefix": "nresmutcreate",
+    "body": [
+      "@Mutation(() => $1)",
+      "async $2Create(@Args('data') data: $1CreateInput): Promise<$1> {",
+      "  return this.$2Service.create(data);",
+      "}"
+    ],
+    "description": "Add GraphQl create mutation"
+  },
+  "Resolver Mutation Update": {
+    "scope": "typescript",
+    "prefix": "nresmutupdate",
+    "body": [
+      "@Mutation(() => $1)",
+      "async $2Update(",
+      "  @Args('data') data: $1UpdateInput,",
+      "  @Args('where') where: $1WhereUniqueInput,",
+      "): Promise<$1> {",
+      "  return this.$2Service.update(data, where);",
+      "}"
+    ],
+    "description": "Add GraphQl update mutation"
+  },
+  "Resolver Mutation Delete": {
+    "scope": "typescript",
+    "prefix": "nresmutdelete",
+    "body": [
+      "@Mutation(() => $1)",
+      "async postDelete(@Args('where') where: $1WhereUniqueInput): Promise<$1> {",
+      "  return this.$2Service.delete(where);",
+      "}"
+    ],
+    "description": "Add GraphQl delete mutation"
+  },
+  "Resolver with subscriptions": {
+    "prefix": "nresps",
+    "body": [
+      "import { Inject } from '@nestjs/common';",
+      "import { Args, Info, Mutation, Query, Resolver, Subscription } from '@nestjs/graphql';",
+      "import { PrismaSelect } from '@paljs/plugins';",
+      "import { GraphQLResolveInfo } from 'graphql';",
+      "import { PubSub } from 'graphql-subscriptions';",
+      "",
+      "@Authorize()",
+      "@Resolver(() => $1)",
+      "export class $1Resolver {",
+      "  private readonly $3_CREATED = '$2_created';",
+      "  private readonly $3_UPDATED = '$2_updated';",
+      "  private readonly $3_DELETED = '$2_deleted';",
+      "",
+      "  constructor(private $2Service: $1Service, @Inject('PUB_SUB') private pubSub: PubSub) {}",
+      "",
+      "  @Subscription(() => $1)",
+      "  $2Changed() {",
+      "    return this.pubSub.asyncIterator([this.$3_CREATED, this.$3_UPDATED, this.$3_DELETED]);",
+      "  }",
+      "",
+      "  @Query(() => [$1])",
+      "  async $4(@Args() args: FindMany$1Args, @Info() info: GraphQLResolveInfo): Promise<$1[]> {",
+      "    const select = new PrismaSelect(info).value;",
+      "    return this.$2Service.get(args, select);",
+      "  }",
+      "",
+      "  @Mutation(() => $1)",
+      "  async $2Create(@Args('data') data: $1CreateInput): Promise<$1> {",
+      "    const created$1 = this.$2Service.create(data);",
+      "    this.pubSub.publish(this.$3_CREATED, { $2Changed: created$1 });",
+      "    return created$1;",
+      "  }",
+      "",
+      "  @Mutation(() => $1)",
+      "  async $2Update(",
+      "    @Args('data') data: $1UpdateInput,",
+      "    @Args('where') where: $1WhereUniqueInput,",
+      "  ): Promise<$1> {",
+      "    const updated$1 = this.$2Service.update(data, where);",
+      "    this.pubSub.publish(this.$3_UPDATED, { $2Changed: updated$1 });",
+      "    return updated$1;",
+      "  }",
+      "",
+      "  @Mutation(() => $1)",
+      "  async $2Delete(@Args('where') where: $1WhereUniqueInput): Promise<$1> {",
+      "    const deleted$1 = this.$2Service.delete(where);",
+      "    this.pubSub.publish(this.$3_DELETED, { $2Changed: deleted$1 });",
+      "    return deleted$1;",
+      "  }",
+      "}"
+    ],
+    "description": "Full implementation of GraphQl resolver with subscriptions"
+  },
+  "Resolver subscription events": {
+    "scope": "typescript",
+    "prefix": "nrespsevents",
+    "body": [
+      "private readonly $1_CREATED = '$2_created';",
+      "private readonly $1_UPDATED = '$2_updated';",
+      "private readonly $1_DELETED = '$2_deleted';"
+    ],
+    "description": "Add resolver subscription events"
+  },
+  "Resolver subscription constructor": {
+    "scope": "typescript",
+    "prefix": "nrespscon",
+    "body": [
+      "constructor(private $1Service: $2Service, @Inject('PUB_SUB') private pubSub: PubSub) {}"
+    ],
+    "description": "Add resolver subscription controller"
+  },
+  "Resolver subscription": {
+    "scope": "typescript",
+    "prefix": "nrespssub",
+    "body": [
+      "@Subscription(() => $1)",
+      "$2Changed() {",
+      "  return this.pubSub.asyncIterator([this.$3_CREATED, this.$3_UPDATED, this.$3_DELETED]);",
+      "}"
+    ],
+    "description": "Add resolver subscription controller"
+  },
+  "Resolver Mutation Create with pubsub": {
+    "scope": "typescript",
+    "prefix": "nrespsmutcreate",
+    "body": [
+      "@Mutation(() => $1)",
+      "async $2Create(@Args('data') data: $1CreateInput): Promise<$1> {",
+      "  const created$1 = this.$2Service.create(data);",
+      "  this.pubSub.publish(this.$3_CREATED, { $2Changed: created$1 });",
+      "  return created$1;",
+      "}"
+    ],
+    "description": "Add GraphQl create mutation with PubSub"
+  },
+  "Resolver Mutation Update with pubsub": {
+    "scope": "typescript",
+    "prefix": "nrespsmutupdate",
+    "body": [
+      "@Mutation(() => $1)",
+      "async $2Update(",
+      "  @Args('data') data: $1UpdateInput,",
+      "  @Args('where') where: $1WhereUniqueInput,",
+      "): Promise<$1> {",
+      "  const updated$1 = this.$2Service.update(data, where);",
+      "  this.pubSub.publish(this.$3_UPDATED, { $2Changed: updated$1 });",
+      "  return updated$1;",
+      "}"
+    ],
+    "description": "Add GraphQl update mutation with PubSub"
+  },
+  "Resolver Mutation Delete with pubsub": {
+    "scope": "typescript",
+    "prefix": "nrespsmutdelete",
+    "body": [
+      "@Mutation(() => $1)",
+      "async $2Delete(@Args('where') where: $1WhereUniqueInput): Promise<$1> {",
+      "  const deleted$1 = this.$2Service.delete(where);",
+      "  this.pubSub.publish(this.$3_DELETED, { $2Changed: deleted$1 });",
+      "  return deleted$1;",
+      "}"
+    ],
+    "description": "Add GraphQl delete mutation with PubSub"
+  }
+}

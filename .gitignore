@@ -35,6 +35,7 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+!.vscode/nest-prisma-gql.code-snippets
 
 # Environment
 .env
