@@ -39,7 +39,7 @@ specifiers:
   passport-jwt: ^4.0.0
   prettier: 2.5.0
   prisma: ^3.1.1
-  prisma-nestjs-graphql: 14.6.0
+  prisma-nestjs-graphql: 14.6.1
   reflect-metadata: ^0.1.13
   rimraf: ^3.0.2
   rxjs: ^7.2.0
@@ -94,7 +94,7 @@ devDependencies:
   lint-staged: 12.1.2
   prettier: 2.5.0
   prisma: 3.1.1
-  prisma-nestjs-graphql: 14.6.0
+  prisma-nestjs-graphql: 14.6.1
   supertest: 6.1.6
   ts-jest: 27.0.5_89e07822d927d0c0cc134b9f1262d829
   ts-loader: 9.2.6_typescript@4.4.3
@@ -1357,14 +1357,11 @@ packages:
       prisma: 3.1.1
     dev: false
 
-  /@prisma/debug/3.2.1:
-    resolution: {integrity: sha512-gzE+z0JzpHH+A6cIf2+VqueUFiFYM9HGHyxHzGyvRTR15QWkowzyupjFjQTJ6bouMSalqEkeI3EKsRzJZUsyCQ==}
+  /@prisma/debug/3.5.0:
+    resolution: {integrity: sha512-JWBmzqxtbq6rJfMyIIQVL/QSAIsiCOp20ArTl5zUHtSYH/MrNmuQ69YAn9RuUQBOTIAQaVTIMII2xpN5kB5RRg==}
     dependencies:
       '@types/debug': 4.1.7
-      debug: 4.3.2
       ms: 2.1.3
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /@prisma/engines-version/3.1.0-24.c22652b7e418506fab23052d569b85d3aec4883f:
@@ -1376,15 +1373,13 @@ packages:
     requiresBuild: true
     dev: true
 
-  /@prisma/generator-helper/3.2.1:
-    resolution: {integrity: sha512-vjKOcHTkK4uJWgG8uBOst9qsTTgXDh2yUJ2uPCM0887b1epwCz+eYfe3XJXUIDXmZ0HzVVSlf045VcRT3peyJQ==}
+  /@prisma/generator-helper/3.5.0:
+    resolution: {integrity: sha512-GT4Fke2Cdzgut3jay+4JIBnE2/GZNcopJ1x6CdT4NgDn2CYI6FL43zJeSafK9PmnVlTdFthavIp7Da9EyuLixA==}
     dependencies:
-      '@prisma/debug': 3.2.1
+      '@prisma/debug': 3.5.0
       '@types/cross-spawn': 6.0.2
       chalk: 4.1.2
       cross-spawn: 7.0.3
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /@protobufjs/aspromise/1.1.2:
@@ -5699,11 +5694,11 @@ packages:
       react-is: 17.0.2
     dev: true
 
-  /prisma-nestjs-graphql/14.6.0:
-    resolution: {integrity: sha512-ggSaaaVj126sBZR9Khu/fq1W5E4oA+BDe3wsAKl1tMs1nY1Bg+rwDqJB0soZKIF6KsrlCtIzPlevXcHfOIHbUA==}
+  /prisma-nestjs-graphql/14.6.1:
+    resolution: {integrity: sha512-t8bdS8XzQCi998L7nq/PeejzDT+jROoZD//7ocV16SX9PN2qgg91d/vKfvvNyqR+FYr1Yv99fK8BVRkA+vsqTg==}
     hasBin: true
     dependencies:
-      '@prisma/generator-helper': 3.2.1
+      '@prisma/generator-helper': 3.5.0
       await-event-emitter: 2.0.2
       filenamify: 4.3.0
       flat: 5.0.2
@@ -5714,8 +5709,6 @@ packages:
       pluralize: 8.0.0
       pupa: 2.1.1
       ts-morph: 12.0.0
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /prisma/3.1.1:
