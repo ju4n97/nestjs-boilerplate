@@ -39,7 +39,7 @@ specifiers:
   passport-jwt: ^4.0.0
   prettier: 2.5.1
   prisma: ^3.1.1
-  prisma-nestjs-graphql: 14.6.1
+  prisma-nestjs-graphql: 14.6.2
   reflect-metadata: ^0.1.13
   rimraf: ^3.0.2
   rxjs: ^7.2.0
@@ -94,7 +94,7 @@ devDependencies:
   lint-staged: 12.3.4
   prettier: 2.5.1
   prisma: 3.1.1
-  prisma-nestjs-graphql: 14.6.1
+  prisma-nestjs-graphql: 14.6.2
   supertest: 6.1.6
   ts-jest: 27.0.5_ea75fbea3b3801601c9017f0832ff16e
   ts-loader: 9.2.6_typescript@4.4.3
@@ -1378,11 +1378,12 @@ packages:
       prisma: 3.1.1
     dev: false
 
-  /@prisma/debug/3.5.0:
-    resolution: {integrity: sha512-JWBmzqxtbq6rJfMyIIQVL/QSAIsiCOp20ArTl5zUHtSYH/MrNmuQ69YAn9RuUQBOTIAQaVTIMII2xpN5kB5RRg==}
+  /@prisma/debug/3.9.2:
+    resolution: {integrity: sha512-zi+GYWvhhXXxXffRAaHK0cJO3/nR44kp85+x7OH8YxV6Q7PvSfIhhUClgbbD8x9YaZI/lle0RvN2OC2DN4JV+A==}
     dependencies:
       '@types/debug': 4.1.7
       ms: 2.1.3
+      strip-ansi: 6.0.1
     dev: true
 
   /@prisma/engines-version/3.1.0-24.c22652b7e418506fab23052d569b85d3aec4883f:
@@ -1394,10 +1395,10 @@ packages:
     requiresBuild: true
     dev: true
 
-  /@prisma/generator-helper/3.5.0:
-    resolution: {integrity: sha512-GT4Fke2Cdzgut3jay+4JIBnE2/GZNcopJ1x6CdT4NgDn2CYI6FL43zJeSafK9PmnVlTdFthavIp7Da9EyuLixA==}
+  /@prisma/generator-helper/3.9.2:
+    resolution: {integrity: sha512-hKVPNeOq4Opznpup2Nn0/nKzEcvHRsPd6Q3hQcmx2y/Yuoq+Gc4GPPjpRBbslFjkty02DjzO9dx+uJFsZZcXCg==}
     dependencies:
-      '@prisma/debug': 3.5.0
+      '@prisma/debug': 3.9.2
       '@types/cross-spawn': 6.0.2
       chalk: 4.1.2
       cross-spawn: 7.0.3
@@ -5750,11 +5751,11 @@ packages:
       react-is: 17.0.2
     dev: true
 
-  /prisma-nestjs-graphql/14.6.1:
-    resolution: {integrity: sha512-t8bdS8XzQCi998L7nq/PeejzDT+jROoZD//7ocV16SX9PN2qgg91d/vKfvvNyqR+FYr1Yv99fK8BVRkA+vsqTg==}
+  /prisma-nestjs-graphql/14.6.2:
+    resolution: {integrity: sha512-54vSNg5ZGBgiBrVlJjFdqitk0miHJ60N37D3Q2awtTtXfVu4Ic5yLosC5XinYo3oIZRqd7mx1hGVaFp1k98T4Q==}
     hasBin: true
     dependencies:
-      '@prisma/generator-helper': 3.5.0
+      '@prisma/generator-helper': 3.9.2
       await-event-emitter: 2.0.2
       filenamify: 4.3.0
       flat: 5.0.2
