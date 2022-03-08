@@ -39,7 +39,7 @@ specifiers:
   passport-jwt: ^4.0.0
   prettier: 2.5.1
   prisma: ^3.1.1
-  prisma-nestjs-graphql: 14.6.2
+  prisma-nestjs-graphql: 14.7.0
   reflect-metadata: ^0.1.13
   rimraf: ^3.0.2
   rxjs: ^7.2.0
@@ -94,7 +94,7 @@ devDependencies:
   lint-staged: 12.3.5
   prettier: 2.5.1
   prisma: 3.1.1
-  prisma-nestjs-graphql: 14.6.2
+  prisma-nestjs-graphql: 14.7.0_efeb2e55e94663435e766ca0251bb9d7
   supertest: 6.1.6
   ts-jest: 27.0.5_48d5c6f008d20e6173fbde9ab18646d6
   ts-loader: 9.2.7_typescript@4.4.3
@@ -1052,6 +1052,34 @@ packages:
       - supports-color
     dev: false
 
+  /@nestjs/apollo/10.0.6_efeb2e55e94663435e766ca0251bb9d7:
+    resolution: {integrity: sha512-wRmaNZFHoetw/90HygIvDKwCbT06ufGMg05XYz3WSoR7WCSFVTFPF+vaTcbtUABlZHz1QAbmDEJQIagMtY6ArQ==}
+    peerDependencies:
+      '@apollo/gateway': ^0.44.1 || ^0.46.0 || ^0.48.0
+      '@nestjs/common': ^8.2.3
+      '@nestjs/core': ^8.2.3
+      '@nestjs/graphql': ^10.0.0
+      apollo-server-core: ^3.5.0
+      apollo-server-express: ^3.5.0
+      apollo-server-fastify: ^3.5.0
+    peerDependenciesMeta:
+      '@apollo/gateway':
+        optional: true
+      apollo-server-core:
+        optional: true
+      apollo-server-express:
+        optional: true
+      apollo-server-fastify:
+        optional: true
+    dependencies:
+      '@nestjs/common': 8.0.9_91e265e1bcd1545143b1cccdf5c76cbc
+      '@nestjs/core': 8.0.9_84c72fe2d2f93cb7dc52b1203ec9d8bb
+      '@nestjs/graphql': 9.0.5_d33cfd230c4ed567149693389b5373ca
+      apollo-server-express: 3.3.0_graphql@15.6.0
+      iterall: 1.3.0
+      lodash.omit: 4.5.0
+    dev: true
+
   /@nestjs/cli/8.1.2:
     resolution: {integrity: sha512-HzjCIyECFHNl+Vv1Sfq0SdenujvdfPPUny9XcPlZK75dmNhIOJmx7Wl/rG72qJ7sZzxoQ3h8r2+jp8ajx227HA==}
     engines: {node: '>= 10.13.0', npm: '>= 6.11.0'}
@@ -1367,8 +1395,8 @@ packages:
       prisma: 3.1.1
     dev: false
 
-  /@prisma/debug/3.9.2:
-    resolution: {integrity: sha512-zi+GYWvhhXXxXffRAaHK0cJO3/nR44kp85+x7OH8YxV6Q7PvSfIhhUClgbbD8x9YaZI/lle0RvN2OC2DN4JV+A==}
+  /@prisma/debug/3.10.0:
+    resolution: {integrity: sha512-rPf9EhhQ82bxuVz3lRkHSWyJTBluyDH1RSvzmiEZorpxxdqZSFxlk1gGxIEuu+T9dAhY1dtCq4E679SSycGHUQ==}
     dependencies:
       '@types/debug': 4.1.7
       ms: 2.1.3
@@ -1384,10 +1412,10 @@ packages:
     requiresBuild: true
     dev: true
 
-  /@prisma/generator-helper/3.9.2:
-    resolution: {integrity: sha512-hKVPNeOq4Opznpup2Nn0/nKzEcvHRsPd6Q3hQcmx2y/Yuoq+Gc4GPPjpRBbslFjkty02DjzO9dx+uJFsZZcXCg==}
+  /@prisma/generator-helper/3.10.0:
+    resolution: {integrity: sha512-toG70HvYEMmpuSeiMI5XMGGRED2t4JqjgEcfpi6JklNFrO9H8xsPaCY6y6elQqlkk3zN8ABosy0+J6qiQUj57g==}
     dependencies:
-      '@prisma/debug': 3.9.2
+      '@prisma/debug': 3.10.0
       '@types/cross-spawn': 6.0.2
       chalk: 4.1.2
       cross-spawn: 7.0.3
@@ -4286,7 +4314,6 @@ packages:
 
   /iterall/1.3.0:
     resolution: {integrity: sha512-QZ9qOMdF+QLHxy1QIpUHUU1D5pS2CG2P69LF6L6CPjPYA/XMOmKV3PZpawHoAjHNyB0swdVTRxdYT4tbBbxqwg==}
-    dev: false
 
   /iterare/1.2.1:
     resolution: {integrity: sha512-RKYVTCjAnRthyJes037NX/IiqeidgN1xc3j1RjFfECFp28A1GVwK9nA+i0rJPaHqSZwygLzRnFlzUuHFoWWy+Q==}
@@ -5062,6 +5089,10 @@ packages:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
     dev: true
 
+  /lodash.omit/4.5.0:
+    resolution: {integrity: sha1-brGa5aHuHdnfC5aeZs4Lf6MLXmA=}
+    dev: true
+
   /lodash.once/4.1.1:
     resolution: {integrity: sha1-DdOXEhPHxW34gJd9UEyI+0cal6w=}
     dev: false
@@ -5710,11 +5741,12 @@ packages:
       react-is: 17.0.2
     dev: true
 
-  /prisma-nestjs-graphql/14.6.2:
-    resolution: {integrity: sha512-54vSNg5ZGBgiBrVlJjFdqitk0miHJ60N37D3Q2awtTtXfVu4Ic5yLosC5XinYo3oIZRqd7mx1hGVaFp1k98T4Q==}
+  /prisma-nestjs-graphql/14.7.0_efeb2e55e94663435e766ca0251bb9d7:
+    resolution: {integrity: sha512-Ny1JfjgZBpg8++30x8oou+ON/loVB2SHAaMn4hVCcokKgFe05TxfrsTOGijc9IcTGUtzSzPpOqLiRa5NqqarMQ==}
     hasBin: true
     dependencies:
-      '@prisma/generator-helper': 3.9.2
+      '@nestjs/apollo': 10.0.6_efeb2e55e94663435e766ca0251bb9d7
+      '@prisma/generator-helper': 3.10.0
       await-event-emitter: 2.0.2
       filenamify: 4.3.0
       flat: 5.0.2
@@ -5725,6 +5757,14 @@ packages:
       pluralize: 8.0.0
       pupa: 2.1.1
       ts-morph: 12.0.0
+    transitivePeerDependencies:
+      - '@apollo/gateway'
+      - '@nestjs/common'
+      - '@nestjs/core'
+      - '@nestjs/graphql'
+      - apollo-server-core
+      - apollo-server-express
+      - apollo-server-fastify
     dev: true
 
   /prisma/3.1.1:
