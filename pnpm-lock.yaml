@@ -45,7 +45,7 @@ specifiers:
   rxjs: ^7.2.0
   supertest: ^6.1.3
   ts-jest: ^27.0.3
-  ts-loader: 9.2.7
+  ts-loader: 9.2.8
   ts-node: ^10.2.1
   tsconfig-paths: ^3.10.1
   typescript: ^4.4.3
@@ -97,7 +97,7 @@ devDependencies:
   prisma-nestjs-graphql: 14.7.0_efeb2e55e94663435e766ca0251bb9d7
   supertest: 6.1.6
   ts-jest: 27.0.5_48d5c6f008d20e6173fbde9ab18646d6
-  ts-loader: 9.2.7_typescript@4.4.3
+  ts-loader: 9.2.8_typescript@4.4.3
   ts-node: 10.2.1_0088345bf6ed8e5566f4f4a984ba8f5e
   tsconfig-paths: 3.11.0
   typescript: 4.4.3
@@ -3709,7 +3709,7 @@ packages:
     resolution: {integrity: sha512-C5owb14u9eJwizKGdchcDUQeFtlSHHthBk8pbX9Vc1PFZrLombudjDnNns88aYslCyF6IY5SUw3Roz6xShcEIQ==}
     engines: {node: '>=12'}
     dependencies:
-      graceful-fs: 4.2.8
+      graceful-fs: 4.2.9
       jsonfile: 6.1.0
       universalify: 2.0.0
     dev: true
@@ -3873,10 +3873,6 @@ packages:
       ignore: 5.2.0
       merge2: 1.4.1
       slash: 3.0.0
-    dev: true
-
-  /graceful-fs/4.2.8:
-    resolution: {integrity: sha512-qkIilPUYcNhJpd33n0GBXTB1MMPp14TxEsEs0pTrsSVucApsYzW5V+Q8Qxhik6KU3evy+qkAAowTByymK0avdg==}
     dev: true
 
   /graceful-fs/4.2.9:
@@ -6705,8 +6701,8 @@ packages:
       yargs-parser: 20.2.9
     dev: true
 
-  /ts-loader/9.2.7_typescript@4.4.3:
-    resolution: {integrity: sha512-Fxh44mKli9QezgbdCXkEJWxnedQ0ead7DXTH+lfXEPedu+Y9EtMJ2aQ9G3Dj1j7Q612E8931rww8NDZha4Tibg==}
+  /ts-loader/9.2.8_typescript@4.4.3:
+    resolution: {integrity: sha512-gxSak7IHUuRtwKf3FIPSW1VpZcqF9+MBrHOvBp9cjHh+525SjtCIJKVGjRKIAfxBwDGDGCFF00rTfzB1quxdSw==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       typescript: '*'
