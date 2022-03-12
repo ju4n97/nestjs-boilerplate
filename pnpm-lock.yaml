@@ -39,7 +39,7 @@ specifiers:
   passport-jwt: ^4.0.0
   prettier: 2.5.1
   prisma: ^3.1.1
-  prisma-nestjs-graphql: 14.7.0
+  prisma-nestjs-graphql: 14.7.1
   reflect-metadata: ^0.1.13
   rimraf: ^3.0.2
   rxjs: ^7.2.0
@@ -94,7 +94,7 @@ devDependencies:
   lint-staged: 12.3.5
   prettier: 2.5.1
   prisma: 3.1.1
-  prisma-nestjs-graphql: 14.7.0_efeb2e55e94663435e766ca0251bb9d7
+  prisma-nestjs-graphql: 14.7.1_efeb2e55e94663435e766ca0251bb9d7
   supertest: 6.1.6
   ts-jest: 27.0.5_48d5c6f008d20e6173fbde9ab18646d6
   ts-loader: 9.2.8_typescript@4.4.3
@@ -5732,8 +5732,8 @@ packages:
       react-is: 17.0.2
     dev: true
 
-  /prisma-nestjs-graphql/14.7.0_efeb2e55e94663435e766ca0251bb9d7:
-    resolution: {integrity: sha512-Ny1JfjgZBpg8++30x8oou+ON/loVB2SHAaMn4hVCcokKgFe05TxfrsTOGijc9IcTGUtzSzPpOqLiRa5NqqarMQ==}
+  /prisma-nestjs-graphql/14.7.1_efeb2e55e94663435e766ca0251bb9d7:
+    resolution: {integrity: sha512-vQz5XTrQ8nxLOCWS8ky5uKKOQ5gIJXmZVNKNOqfAjuobIkoXvKu0jUh8xcCAvkkG2XQUMoKUYcHdHl+HzUUzoA==}
     hasBin: true
     dependencies:
       '@nestjs/apollo': 10.0.6_efeb2e55e94663435e766ca0251bb9d7
