@@ -39,7 +39,7 @@ specifiers:
   passport-jwt: ^4.0.0
   prettier: 2.6.2
   prisma: ^3.1.1
-  prisma-nestjs-graphql: 15.2.1
+  prisma-nestjs-graphql: 15.2.2
   reflect-metadata: ^0.1.13
   rimraf: ^3.0.2
   rxjs: ^7.2.0
@@ -94,7 +94,7 @@ devDependencies:
   lint-staged: 12.3.7
   prettier: 2.6.2
   prisma: 3.1.1
-  prisma-nestjs-graphql: 15.2.1_efeb2e55e94663435e766ca0251bb9d7
+  prisma-nestjs-graphql: 15.2.2_efeb2e55e94663435e766ca0251bb9d7
   supertest: 6.1.6
   ts-jest: 27.0.5_48d5c6f008d20e6173fbde9ab18646d6
   ts-loader: 9.2.8_typescript@4.4.3
@@ -225,7 +225,7 @@ packages:
       convert-source-map: 1.8.0
       debug: 4.3.3
       gensync: 1.0.0-beta.2
-      json5: 2.2.0
+      json5: 2.2.1
       semver: 6.3.0
       source-map: 0.5.7
     transitivePeerDependencies:
@@ -1052,8 +1052,8 @@ packages:
       - supports-color
     dev: false
 
-  /@nestjs/apollo/10.0.7_efeb2e55e94663435e766ca0251bb9d7:
-    resolution: {integrity: sha512-bc1aDGUyELiI4QUpLBUseQ5l0rmAP88jW+r/U3xynImkM2fH1XFwZq1l0kcE54TCRKWFLFUI0/cYTpBuYQPVyA==}
+  /@nestjs/apollo/10.0.8_efeb2e55e94663435e766ca0251bb9d7:
+    resolution: {integrity: sha512-AlJn+UJpyXju1YUWEw4u+K24fulh66MZDHXH4Lk5ak5Nb3FFXUsODepcflMbcjkaIFLezt4DC3FlrZQ+wjFIBA==}
     peerDependencies:
       '@apollo/gateway': ^0.44.1 || ^0.46.0 || ^0.48.0
       '@nestjs/common': ^8.2.3
@@ -1396,8 +1396,8 @@ packages:
       prisma: 3.1.1
     dev: false
 
-  /@prisma/debug/3.11.0:
-    resolution: {integrity: sha512-hbOU50++HdE0Xdt0FenrVvCteTvRg8EHNGKkxa1jWIB8O2o0bkm5igOlhfYGkvHZ3H1GK35oZp7rllMVeMM4ig==}
+  /@prisma/debug/3.12.0:
+    resolution: {integrity: sha512-MFNsK8jzao3VX+cEP6+txABa3w8bU4gD0QpqTbGS3v3TW1c7TtHvhsmI7xTx9Cll7biuJdaRd3YwG2Fa/CHVmA==}
     dependencies:
       '@types/debug': 4.1.7
       ms: 2.1.3
@@ -1413,10 +1413,10 @@ packages:
     requiresBuild: true
     dev: true
 
-  /@prisma/generator-helper/3.11.0:
-    resolution: {integrity: sha512-flxbnlXwlAPIAipszn6pV+OzB5G29va2q5TMg6nu2h0mCUgUYohUl/6U4885FW966kKQivH/ArxHHFaVOWxjXQ==}
+  /@prisma/generator-helper/3.12.0:
+    resolution: {integrity: sha512-wfEcSVUX0HH0A/CIrsecV1CLH3McNCLH2A76UL7QpSX1XLoIDo6SxgMwAfXufNGDhPET6NAoWm8mSmDXJopgrw==}
     dependencies:
-      '@prisma/debug': 3.11.0
+      '@prisma/debug': 3.12.0
       '@types/cross-spawn': 6.0.2
       chalk: 4.1.2
       cross-spawn: 7.0.3
@@ -4893,6 +4893,12 @@ packages:
       minimist: 1.2.5
     dev: true
 
+  /json5/2.2.1:
+    resolution: {integrity: sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==}
+    engines: {node: '>=6'}
+    hasBin: true
+    dev: true
+
   /jsonc-parser/3.0.0:
     resolution: {integrity: sha512-fQzRfAbIBnR0IQvftw9FJveWiHp72Fg20giDrHz6TdfB12UH/uue0D3hm57UB5KgAVuniLMCaS8P1IMj9NR7cA==}
     dev: true
@@ -5740,17 +5746,17 @@ packages:
       react-is: 17.0.2
     dev: true
 
-  /prisma-nestjs-graphql/15.2.1_efeb2e55e94663435e766ca0251bb9d7:
-    resolution: {integrity: sha512-UdkoQrLI1VtfxYc6MkAou4APqz7ZTc1E5qjRZynXxVb4JBMI9cIbxP9phZevIbFZ/qUQ8CR+uaP40usLNRNjBA==}
+  /prisma-nestjs-graphql/15.2.2_efeb2e55e94663435e766ca0251bb9d7:
+    resolution: {integrity: sha512-cA9ntrVOoosWN49mEHkAOQSLWK3zioqWS4DSY3T3w7ibA7re6cNyNkl8S3u0pZlXZr+TlxFtSesofdMUhwv60Q==}
     hasBin: true
     dependencies:
-      '@nestjs/apollo': 10.0.7_efeb2e55e94663435e766ca0251bb9d7
-      '@prisma/generator-helper': 3.11.0
+      '@nestjs/apollo': 10.0.8_efeb2e55e94663435e766ca0251bb9d7
+      '@prisma/generator-helper': 3.12.0
       await-event-emitter: 2.0.2
       filenamify: 4.3.0
       flat: 5.0.2
       get-relative-path: 1.0.2
-      json5: 2.2.0
+      json5: 2.2.1
       lodash: 4.17.21
       outmatch: 0.7.0
       pluralize: 8.0.0
