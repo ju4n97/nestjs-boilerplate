@@ -34,7 +34,7 @@ specifiers:
   graphql-scalars: ^1.10.1
   graphql-subscriptions: ^1.2.1
   jest: 28.0.1
-  lint-staged: 12.4.0
+  lint-staged: 12.4.1
   passport: ^0.4.1
   passport-jwt: ^4.0.0
   prettier: 2.6.2
@@ -91,7 +91,7 @@ devDependencies:
   eslint-config-prettier: 8.3.0_eslint@8.14.0
   eslint-plugin-prettier: 4.0.0_b90148a4c80c43e989efa7c636388879
   jest: 28.0.1_5a3afdc404ba21944a8e05e72cd693e8
-  lint-staged: 12.4.0
+  lint-staged: 12.4.1
   prettier: 2.6.2
   prisma: 3.1.1
   prisma-nestjs-graphql: 15.2.2_efeb2e55e94663435e766ca0251bb9d7
@@ -4874,8 +4874,8 @@ packages:
     resolution: {integrity: sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=}
     dev: true
 
-  /lint-staged/12.4.0:
-    resolution: {integrity: sha512-3X7MR0h9b7qf4iXf/1n7RlVAx+EzpAZXoCEMhVSpaBlgKDfH2ewf+QUm7BddFyq29v4dgPP+8+uYpWuSWx035A==}
+  /lint-staged/12.4.1:
+    resolution: {integrity: sha512-PTXgzpflrQ+pODQTG116QNB+Q6uUTDg5B5HqGvNhoQSGt8Qy+MA/6zSnR8n38+sxP5TapzeQGTvoKni0KRS8Vg==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
