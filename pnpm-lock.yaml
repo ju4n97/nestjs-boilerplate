@@ -45,7 +45,7 @@ specifiers:
   rxjs: ^7.2.0
   supertest: ^6.1.3
   ts-jest: ^27.0.3
-  ts-loader: 9.2.9
+  ts-loader: 9.3.0
   ts-node: ^10.2.1
   tsconfig-paths: ^3.10.1
   typescript: ^4.4.3
@@ -97,7 +97,7 @@ devDependencies:
   prisma-nestjs-graphql: 15.2.2_efeb2e55e94663435e766ca0251bb9d7
   supertest: 6.1.6
   ts-jest: 27.0.5_5750e156412ff2a860a3d437ea39de21
-  ts-loader: 9.2.9_typescript@4.4.3
+  ts-loader: 9.3.0_typescript@4.4.3
   ts-node: 10.2.1_0088345bf6ed8e5566f4f4a984ba8f5e
   tsconfig-paths: 3.11.0
   typescript: 4.4.3
@@ -1094,7 +1094,7 @@ packages:
       nopt: 5.0.0
       npmlog: 4.1.2
       rimraf: 3.0.2
-      semver: 7.3.5
+      semver: 7.3.7
       tar: 6.1.11
     transitivePeerDependencies:
       - supports-color
@@ -5964,6 +5964,7 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
+    dev: true
 
   /semver/7.3.7:
     resolution: {integrity: sha512-QlYTucUYOews+WeEujDoEGziz4K6c47V/Bd+LjSSYcA94p+DmINdf7ncaUinThfvZyu13lN9OY1XDxt8C0Tw0g==}
@@ -5971,7 +5972,6 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
-    dev: true
 
   /send/0.17.1:
     resolution: {integrity: sha512-BsVKsiGcQMFwT8UxypobUKyv7irCNRHk1T0G680vk88yf6LBByGcZJOTJCrTP2xVN6yI+XjPJcNuE3V4fT9sAg==}
@@ -6332,7 +6332,7 @@ packages:
       mime: 2.5.2
       qs: 6.10.1
       readable-stream: 3.6.0
-      semver: 7.3.5
+      semver: 7.3.7
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -6566,8 +6566,8 @@ packages:
       yargs-parser: 20.2.9
     dev: true
 
-  /ts-loader/9.2.9_typescript@4.4.3:
-    resolution: {integrity: sha512-b0+vUY2/enb0qYtDQuNlDnJ9900NTiPiJcDJ6sY7ax1CCCwXfYIqPOMm/BwW7jsF1km+Oz8W9s31HLuD+FLIMg==}
+  /ts-loader/9.3.0_typescript@4.4.3:
+    resolution: {integrity: sha512-2kLLAdAD+FCKijvGKi9sS0OzoqxLCF3CxHpok7rVgCZ5UldRzH0TkbwG9XECKjBzHsAewntC5oDaI/FwKzEUog==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       typescript: '*'
@@ -6576,7 +6576,7 @@ packages:
       chalk: 4.1.2
       enhanced-resolve: 5.8.3
       micromatch: 4.0.4
-      semver: 7.3.5
+      semver: 7.3.7
       typescript: 4.4.3
     dev: true
 
