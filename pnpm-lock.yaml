@@ -39,7 +39,7 @@ specifiers:
   passport-jwt: ^4.0.0
   prettier: 2.6.2
   prisma: ^3.1.1
-  prisma-nestjs-graphql: 15.2.2
+  prisma-nestjs-graphql: 15.3.0
   reflect-metadata: ^0.1.13
   rimraf: ^3.0.2
   rxjs: ^7.2.0
@@ -94,7 +94,7 @@ devDependencies:
   lint-staged: 12.4.1
   prettier: 2.6.2
   prisma: 3.1.1
-  prisma-nestjs-graphql: 15.2.2_efeb2e55e94663435e766ca0251bb9d7
+  prisma-nestjs-graphql: 15.3.0_efeb2e55e94663435e766ca0251bb9d7
   supertest: 6.1.6
   ts-jest: 27.0.5_5750e156412ff2a860a3d437ea39de21
   ts-loader: 9.3.0_typescript@4.4.3
@@ -1100,10 +1100,10 @@ packages:
       - supports-color
     dev: false
 
-  /@nestjs/apollo/10.0.8_efeb2e55e94663435e766ca0251bb9d7:
-    resolution: {integrity: sha512-AlJn+UJpyXju1YUWEw4u+K24fulh66MZDHXH4Lk5ak5Nb3FFXUsODepcflMbcjkaIFLezt4DC3FlrZQ+wjFIBA==}
+  /@nestjs/apollo/10.0.11_efeb2e55e94663435e766ca0251bb9d7:
+    resolution: {integrity: sha512-a4WJJ0eoQPKE1ioVqYJyLJzEzXqL+JWW2XsWqtqUSFtZ2Xu1NYogMzk91yczcrYrV69DY/FpvscO6NJkfjiobQ==}
     peerDependencies:
-      '@apollo/gateway': ^0.44.1 || ^0.46.0 || ^0.48.0
+      '@apollo/gateway': ^0.44.1 || ^0.46.0 || ^0.48.0 || ^0.49.0 || ^0.50.0
       '@nestjs/common': ^8.2.3
       '@nestjs/core': ^8.2.3
       '@nestjs/graphql': ^10.0.0
@@ -1126,7 +1126,7 @@ packages:
       apollo-server-express: 3.3.0_graphql@15.6.0
       iterall: 1.3.0
       lodash.omit: 4.5.0
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: true
 
   /@nestjs/cli/8.1.2:
@@ -1444,8 +1444,8 @@ packages:
       prisma: 3.1.1
     dev: false
 
-  /@prisma/debug/3.12.0:
-    resolution: {integrity: sha512-MFNsK8jzao3VX+cEP6+txABa3w8bU4gD0QpqTbGS3v3TW1c7TtHvhsmI7xTx9Cll7biuJdaRd3YwG2Fa/CHVmA==}
+  /@prisma/debug/3.13.0:
+    resolution: {integrity: sha512-uzL4ug7pWbiodTSW/WMAJ9SOP/ulxn6EVlV4YTpKaidgPMOLPqSV7iLZP7P4w7q3HGSpWZp+kr2a4nq7+ANEfg==}
     dependencies:
       '@types/debug': 4.1.7
       ms: 2.1.3
@@ -1461,10 +1461,10 @@ packages:
     requiresBuild: true
     dev: true
 
-  /@prisma/generator-helper/3.12.0:
-    resolution: {integrity: sha512-wfEcSVUX0HH0A/CIrsecV1CLH3McNCLH2A76UL7QpSX1XLoIDo6SxgMwAfXufNGDhPET6NAoWm8mSmDXJopgrw==}
+  /@prisma/generator-helper/3.13.0:
+    resolution: {integrity: sha512-PgSqCaDPfnr0txfxnJFyqGkhobOzWNBX+8uQK/qgBde83Lb0Q58JEkWn1QzisUl6IHtVwL9Us0D7G2K77ph5yw==}
     dependencies:
-      '@prisma/debug': 3.12.0
+      '@prisma/debug': 3.13.0
       '@types/cross-spawn': 6.0.2
       chalk: 4.1.2
       cross-spawn: 7.0.3
@@ -2634,7 +2634,7 @@ packages:
     resolution: {integrity: sha512-gxGWBrTT1JuMx6R+o5PTXMmUnhnVzLQ9SNutD4YqKtI6ap897t3tKECYla6gCWEkplXnlNybEkZg9GEGxKFCgw==}
     dependencies:
       pascal-case: 3.1.2
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: false
 
   /camelcase-keys/6.2.2:
@@ -3895,7 +3895,7 @@ packages:
       graphql: ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
     dependencies:
       graphql: 15.6.0
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: false
 
   /graphql-ws/5.5.0_graphql@15.6.0:
@@ -5020,7 +5020,7 @@ packages:
   /lower-case/2.0.2:
     resolution: {integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==}
     dependencies:
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: false
 
   /lru-cache/6.0.0:
@@ -5247,7 +5247,7 @@ packages:
     resolution: {integrity: sha512-fgAN3jGAh+RoxUGZHTSOLJIqUc2wmoBwGR4tbpNAKmmovFoWq0OdRkb0VkldReO2a2iBT/OEulG9XSUc10r3zg==}
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: false
 
   /node-addon-api/3.2.1:
@@ -5488,7 +5488,7 @@ packages:
     resolution: {integrity: sha512-uWlGT3YSnK9x3BQJaOdcZwrnV6hPpd8jFH1/ucpiLRPh/2zCVJKS19E4GvYHvaCcACn3foXZ0cLB9Wrx1KGe5g==}
     dependencies:
       no-case: 3.0.4
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: false
 
   /passport-jwt/4.0.0:
@@ -5614,12 +5614,12 @@ packages:
       react-is: 18.0.0
     dev: true
 
-  /prisma-nestjs-graphql/15.2.2_efeb2e55e94663435e766ca0251bb9d7:
-    resolution: {integrity: sha512-cA9ntrVOoosWN49mEHkAOQSLWK3zioqWS4DSY3T3w7ibA7re6cNyNkl8S3u0pZlXZr+TlxFtSesofdMUhwv60Q==}
+  /prisma-nestjs-graphql/15.3.0_efeb2e55e94663435e766ca0251bb9d7:
+    resolution: {integrity: sha512-vR/AHhP+nAMDUWL6C4UVRCczzQ4LeXUXVuskMR2QKElyu0xkVMn35tcuckVv6oaPXR91rxGOvjmzWYeybbRRMA==}
     hasBin: true
     dependencies:
-      '@nestjs/apollo': 10.0.8_efeb2e55e94663435e766ca0251bb9d7
-      '@prisma/generator-helper': 3.12.0
+      '@nestjs/apollo': 10.0.11_efeb2e55e94663435e766ca0251bb9d7
+      '@prisma/generator-helper': 3.13.0
       await-event-emitter: 2.0.2
       filenamify: 4.3.0
       flat: 5.0.2
@@ -5920,7 +5920,7 @@ packages:
   /rxjs/7.5.2:
     resolution: {integrity: sha512-PwDt186XaL3QN5qXj/H9DGyHhP3/RYYgZZwqBv9Tv8rsAaiwFH1IsJJlcgD37J7UW5a6O67qX0KWKS3/pu0m4w==}
     dependencies:
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: true
 
   /safe-buffer/5.1.2:
@@ -6683,6 +6683,9 @@ packages:
 
   /tslib/2.3.1:
     resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
+
+  /tslib/2.4.0:
+    resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
 
   /tsutils/3.21.0_typescript@4.4.3:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
