@@ -47,7 +47,7 @@ specifiers:
   ts-jest: 28.0.1
   ts-loader: 9.3.0
   ts-node: ^10.2.1
-  tsconfig-paths: ^3.10.1
+  tsconfig-paths: 4.0.0
   typescript: ^4.4.3
 
 dependencies:
@@ -99,7 +99,7 @@ devDependencies:
   ts-jest: 28.0.1_266a9a788a46f10f1b8d4c507d4a1576
   ts-loader: 9.3.0_typescript@4.4.3
   ts-node: 10.2.1_0088345bf6ed8e5566f4f4a984ba8f5e
-  tsconfig-paths: 3.11.0
+  tsconfig-paths: 4.0.0
   typescript: 4.4.3
 
 packages:
@@ -4738,7 +4738,7 @@ packages:
     resolution: {integrity: sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==}
     hasBin: true
     dependencies:
-      minimist: 1.2.5
+      minimist: 1.2.6
     dev: true
 
   /json5/2.2.1:
@@ -5133,6 +5133,10 @@ packages:
 
   /minimist/1.2.5:
     resolution: {integrity: sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==}
+    dev: true
+
+  /minimist/1.2.6:
+    resolution: {integrity: sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==}
 
   /minipass/3.1.5:
     resolution: {integrity: sha512-+8NzxD82XQoNKNrl1d/FSi+X8wAEWR+sbYAfIvub4Nz0d22plFG72CEVVaufV8PNf4qSslFTD8VMOxNVhHCjTw==}
@@ -5153,7 +5157,7 @@ packages:
     resolution: {integrity: sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==}
     hasBin: true
     dependencies:
-      minimist: 1.2.5
+      minimist: 1.2.6
     dev: false
 
   /mkdirp/1.0.4:
@@ -6623,7 +6627,15 @@ packages:
     dependencies:
       '@types/json5': 0.0.29
       json5: 1.0.1
-      minimist: 1.2.5
+      minimist: 1.2.6
+      strip-bom: 3.0.0
+    dev: true
+
+  /tsconfig-paths/4.0.0:
+    resolution: {integrity: sha512-SLBg2GBKlR6bVtMgJJlud/o3waplKtL7skmLkExomIiaAtLGtVsoXIqP3SYdjbcH9lq/KVv7pMZeCBpLYOit6Q==}
+    dependencies:
+      json5: 2.2.1
+      minimist: 1.2.6
       strip-bom: 3.0.0
     dev: true
 
