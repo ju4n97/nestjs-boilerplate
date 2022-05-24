@@ -44,7 +44,7 @@ specifiers:
   rimraf: ^3.0.2
   rxjs: ^7.2.0
   supertest: ^6.1.3
-  ts-jest: 28.0.2
+  ts-jest: 28.0.3
   ts-loader: 9.3.0
   ts-node: ^10.2.1
   tsconfig-paths: 4.0.0
@@ -96,7 +96,7 @@ devDependencies:
   prisma: 3.1.1
   prisma-nestjs-graphql: 15.3.3
   supertest: 6.1.6
-  ts-jest: 28.0.2_36b91348e294861a618186712db1a35d
+  ts-jest: 28.0.3_36b91348e294861a618186712db1a35d
   ts-loader: 9.3.0_typescript@4.4.3
   ts-node: 10.2.1_0088345bf6ed8e5566f4f4a984ba8f5e
   tsconfig-paths: 4.0.0
@@ -6427,8 +6427,8 @@ packages:
       escape-string-regexp: 1.0.5
     dev: true
 
-  /ts-jest/28.0.2_36b91348e294861a618186712db1a35d:
-    resolution: {integrity: sha512-IOZMb3D0gx6IHO9ywPgiQxJ3Zl4ECylEFwoVpENB55aTn5sdO0Ptyx/7noNBxAaUff708RqQL4XBNxxOVjY0vQ==}
+  /ts-jest/28.0.3_36b91348e294861a618186712db1a35d:
+    resolution: {integrity: sha512-HzgbEDQ2KgVtDmpXToqAcKTyGHdHsG23i/iUjfxji92G5eT09S1m9UHZd7csF0Bfgh9txM4JzwHnv7r1waFPlw==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
     peerDependencies:
