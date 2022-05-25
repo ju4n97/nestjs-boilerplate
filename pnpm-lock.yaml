@@ -39,7 +39,7 @@ specifiers:
   passport-jwt: ^4.0.0
   prettier: 2.6.2
   prisma: ^3.1.1
-  prisma-nestjs-graphql: 15.3.3
+  prisma-nestjs-graphql: 16.0.1
   reflect-metadata: ^0.1.13
   rimraf: ^3.0.2
   rxjs: ^7.2.0
@@ -94,7 +94,7 @@ devDependencies:
   lint-staged: 12.4.2
   prettier: 2.6.2
   prisma: 3.1.1
-  prisma-nestjs-graphql: 15.3.3
+  prisma-nestjs-graphql: 16.0.1
   supertest: 6.1.6
   ts-jest: 28.0.3_36b91348e294861a618186712db1a35d
   ts-loader: 9.3.0_typescript@4.4.3
@@ -5538,8 +5538,8 @@ packages:
       react-is: 18.0.0
     dev: true
 
-  /prisma-nestjs-graphql/15.3.3:
-    resolution: {integrity: sha512-VJefHjUUplFdfH/3Q5YjM8vgIGWG48837H2Tbvqs9OFrHsbOppSVv8CcXJxQRh/MaOzcg5AqrePAkOWG06cLuA==}
+  /prisma-nestjs-graphql/16.0.1:
+    resolution: {integrity: sha512-pkxP6S/wgB0jQfrqTqBJfqCRGAIjFVKk91pF1UxD8Ah0+ubNM5cdwhLlb9rrp4lKzpkgeYsEWzgGbMDyUTlZXQ==}
     hasBin: true
     dependencies:
       '@prisma/generator-helper': 3.14.0
