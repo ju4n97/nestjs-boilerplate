@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@commitlint/cli': 17.0.0
+  '@commitlint/cli': 17.0.1
   '@commitlint/config-conventional': 17.0.0
   '@nestjs/cli': ^8.0.0
   '@nestjs/common': ^8.0.0
@@ -74,7 +74,7 @@ dependencies:
   rxjs: 7.3.1
 
 devDependencies:
-  '@commitlint/cli': 17.0.0
+  '@commitlint/cli': 17.0.1
   '@commitlint/config-conventional': 17.0.0
   '@nestjs/cli': 8.1.2_eslint@8.16.0
   '@nestjs/schematics': 8.0.3_typescript@4.4.3
@@ -544,8 +544,8 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@commitlint/cli/17.0.0:
-    resolution: {integrity: sha512-Np6slCdVVG1XwMvwbZrXIzS1INPAD5QmN4L6al04AmCd4nAPU63gxgxC5Mz0Fmx7va23Uvb0S7yEFV1JPhvPUQ==}
+  /@commitlint/cli/17.0.1:
+    resolution: {integrity: sha512-5xT1G5pnynR0tk/ms8Ji7yr9lZCeQs4GLVVtyK/gw20w+enoLTVuRKKY9zg88hy9FoCycc/W8iip2xv3c8payg==}
     engines: {node: '>=v14'}
     hasBin: true
     dependencies:
@@ -554,6 +554,7 @@ packages:
       '@commitlint/load': 17.0.0
       '@commitlint/read': 17.0.0
       '@commitlint/types': 17.0.0
+      execa: 5.1.1
       lodash: 4.17.21
       resolve-from: 5.0.0
       resolve-global: 1.0.0
@@ -2138,12 +2139,12 @@ packages:
     dev: true
 
   /ansi-regex/2.1.1:
-    resolution: {integrity: sha1-w7M6te42DYbg5ijwRorn7yfWVN8=}
+    resolution: {integrity: sha512-TIGnTpdo+E3+pCyAluZvtED5p5wCqLdezCyhPZzKPcxvFplEt4i+W7OONCKgeZFT3+y5NZZfOOS/Bdcanm1MYA==}
     engines: {node: '>=0.10.0'}
     dev: false
 
   /ansi-regex/3.0.0:
-    resolution: {integrity: sha1-7QMXwyIGT3lGbAKWa922Bas32Zg=}
+    resolution: {integrity: sha512-wFUFA5bg5dviipbQQ32yOQhl6gcJaJXiHE7dvR8VYPG97+J/GNC5FKGepKdEDUFeXRzDxPF1X/Btc8L+v7oqIQ==}
     engines: {node: '>=4'}
 
   /ansi-regex/5.0.1:
