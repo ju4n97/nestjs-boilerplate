@@ -17,7 +17,7 @@ specifiers:
   '@prisma/client': ^3.1.1
   '@types/bcrypt': ^5.0.0
   '@types/express': ^4.17.13
-  '@types/jest': 27.5.2
+  '@types/jest': 28.1.0
   '@types/node': ^16.9.2
   '@types/passport-jwt': ^3.0.6
   '@types/supertest': ^2.0.11
@@ -81,7 +81,7 @@ devDependencies:
   '@nestjs/testing': 8.0.9_6a32363b272836842cceea45fc80e251
   '@types/bcrypt': 5.0.0
   '@types/express': 4.17.13
-  '@types/jest': 27.5.2
+  '@types/jest': 28.1.0
   '@types/node': 16.10.2
   '@types/passport-jwt': 3.0.6
   '@types/supertest': 2.0.11
@@ -96,7 +96,7 @@ devDependencies:
   prisma: 3.1.1
   prisma-nestjs-graphql: 16.0.1
   supertest: 6.1.6
-  ts-jest: 28.0.3_1282af9d1bad7f854c116cee3103a061
+  ts-jest: 28.0.3_24a280da136a3705dc49524dc86b3ffb
   ts-loader: 9.3.0_typescript@4.4.3
   ts-node: 10.2.1_0088345bf6ed8e5566f4f4a984ba8f5e
   tsconfig-paths: 4.0.0
@@ -1648,8 +1648,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
-  /@types/jest/27.5.2:
-    resolution: {integrity: sha512-mpT8LJJ4CMeeahobofYWIjFo0xonRS/HfxnVEPMPFSQdGUt1uHCnoPT7Zhb+sjDU2wz0oKV0OLUR0WzrHNgfeA==}
+  /@types/jest/28.1.0:
+    resolution: {integrity: sha512-ITfF6JJIl9zbEi2k6NmhNE/BiDqfsI/ceqfvdaWaPbcrCpYyyRq4KtDQIWh6vQUru6SqwppODiom/Zhid+np6A==}
     dependencies:
       jest-matcher-utils: 27.5.1
       pretty-format: 27.5.1
@@ -6477,7 +6477,7 @@ packages:
       escape-string-regexp: 1.0.5
     dev: true
 
-  /ts-jest/28.0.3_1282af9d1bad7f854c116cee3103a061:
+  /ts-jest/28.0.3_24a280da136a3705dc49524dc86b3ffb:
     resolution: {integrity: sha512-HzgbEDQ2KgVtDmpXToqAcKTyGHdHsG23i/iUjfxji92G5eT09S1m9UHZd7csF0Bfgh9txM4JzwHnv7r1waFPlw==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
@@ -6498,7 +6498,7 @@ packages:
       esbuild:
         optional: true
     dependencies:
-      '@types/jest': 27.5.2
+      '@types/jest': 28.1.0
       bs-logger: 0.2.6
       fast-json-stable-stringify: 2.1.0
       jest: 28.1.0_5a3afdc404ba21944a8e05e72cd693e8
