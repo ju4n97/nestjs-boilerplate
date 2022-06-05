@@ -17,7 +17,7 @@ specifiers:
   '@prisma/client': ^3.1.1
   '@types/bcrypt': ^5.0.0
   '@types/express': ^4.17.13
-  '@types/jest': 28.1.0
+  '@types/jest': 28.1.1
   '@types/node': ^16.9.2
   '@types/passport-jwt': ^3.0.6
   '@types/supertest': ^2.0.11
@@ -81,7 +81,7 @@ devDependencies:
   '@nestjs/testing': 8.0.9_6a32363b272836842cceea45fc80e251
   '@types/bcrypt': 5.0.0
   '@types/express': 4.17.13
-  '@types/jest': 28.1.0
+  '@types/jest': 28.1.1
   '@types/node': 16.10.2
   '@types/passport-jwt': 3.0.6
   '@types/supertest': 2.0.11
@@ -1648,8 +1648,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
-  /@types/jest/28.1.0:
-    resolution: {integrity: sha512-ITfF6JJIl9zbEi2k6NmhNE/BiDqfsI/ceqfvdaWaPbcrCpYyyRq4KtDQIWh6vQUru6SqwppODiom/Zhid+np6A==}
+  /@types/jest/28.1.1:
+    resolution: {integrity: sha512-C2p7yqleUKtCkVjlOur9BWVA4HgUQmEj/HWCt5WzZ5mLXrWnyIfl0wGuArc+kBXsy0ZZfLp+7dywB4HtSVYGVA==}
     dependencies:
       jest-matcher-utils: 27.5.1
       pretty-format: 27.5.1
