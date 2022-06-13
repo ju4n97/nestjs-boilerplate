@@ -44,7 +44,7 @@ specifiers:
   rimraf: ^3.0.2
   rxjs: ^7.2.0
   supertest: ^6.1.3
-  ts-jest: 28.0.4
+  ts-jest: 28.0.5
   ts-loader: 9.3.0
   ts-node: ^10.2.1
   tsconfig-paths: 4.0.0
@@ -96,7 +96,7 @@ devDependencies:
   prisma: 3.1.1
   prisma-nestjs-graphql: 16.0.1
   supertest: 6.1.6
-  ts-jest: 28.0.4_jest@28.1.1+typescript@4.4.3
+  ts-jest: 28.0.5_jest@28.1.1+typescript@4.4.3
   ts-loader: 9.3.0_typescript@4.4.3
   ts-node: 10.2.1_0088345bf6ed8e5566f4f4a984ba8f5e
   tsconfig-paths: 4.0.0
@@ -4605,18 +4605,6 @@ packages:
       - supports-color
     dev: true
 
-  /jest-util/28.1.0:
-    resolution: {integrity: sha512-qYdCKD77k4Hwkose2YBEqQk7PzUf/NSE+rutzceduFveQREeH6b+89Dc9+wjX9dAwHcgdx4yedGA3FQlU/qCTA==}
-    engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
-    dependencies:
-      '@jest/types': 28.1.1
-      '@types/node': 16.10.2
-      chalk: 4.1.2
-      ci-info: 3.2.0
-      graceful-fs: 4.2.9
-      picomatch: 2.3.1
-    dev: true
-
   /jest-util/28.1.1:
     resolution: {integrity: sha512-FktOu7ca1DZSyhPAxgxB6hfh2+9zMoJ7aEQA759Z6p45NuO8mWcqujH+UdHlCm/V6JTWwDztM2ITCzU1ijJAfw==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
@@ -6486,8 +6474,8 @@ packages:
       escape-string-regexp: 1.0.5
     dev: true
 
-  /ts-jest/28.0.4_jest@28.1.1+typescript@4.4.3:
-    resolution: {integrity: sha512-S6uRDDdCJBvnZqyGjB4VCnwbQrbgdL8WPeP4jevVSpYsBaeGRQAIS08o3Svav2Ex+oXwLgJ/m7F24TNq62kA1A==}
+  /ts-jest/28.0.5_jest@28.1.1+typescript@4.4.3:
+    resolution: {integrity: sha512-Sx9FyP9pCY7pUzQpy4FgRZf2bhHY3za576HMKJFs+OnQ9jS96Du5vNsDKkyedQkik+sEabbKAnCliv9BEsHZgQ==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
     peerDependencies:
@@ -6507,13 +6495,13 @@ packages:
       bs-logger: 0.2.6
       fast-json-stable-stringify: 2.1.0
       jest: 28.1.1_5a3afdc404ba21944a8e05e72cd693e8
-      jest-util: 28.1.0
+      jest-util: 28.1.1
       json5: 2.2.1
       lodash.memoize: 4.1.2
       make-error: 1.3.6
       semver: 7.3.7
       typescript: 4.4.3
-      yargs-parser: 20.2.9
+      yargs-parser: 21.0.1
     dev: true
 
   /ts-loader/9.3.0_typescript@4.4.3:
