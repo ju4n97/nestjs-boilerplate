@@ -45,7 +45,7 @@ specifiers:
   rxjs: ^7.2.0
   supertest: ^6.1.3
   ts-jest: 28.0.5
-  ts-loader: 9.3.0
+  ts-loader: 9.3.1
   ts-node: ^10.2.1
   tsconfig-paths: 4.0.0
   typescript: ^4.4.3
@@ -97,7 +97,7 @@ devDependencies:
   prisma-nestjs-graphql: 16.0.1
   supertest: 6.1.6
   ts-jest: 28.0.5_jest@28.1.1+typescript@4.4.3
-  ts-loader: 9.3.0_typescript@4.4.3
+  ts-loader: 9.3.1_typescript@4.4.3
   ts-node: 10.2.1_0088345bf6ed8e5566f4f4a984ba8f5e
   tsconfig-paths: 4.0.0
   typescript: 4.4.3
@@ -5027,14 +5027,6 @@ packages:
     resolution: {integrity: sha1-VSmk1nZUE07cxSZmVoNbD4Ua/O4=}
     engines: {node: '>= 0.6'}
 
-  /micromatch/4.0.4:
-    resolution: {integrity: sha512-pRmzw/XUcwXGpD9aI9q/0XOwLNygjETJ8y0ao0wdqprrzDa4YnxLcz7fQRZr8voh8V10kGhABbNcHVk5wHgWwg==}
-    engines: {node: '>=8.6'}
-    dependencies:
-      braces: 3.0.2
-      picomatch: 2.3.1
-    dev: true
-
   /micromatch/4.0.5:
     resolution: {integrity: sha512-DMy+ERcEW2q8Z2Po+WNXuw3c5YaUSFjAO5GsJqfEl7UjvtIuFKO6ZrKvcItdy98dwFI2N1tg3zNIdKaQT+aNdA==}
     engines: {node: '>=8.6'}
@@ -6461,8 +6453,8 @@ packages:
       yargs-parser: 21.0.1
     dev: true
 
-  /ts-loader/9.3.0_typescript@4.4.3:
-    resolution: {integrity: sha512-2kLLAdAD+FCKijvGKi9sS0OzoqxLCF3CxHpok7rVgCZ5UldRzH0TkbwG9XECKjBzHsAewntC5oDaI/FwKzEUog==}
+  /ts-loader/9.3.1_typescript@4.4.3:
+    resolution: {integrity: sha512-OkyShkcZTsTwyS3Kt7a4rsT/t2qvEVQuKCTg4LJmpj9fhFR7ukGdZwV6Qq3tRUkqcXtfGpPR7+hFKHCG/0d3Lw==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       typescript: '*'
@@ -6470,7 +6462,7 @@ packages:
     dependencies:
       chalk: 4.1.2
       enhanced-resolve: 5.8.3
-      micromatch: 4.0.4
+      micromatch: 4.0.5
       semver: 7.3.7
       typescript: 4.4.3
     dev: true
