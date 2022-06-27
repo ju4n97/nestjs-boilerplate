@@ -29,7 +29,7 @@ specifiers:
   class-validator: ^0.13.1
   eslint: 8.18.0
   eslint-config-prettier: ^8.3.0
-  eslint-plugin-prettier: 4.0.0
+  eslint-plugin-prettier: 4.1.0
   graphql: ^15.5.3
   graphql-scalars: ^1.10.1
   graphql-subscriptions: ^1.2.1
@@ -89,7 +89,7 @@ devDependencies:
   '@typescript-eslint/parser': 5.29.0_eslint@8.18.0+typescript@4.4.3
   eslint: 8.18.0
   eslint-config-prettier: 8.3.0_eslint@8.18.0
-  eslint-plugin-prettier: 4.0.0_77ccd4dfe765acc02eaf6047d6848093
+  eslint-plugin-prettier: 4.1.0_77ccd4dfe765acc02eaf6047d6848093
   jest: 28.1.1_5a3afdc404ba21944a8e05e72cd693e8
   lint-staged: 13.0.3
   prettier: 2.7.1
@@ -3211,9 +3211,9 @@ packages:
       eslint: 8.18.0
     dev: true
 
-  /eslint-plugin-prettier/4.0.0_77ccd4dfe765acc02eaf6047d6848093:
-    resolution: {integrity: sha512-98MqmCJ7vJodoQK359bqQWaxOE0CS8paAz/GgjaZLyex4TTk3g9HugoO89EqWCrFiOqn9EVvcoo7gZzONCWVwQ==}
-    engines: {node: '>=6.0.0'}
+  /eslint-plugin-prettier/4.1.0_77ccd4dfe765acc02eaf6047d6848093:
+    resolution: {integrity: sha512-A3AXIEfTnq3D5qDFjWJdQ9c4BLhw/TqhSR+6+SVaoPJBAWciFEuJiNQh275OnjRrAi7yssZzuWBRw66VG2g6UA==}
+    engines: {node: '>=12.0.0'}
     peerDependencies:
       eslint: '>=7.28.0'
       eslint-config-prettier: '*'
