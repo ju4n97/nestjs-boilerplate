@@ -5,7 +5,7 @@ specifiers:
   '@commitlint/config-conventional': 17.4.4
   '@nestjs/cli': ^8.0.0
   '@nestjs/common': ^8.0.0
-  '@nestjs/config': ^1.0.1
+  '@nestjs/config': ^2.0.0
   '@nestjs/core': ^8.0.0
   '@nestjs/graphql': ^9.0.4
   '@nestjs/jwt': ^8.0.0
@@ -52,7 +52,7 @@ specifiers:
 
 dependencies:
   '@nestjs/common': 8.0.9_91e265e1bcd1545143b1cccdf5c76cbc
-  '@nestjs/config': 1.0.1_946bf8982b6f3d7b46cf0b296973a2a3
+  '@nestjs/config': 2.3.1_946bf8982b6f3d7b46cf0b296973a2a3
   '@nestjs/core': 8.0.9_84c72fe2d2f93cb7dc52b1203ec9d8bb
   '@nestjs/graphql': 9.0.5_d33cfd230c4ed567149693389b5373ca
   '@nestjs/jwt': 8.0.0_@nestjs+common@8.0.9
@@ -1190,22 +1190,20 @@ packages:
     transitivePeerDependencies:
       - debug
 
-  /@nestjs/config/1.0.1_946bf8982b6f3d7b46cf0b296973a2a3:
-    resolution: {integrity: sha512-azMl4uYlFIhYsywFxPJT81RxF3Pnn0TZW3EEmr0Wa0Wex8R2xpvBNrCcrOgW3TB1xGMP7eqBrlfsVh5ZP82szg==}
+  /@nestjs/config/2.3.1_946bf8982b6f3d7b46cf0b296973a2a3:
+    resolution: {integrity: sha512-Ckzel0NZ9CWhNsLfE1hxfDuxJuEbhQvGxSlmZ1/X8awjRmAA/g3kT6M1+MO1SHj1wMtPyUfd9WpwkiqFbiwQgA==}
     peerDependencies:
-      '@nestjs/common': ^7.0.0 || ^8.0.0
+      '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0
       reflect-metadata: ^0.1.13
       rxjs: ^6.0.0 || ^7.2.0
     dependencies:
       '@nestjs/common': 8.0.9_91e265e1bcd1545143b1cccdf5c76cbc
-      dotenv: 10.0.0
-      dotenv-expand: 5.1.0
-      lodash.get: 4.4.2
-      lodash.has: 4.5.2
-      lodash.set: 4.3.2
+      dotenv: 16.0.3
+      dotenv-expand: 10.0.0
+      lodash: 4.17.21
       reflect-metadata: 0.1.13
       rxjs: 7.3.1
-      uuid: 8.3.2
+      uuid: 9.0.0
     dev: false
 
   /@nestjs/core/8.0.9_84c72fe2d2f93cb7dc52b1203ec9d8bb:
@@ -3142,13 +3140,14 @@ packages:
       is-obj: 2.0.0
     dev: true
 
-  /dotenv-expand/5.1.0:
-    resolution: {integrity: sha512-YXQl1DSa4/PQyRfgrv6aoNjhasp/p4qs9FjJ4q4cQk+8m4r6k4ZSiEyytKG8f8W9gi8WsQtIObNmKd+tMzNTmA==}
+  /dotenv-expand/10.0.0:
+    resolution: {integrity: sha512-GopVGCpVS1UKH75VKHGuQFqS1Gusej0z4FyQkPdwjil2gNIv+LNsqBlboOzpJFZKVT95GkCyWJbBSdFEFUWI2A==}
+    engines: {node: '>=12'}
     dev: false
 
-  /dotenv/10.0.0:
-    resolution: {integrity: sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==}
-    engines: {node: '>=10'}
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
     dev: false
 
   /ecdsa-sig-formatter/1.0.11:
@@ -4964,14 +4963,6 @@ packages:
     resolution: {integrity: sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==}
     dev: true
 
-  /lodash.get/4.4.2:
-    resolution: {integrity: sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=}
-    dev: false
-
-  /lodash.has/4.5.2:
-    resolution: {integrity: sha1-0Z9NwQlQWMzL4rDN9O4P5Ko3yGI=}
-    dev: false
-
   /lodash.includes/4.3.0:
     resolution: {integrity: sha1-YLuYqHy5I8aMoeUTJUgzFISfVT8=}
     dev: false
@@ -5017,10 +5008,6 @@ packages:
 
   /lodash.once/4.1.1:
     resolution: {integrity: sha1-DdOXEhPHxW34gJd9UEyI+0cal6w=}
-    dev: false
-
-  /lodash.set/4.3.2:
-    resolution: {integrity: sha1-2HV7HagH3eJIFrDWqEvqGnYjCyM=}
     dev: false
 
   /lodash.snakecase/4.1.1:
@@ -6837,6 +6824,11 @@ packages:
   /uuid/8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
+
+  /uuid/9.0.0:
+    resolution: {integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==}
+    hasBin: true
+    dev: false
 
   /v8-compile-cache-lib/3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
