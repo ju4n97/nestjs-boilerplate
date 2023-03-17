@@ -39,7 +39,7 @@ specifiers:
   passport-jwt: ^4.0.0
   prettier: 2.8.4
   prisma: ^3.1.1
-  prisma-nestjs-graphql: 16.0.1
+  prisma-nestjs-graphql: 17.1.0
   reflect-metadata: ^0.1.13
   rimraf: ^3.0.2
   rxjs: ^7.2.0
@@ -94,7 +94,7 @@ devDependencies:
   lint-staged: 13.2.0
   prettier: 2.8.4
   prisma: 3.1.1
-  prisma-nestjs-graphql: 16.0.1
+  prisma-nestjs-graphql: 17.1.0
   supertest: 6.1.6
   ts-jest: 28.0.8_jest@28.1.3+typescript@4.4.3
   ts-loader: 9.4.2_typescript@4.4.3
@@ -1516,12 +1516,14 @@ packages:
       prisma: 3.1.1
     dev: false
 
-  /@prisma/debug/3.14.0:
-    resolution: {integrity: sha512-cvA2NRJU6oLCFpYcOJO6jjUZZcPwQqdKYVpa6OY+jFrSwLdYLgSPjrfbnBPOD2z1gzODdnrWYfpz3wPKVhZ0IQ==}
+  /@prisma/debug/4.11.0:
+    resolution: {integrity: sha512-2ZCmY5l5IfMCnlsBYECysK3Gaoq4BWl7KbOLGDYRwrlZTA/DwUqJ3JrmroJQY6jHvSkyvMrkaJpQKo1QfKuuyw==}
     dependencies:
       '@types/debug': 4.1.7
-      ms: 2.1.3
+      debug: 4.3.4
       strip-ansi: 6.0.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@prisma/engines-version/3.1.0-24.c22652b7e418506fab23052d569b85d3aec4883f:
@@ -1532,13 +1534,15 @@ packages:
     resolution: {integrity: sha512-6NEp0VlLho3hVtIvj2P4h0e19AYqQSXtFGts8gSIXDnV+l5pRFZaDMfGo2RiLMR0Kfrs8c3ZYxYX0sWmVL0tWw==}
     requiresBuild: true
 
-  /@prisma/generator-helper/3.14.0:
-    resolution: {integrity: sha512-WuYhXMOr2rJ+A0D93QLoKJvu7FlHORPZz/72LwZlJT2GXQi2WNtS2xKJzgCI+Auc0JlLjijV5/7mDrUa4iHUbw==}
+  /@prisma/generator-helper/4.11.0:
+    resolution: {integrity: sha512-hHP2sqMT7xPbFOVQQ1HrGFbCG1mV1DHiiUC7wceJfpWMMuBIBZhQVsayNspHk3V5Y+HeOOUruE+qPNHXk2Botg==}
     dependencies:
-      '@prisma/debug': 3.14.0
+      '@prisma/debug': 4.11.0
       '@types/cross-spawn': 6.0.2
       chalk: 4.1.2
       cross-spawn: 7.0.3
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@protobufjs/aspromise/1.1.2:
@@ -3673,7 +3677,7 @@ packages:
     dev: true
 
   /filename-reserved-regex/2.0.0:
-    resolution: {integrity: sha1-q/c9+rc10EVECr/qLZHzieu/oik=}
+    resolution: {integrity: sha512-lc1bnsSr4L4Bdif8Xb/qrtokGbq5zlsms/CYH8PP+WtCkGNF65DPiQY8vG3SakEdRn8Dlnm+gW/qWKKjS5sZzQ==}
     engines: {node: '>=4'}
     dev: true
 
@@ -5364,6 +5368,7 @@ packages:
 
   /ms/2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
+    dev: false
 
   /multer/1.4.3:
     resolution: {integrity: sha512-np0YLKncuZoTzufbkM6wEKp68EhWJXcU6fq6QqrSwkckd2LlMgd1UqhUJLj6NS/5sZ8dE8LYDWslsltJznnXlg==}
@@ -5791,21 +5796,23 @@ packages:
       react-is: 18.0.0
     dev: true
 
-  /prisma-nestjs-graphql/16.0.1:
-    resolution: {integrity: sha512-pkxP6S/wgB0jQfrqTqBJfqCRGAIjFVKk91pF1UxD8Ah0+ubNM5cdwhLlb9rrp4lKzpkgeYsEWzgGbMDyUTlZXQ==}
+  /prisma-nestjs-graphql/17.1.0:
+    resolution: {integrity: sha512-TrkOjb4wAPZ7OBej0EyB2ZsinjYTwWR5sD8RMk27xSm7i7K8exjLOTkVZaLYrncV6lzcq82Rocdlie3RpgQVZQ==}
     hasBin: true
     dependencies:
-      '@prisma/generator-helper': 3.14.0
+      '@prisma/generator-helper': 4.11.0
       await-event-emitter: 2.0.2
       filenamify: 4.3.0
       flat: 5.0.2
       get-relative-path: 1.0.2
-      json5: 2.2.1
+      json5: 2.2.3
       lodash: 4.17.21
       outmatch: 0.7.0
       pluralize: 8.0.0
       pupa: 2.1.1
       ts-morph: 12.0.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /prisma/3.1.1:
@@ -6666,7 +6673,7 @@ packages:
     dev: true
 
   /trim-repeated/1.0.0:
-    resolution: {integrity: sha1-42RqLqTokTEr9+rObPsFOAvAHCE=}
+    resolution: {integrity: sha512-pkonvlKk8/ZuR0D5tLW8ljt5I8kmxp2XKymhepUeOdCEfKpZaktSArkLHZt76OB1ZvO9bssUsDty4SWhLvZpLg==}
     engines: {node: '>=0.10.0'}
     dependencies:
       escape-string-regexp: 1.0.5
