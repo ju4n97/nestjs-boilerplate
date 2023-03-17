@@ -45,7 +45,7 @@ specifiers:
   rxjs: ^7.2.0
   supertest: ^6.1.3
   ts-jest: 28.0.8
-  ts-loader: 9.3.1
+  ts-loader: 9.4.2
   ts-node: ^10.2.1
   tsconfig-paths: 4.0.0
   typescript: ^4.4.3
@@ -97,7 +97,7 @@ devDependencies:
   prisma-nestjs-graphql: 16.0.1
   supertest: 6.1.6
   ts-jest: 28.0.8_jest@28.1.3+typescript@4.4.3
-  ts-loader: 9.3.1_typescript@4.4.3
+  ts-loader: 9.4.2_typescript@4.4.3
   ts-node: 10.2.1_0a936ae4fd2e63db37f94eb4969f6cb2
   tsconfig-paths: 4.0.0
   typescript: 4.4.3
@@ -6656,8 +6656,8 @@ packages:
       yargs-parser: 21.0.1
     dev: true
 
-  /ts-loader/9.3.1_typescript@4.4.3:
-    resolution: {integrity: sha512-OkyShkcZTsTwyS3Kt7a4rsT/t2qvEVQuKCTg4LJmpj9fhFR7ukGdZwV6Qq3tRUkqcXtfGpPR7+hFKHCG/0d3Lw==}
+  /ts-loader/9.4.2_typescript@4.4.3:
+    resolution: {integrity: sha512-OmlC4WVmFv5I0PpaxYb+qGeGOdm5giHU7HwDDUjw59emP2UYMHy9fFSDcYgSNoH8sXcj4hGCSEhlDZ9ULeDraA==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       typescript: '*'
@@ -6666,7 +6666,7 @@ packages:
       chalk: 4.1.2
       enhanced-resolve: 5.8.3
       micromatch: 4.0.5
-      semver: 7.3.7
+      semver: 7.3.8
       typescript: 4.4.3
     dev: true
 
